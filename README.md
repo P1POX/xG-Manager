@@ -4,6 +4,16 @@ Juego de gestión de fútbol en **Pygame** para el ramo de Minería de Datos. Di
 ligas durante una temporada completa (datos reales de **EA SPORTS FC 24**, Kaggle) y un asistente basado en modelos
 de minería de datos te ayuda a decidir.
 
+## Capturas
+
+| | |
+|---|---|
+| ![Menú](docs/capturas/01_menu.png) **Menú principal** | ![Alineación](docs/capturas/04b_alineacion_sel.png) **Alineación** (asignación óptima con algoritmo húngaro) |
+| ![Mercado](docs/capturas/05_mercado.png) **Mercado** (gangas según la regresión) | ![Táctica](docs/capturas/05_tactica.png) **Táctica** (reglas Apriori) |
+| ![Previa](docs/capturas/06_previa.png) **Previa** con pronóstico y árbol de decisión | ![Datos](docs/capturas/05_datos.png) **Datos y modelos** (K-means, métricas) |
+
+![Liga](docs/capturas/09_liga_j5.png)
+
 ## Cómo ejecutarlo
 
 Requisitos: **Python 3.12** (probado en Windows 11) y unos 20 MB de disco.
