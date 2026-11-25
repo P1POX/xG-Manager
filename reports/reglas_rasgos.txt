@@ -1,0 +1,2 @@
+{Quick Step} => {Rapid}  conf=0.60 lift=3.8
+{Flair} => {Technical}  conf=0.52 lift=2.6

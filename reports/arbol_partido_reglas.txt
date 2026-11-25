@@ -1,0 +1,22 @@
+|--- dif_overall <= -1.77
+|   |--- dif_overall <= -6.95
+|   |   |--- dif_medio <= -7.73
+|   |   |   |--- class: Visitante
+|   |   |--- dif_medio >  -7.73
+|   |   |   |--- class: Visitante
+|   |--- dif_overall >  -6.95
+|   |   |--- dif_defensa <= -3.69
+|   |   |   |--- class: Visitante
+|   |   |--- dif_defensa >  -3.69
+|   |   |   |--- class: Visitante
+|--- dif_overall >  -1.77
+|   |--- dif_defensa <= 3.51
+|   |   |--- dif_ataque <= 3.42
+|   |   |   |--- class: Local
+|   |   |--- dif_ataque >  3.42
+|   |   |   |--- class: Local
+|   |--- dif_defensa >  3.51
+|   |   |--- dif_defensa <= 10.13
+|   |   |   |--- class: Local
+|   |   |--- dif_defensa >  10.13
+|   |   |   |--- class: Local

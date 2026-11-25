@@ -1,0 +1,73 @@
+|--- defending_sliding_tackle <= 46.50
+|   |--- goalkeeping_diving <= 37.00
+|   |   |--- attacking_heading_accuracy <= 54.50
+|   |   |   |--- skill_long_passing <= 41.50
+|   |   |   |   |--- defending_sliding_tackle <= 39.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- defending_sliding_tackle >  39.50
+|   |   |   |   |   |--- class: DEF
+|   |   |   |--- skill_long_passing >  41.50
+|   |   |   |   |--- movement_sprint_speed <= 72.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- movement_sprint_speed >  72.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- attacking_heading_accuracy >  54.50
+|   |   |   |--- attacking_crossing <= 57.50
+|   |   |   |   |--- defending_sliding_tackle <= 40.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- defending_sliding_tackle >  40.50
+|   |   |   |   |   |--- class: DEL
+|   |   |   |--- attacking_crossing >  57.50
+|   |   |   |   |--- power_strength <= 67.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- power_strength >  67.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |--- goalkeeping_diving >  37.00
+|   |   |--- class: POR
+|--- defending_sliding_tackle >  46.50
+|   |--- mentality_vision <= 56.50
+|   |   |--- defending_marking_awareness <= 49.50
+|   |   |   |--- skill_long_passing <= 46.50
+|   |   |   |   |--- mentality_vision <= 42.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- mentality_vision >  42.50
+|   |   |   |   |   |--- class: DEF
+|   |   |   |--- skill_long_passing >  46.50
+|   |   |   |   |--- attacking_crossing <= 51.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- attacking_crossing >  51.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- defending_marking_awareness >  49.50
+|   |   |   |--- mentality_vision <= 49.50
+|   |   |   |   |--- mentality_vision <= 42.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- mentality_vision >  42.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- mentality_vision >  49.50
+|   |   |   |   |--- attacking_crossing <= 52.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- attacking_crossing >  52.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |--- mentality_vision >  56.50
+|   |   |--- defending_sliding_tackle <= 62.50
+|   |   |   |--- skill_long_passing <= 59.50
+|   |   |   |   |--- defending_sliding_tackle <= 54.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- defending_sliding_tackle >  54.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- skill_long_passing >  59.50
+|   |   |   |   |--- movement_sprint_speed <= 75.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- movement_sprint_speed >  75.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- defending_sliding_tackle >  62.50
+|   |   |   |--- mentality_vision <= 67.50
+|   |   |   |   |--- attacking_crossing <= 61.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- attacking_crossing >  61.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- mentality_vision >  67.50
+|   |   |   |   |--- attacking_crossing <= 71.50
+|   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- attacking_crossing >  71.50
+|   |   |   |   |   |--- truncated branch of depth 2

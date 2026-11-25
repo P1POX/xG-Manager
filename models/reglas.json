@@ -1,0 +1,2685 @@
+[
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.018,
+  "confianza": 0.385,
+  "lift": 2.026
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Presión al mal control",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0224,
+  "confianza": 0.354,
+  "lift": 1.86
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.021,
+  "confianza": 0.347,
+  "lift": 1.823
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión al mal control",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0302,
+  "confianza": 0.343,
+  "lift": 1.801
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0322,
+  "confianza": 0.338,
+  "lift": 1.779
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0322,
+  "confianza": 0.338,
+  "lift": 1.779
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0322,
+  "confianza": 0.338,
+  "lift": 1.779
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0151,
+  "confianza": 0.33,
+  "lift": 1.733
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0151,
+  "confianza": 0.33,
+  "lift": 1.733
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Presión tras pérdida",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.018,
+  "confianza": 0.327,
+  "lift": 1.721
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0224,
+  "confianza": 0.639,
+  "lift": 1.71
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0224,
+  "confianza": 0.639,
+  "lift": 1.71
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Presión al mal control"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0244,
+  "confianza": 0.325,
+  "lift": 1.707
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Presión al mal control",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0244,
+  "confianza": 0.325,
+  "lift": 1.707
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión al mal control",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0244,
+  "confianza": 0.325,
+  "lift": 1.707
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión tras pérdida",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0176,
+  "confianza": 0.324,
+  "lift": 1.705
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Presión tras pérdida"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0176,
+  "confianza": 0.324,
+  "lift": 1.705
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Presión tras pérdida",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0176,
+  "confianza": 0.324,
+  "lift": 1.705
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión tras pérdida",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0263,
+  "confianza": 0.323,
+  "lift": 1.7
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0244,
+  "confianza": 0.323,
+  "lift": 1.696
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.02,
+  "confianza": 0.631,
+  "lift": 1.688
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.02,
+  "confianza": 0.631,
+  "lift": 1.688
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0527,
+  "confianza": 0.319,
+  "lift": 1.675
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Presión al mal control"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0195,
+  "confianza": 0.315,
+  "lift": 1.656
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.617,
+  "lift": 1.65
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.617,
+  "lift": 1.65
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Posesión",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0205,
+  "confianza": 0.313,
+  "lift": 1.648
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0205,
+  "confianza": 0.313,
+  "lift": 1.648
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0766,
+  "confianza": 0.313,
+  "lift": 1.644
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Presión al mal control"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0366,
+  "confianza": 0.312,
+  "lift": 1.643
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0351,
+  "confianza": 0.305,
+  "lift": 1.604
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.597,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.597,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.597,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0185,
+  "confianza": 0.304,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0185,
+  "confianza": 0.304,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.0185,
+  "confianza": 0.304,
+  "lift": 1.598
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Alta"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.021,
+  "confianza": 0.303,
+  "lift": 1.592
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.021,
+  "confianza": 0.303,
+  "lift": 1.592
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Alta",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Alto",
+  "soporte": 0.021,
+  "confianza": 0.303,
+  "lift": 1.592
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.589,
+  "lift": 1.577
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.589,
+  "lift": 1.577
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.589,
+  "lift": 1.577
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0229,
+  "confianza": 0.588,
+  "lift": 1.572
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0229,
+  "confianza": 0.588,
+  "lift": 1.572
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0156,
+  "confianza": 0.582,
+  "lift": 1.557
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0156,
+  "confianza": 0.582,
+  "lift": 1.557
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0229,
+  "confianza": 0.58,
+  "lift": 1.553
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0229,
+  "confianza": 0.58,
+  "lift": 1.553
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Replegar"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.573,
+  "lift": 1.534
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Replegar",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.02,
+  "confianza": 0.569,
+  "lift": 1.524
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0502,
+  "confianza": 0.569,
+  "lift": 1.523
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0502,
+  "confianza": 0.569,
+  "lift": 1.523
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0502,
+  "confianza": 0.569,
+  "lift": 1.523
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0595,
+  "confianza": 0.567,
+  "lift": 1.519
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0595,
+  "confianza": 0.567,
+  "lift": 1.519
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0595,
+  "confianza": 0.567,
+  "lift": 1.519
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0317,
+  "confianza": 0.565,
+  "lift": 1.513
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0317,
+  "confianza": 0.565,
+  "lift": 1.513
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0317,
+  "confianza": 0.565,
+  "lift": 1.513
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0302,
+  "confianza": 0.564,
+  "lift": 1.508
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0302,
+  "confianza": 0.564,
+  "lift": 1.508
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0302,
+  "confianza": 0.564,
+  "lift": 1.508
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0332,
+  "confianza": 0.557,
+  "lift": 1.492
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0332,
+  "confianza": 0.557,
+  "lift": 1.492
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Estrecha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0395,
+  "confianza": 0.555,
+  "lift": 1.485
+ },
+ {
+  "si": [
+   "Estilo defensivo = Replegar"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0283,
+  "confianza": 0.552,
+  "lift": 1.478
+ },
+ {
+  "si": [
+   "Estilo defensivo = Replegar",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0268,
+  "confianza": 0.55,
+  "lift": 1.472
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0366,
+  "confianza": 0.547,
+  "lift": 1.465
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0366,
+  "confianza": 0.547,
+  "lift": 1.465
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0366,
+  "confianza": 0.547,
+  "lift": 1.465
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.544,
+  "lift": 1.457
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.021,
+  "confianza": 0.544,
+  "lift": 1.457
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0288,
+  "confianza": 0.541,
+  "lift": 1.449
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0288,
+  "confianza": 0.541,
+  "lift": 1.449
+ },
+ {
+  "si": [
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0873,
+  "confianza": 0.541,
+  "lift": 1.447
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0873,
+  "confianza": 0.541,
+  "lift": 1.447
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0873,
+  "confianza": 0.541,
+  "lift": 1.447
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0439,
+  "confianza": 0.529,
+  "lift": 1.441
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0439,
+  "confianza": 0.529,
+  "lift": 1.441
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0195,
+  "confianza": 0.526,
+  "lift": 1.433
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0195,
+  "confianza": 0.526,
+  "lift": 1.433
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0259,
+  "confianza": 0.535,
+  "lift": 1.433
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0259,
+  "confianza": 0.535,
+  "lift": 1.433
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0439,
+  "confianza": 0.529,
+  "lift": 1.417
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0205,
+  "confianza": 0.519,
+  "lift": 1.412
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0205,
+  "confianza": 0.519,
+  "lift": 1.412
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0151,
+  "confianza": 0.525,
+  "lift": 1.406
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0166,
+  "confianza": 0.515,
+  "lift": 1.379
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0166,
+  "confianza": 0.515,
+  "lift": 1.379
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0273,
+  "confianza": 0.505,
+  "lift": 1.373
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0273,
+  "confianza": 0.505,
+  "lift": 1.373
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0273,
+  "confianza": 0.505,
+  "lift": 1.373
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0302,
+  "confianza": 0.504,
+  "lift": 1.372
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0302,
+  "confianza": 0.504,
+  "lift": 1.372
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0415,
+  "confianza": 0.503,
+  "lift": 1.369
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0415,
+  "confianza": 0.503,
+  "lift": 1.369
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0517,
+  "confianza": 0.502,
+  "lift": 1.368
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0517,
+  "confianza": 0.502,
+  "lift": 1.368
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0517,
+  "confianza": 0.502,
+  "lift": 1.368
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0254,
+  "confianza": 0.51,
+  "lift": 1.364
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0224,
+  "confianza": 0.5,
+  "lift": 1.361
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0156,
+  "confianza": 0.5,
+  "lift": 1.361
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0224,
+  "confianza": 0.5,
+  "lift": 1.361
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0156,
+  "confianza": 0.5,
+  "lift": 1.361
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0395,
+  "confianza": 0.506,
+  "lift": 1.355
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0395,
+  "confianza": 0.506,
+  "lift": 1.355
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0395,
+  "confianza": 0.506,
+  "lift": 1.355
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.018,
+  "confianza": 0.493,
+  "lift": 1.343
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.018,
+  "confianza": 0.493,
+  "lift": 1.343
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0454,
+  "confianza": 0.5,
+  "lift": 1.338
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Pase directo",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0298,
+  "confianza": 0.5,
+  "lift": 1.338
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0298,
+  "confianza": 0.5,
+  "lift": 1.338
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Pase directo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0298,
+  "confianza": 0.5,
+  "lift": 1.338
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0454,
+  "confianza": 0.5,
+  "lift": 1.338
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0405,
+  "confianza": 0.497,
+  "lift": 1.33
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Estrecha"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0522,
+  "confianza": 0.495,
+  "lift": 1.326
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0332,
+  "confianza": 0.486,
+  "lift": 1.322
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0332,
+  "confianza": 0.486,
+  "lift": 1.322
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Pase directo",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.493,
+  "lift": 1.318
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Balón largo"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.493,
+  "lift": 1.318
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0293,
+  "confianza": 0.484,
+  "lift": 1.317
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0293,
+  "confianza": 0.484,
+  "lift": 1.317
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.062,
+  "confianza": 0.49,
+  "lift": 1.312
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0337,
+  "confianza": 0.489,
+  "lift": 1.31
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0337,
+  "confianza": 0.489,
+  "lift": 1.31
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.018,
+  "confianza": 0.481,
+  "lift": 1.308
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.018,
+  "confianza": 0.481,
+  "lift": 1.308
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Estrecha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0312,
+  "confianza": 0.489,
+  "lift": 1.307
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.081,
+  "confianza": 0.48,
+  "lift": 1.306
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.081,
+  "confianza": 0.48,
+  "lift": 1.306
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.081,
+  "confianza": 0.48,
+  "lift": 1.306
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0161,
+  "confianza": 0.478,
+  "lift": 1.302
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0161,
+  "confianza": 0.478,
+  "lift": 1.302
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0263,
+  "confianza": 0.478,
+  "lift": 1.301
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0263,
+  "confianza": 0.478,
+  "lift": 1.301
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0346,
+  "confianza": 0.477,
+  "lift": 1.297
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0346,
+  "confianza": 0.477,
+  "lift": 1.297
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0283,
+  "confianza": 0.475,
+  "lift": 1.294
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0283,
+  "confianza": 0.475,
+  "lift": 1.294
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0639,
+  "confianza": 0.473,
+  "lift": 1.288
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0639,
+  "confianza": 0.473,
+  "lift": 1.288
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0639,
+  "confianza": 0.473,
+  "lift": 1.288
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0249,
+  "confianza": 0.472,
+  "lift": 1.286
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0205,
+  "confianza": 0.472,
+  "lift": 1.285
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0463,
+  "confianza": 0.48,
+  "lift": 1.284
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0502,
+  "confianza": 0.479,
+  "lift": 1.282
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0273,
+  "confianza": 0.479,
+  "lift": 1.281
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0185,
+  "confianza": 0.469,
+  "lift": 1.277
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0185,
+  "confianza": 0.469,
+  "lift": 1.277
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0459,
+  "confianza": 0.477,
+  "lift": 1.277
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0561,
+  "confianza": 0.475,
+  "lift": 1.272
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0376,
+  "confianza": 0.467,
+  "lift": 1.27
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0376,
+  "confianza": 0.467,
+  "lift": 1.27
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.468,
+  "lift": 1.253
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.468,
+  "lift": 1.253
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.062,
+  "confianza": 0.467,
+  "lift": 1.25
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0205,
+  "confianza": 0.467,
+  "lift": 1.249
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0429,
+  "confianza": 0.458,
+  "lift": 1.248
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0429,
+  "confianza": 0.458,
+  "lift": 1.248
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0166,
+  "confianza": 0.466,
+  "lift": 1.246
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Estrecha",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0166,
+  "confianza": 0.466,
+  "lift": 1.246
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.1132,
+  "confianza": 0.464,
+  "lift": 1.242
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0532,
+  "confianza": 0.464,
+  "lift": 1.241
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0463,
+  "confianza": 0.463,
+  "lift": 1.24
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0463,
+  "confianza": 0.463,
+  "lift": 1.24
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0351,
+  "confianza": 0.462,
+  "lift": 1.235
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0205,
+  "confianza": 0.462,
+  "lift": 1.235
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0522,
+  "confianza": 0.461,
+  "lift": 1.234
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0166,
+  "confianza": 0.453,
+  "lift": 1.234
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Desmarques",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.458,
+  "lift": 1.227
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.458,
+  "lift": 1.227
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.458,
+  "lift": 1.227
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión tras pérdida",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.02,
+  "confianza": 0.451,
+  "lift": 1.227
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Presión tras pérdida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.22
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Presión tras pérdida",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.22
+ },
+ {
+  "si": [
+   "Estilo defensivo = Presión tras pérdida",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.22
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.042,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.042,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.021,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Desmarques",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.042,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.021,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.021,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.021,
+  "confianza": 0.448,
+  "lift": 1.219
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0302,
+  "confianza": 0.446,
+  "lift": 1.214
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0302,
+  "confianza": 0.446,
+  "lift": 1.214
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0468,
+  "confianza": 0.444,
+  "lift": 1.21
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0468,
+  "confianza": 0.444,
+  "lift": 1.21
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.039,
+  "confianza": 0.444,
+  "lift": 1.21
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0468,
+  "confianza": 0.444,
+  "lift": 1.21
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0502,
+  "confianza": 0.444,
+  "lift": 1.209
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0195,
+  "confianza": 0.449,
+  "lift": 1.203
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.1039,
+  "confianza": 0.449,
+  "lift": 1.203
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.2
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.2
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.019,
+  "confianza": 0.448,
+  "lift": 1.2
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.1185,
+  "confianza": 0.44,
+  "lift": 1.198
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Desmarques"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.1185,
+  "confianza": 0.44,
+  "lift": 1.198
+ },
+ {
+  "si": [
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.1185,
+  "confianza": 0.44,
+  "lift": 1.198
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0283,
+  "confianza": 0.439,
+  "lift": 1.196
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0283,
+  "confianza": 0.439,
+  "lift": 1.196
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.1224,
+  "confianza": 0.447,
+  "lift": 1.195
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0507,
+  "confianza": 0.439,
+  "lift": 1.195
+ },
+ {
+  "si": [
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0507,
+  "confianza": 0.439,
+  "lift": 1.195
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0507,
+  "confianza": 0.439,
+  "lift": 1.195
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0288,
+  "confianza": 0.444,
+  "lift": 1.187
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0288,
+  "confianza": 0.444,
+  "lift": 1.187
+ },
+ {
+  "si": [
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.1624,
+  "confianza": 0.443,
+  "lift": 1.187
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.44,
+  "lift": 1.179
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Posesión",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.018,
+  "confianza": 0.44,
+  "lift": 1.179
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.041,
+  "confianza": 0.433,
+  "lift": 1.179
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0702,
+  "confianza": 0.44,
+  "lift": 1.179
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0502,
+  "confianza": 0.433,
+  "lift": 1.178
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0502,
+  "confianza": 0.433,
+  "lift": 1.178
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0502,
+  "confianza": 0.433,
+  "lift": 1.178
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0298,
+  "confianza": 0.433,
+  "lift": 1.178
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0156,
+  "confianza": 0.432,
+  "lift": 1.177
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0156,
+  "confianza": 0.432,
+  "lift": 1.177
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0644,
+  "confianza": 0.431,
+  "lift": 1.174
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0298,
+  "confianza": 0.43,
+  "lift": 1.17
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0824,
+  "confianza": 0.436,
+  "lift": 1.166
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0288,
+  "confianza": 0.428,
+  "lift": 1.164
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0288,
+  "confianza": 0.428,
+  "lift": 1.164
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0244,
+  "confianza": 0.427,
+  "lift": 1.163
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0244,
+  "confianza": 0.427,
+  "lift": 1.163
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.1171,
+  "confianza": 0.427,
+  "lift": 1.163
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0366,
+  "confianza": 0.426,
+  "lift": 1.16
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0366,
+  "confianza": 0.426,
+  "lift": 1.16
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0371,
+  "confianza": 0.432,
+  "lift": 1.156
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Equilibrada",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0371,
+  "confianza": 0.432,
+  "lift": 1.156
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.1107,
+  "confianza": 0.43,
+  "lift": 1.151
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0898,
+  "confianza": 0.43,
+  "lift": 1.151
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0673,
+  "confianza": 0.422,
+  "lift": 1.149
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0473,
+  "confianza": 0.422,
+  "lift": 1.148
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.429,
+  "lift": 1.147
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0161,
+  "confianza": 0.429,
+  "lift": 1.147
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.018,
+  "confianza": 0.42,
+  "lift": 1.145
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0595,
+  "confianza": 0.419,
+  "lift": 1.141
+ },
+ {
+  "si": [
+   "Anchura defensiva = Ancha",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0224,
+  "confianza": 0.426,
+  "lift": 1.14
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Estilo defensivo = Equilibrada",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0434,
+  "confianza": 0.418,
+  "lift": 1.138
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0151,
+  "confianza": 0.425,
+  "lift": 1.136
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Creación de ocasiones = Posesión",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0151,
+  "confianza": 0.425,
+  "lift": 1.136
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Profundidad defensiva = Baja",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.019,
+  "confianza": 0.424,
+  "lift": 1.134
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Profundidad defensiva = Baja"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.019,
+  "confianza": 0.424,
+  "lift": 1.134
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0917,
+  "confianza": 0.416,
+  "lift": 1.132
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Equilibrada",
+   "Profundidad defensiva = Media"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0307,
+  "confianza": 0.423,
+  "lift": 1.132
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Ancha",
+   "Profundidad defensiva = Media",
+   "Salida de balón = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0307,
+  "confianza": 0.423,
+  "lift": 1.132
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Estilo defensivo = Equilibrada",
+   "Salida de balón = Salida rápida"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0283,
+  "confianza": 0.42,
+  "lift": 1.125
+ },
+ {
+  "si": [
+   "Anchura ofensiva = Media",
+   "Creación de ocasiones = Desmarques",
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0283,
+  "confianza": 0.42,
+  "lift": 1.125
+ },
+ {
+  "si": [
+   "Anchura defensiva = Estrecha",
+   "Estilo defensivo = Presión tras pérdida"
+  ],
+  "entonces": "Nivel = Medio",
+  "soporte": 0.0161,
+  "confianza": 0.413,
+  "lift": 1.123
+ },
+ {
+  "si": [
+   "Estilo defensivo = Equilibrada"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.2541,
+  "confianza": 0.419,
+  "lift": 1.122
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Creación de ocasiones = Posesión"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0215,
+  "confianza": 0.419,
+  "lift": 1.121
+ },
+ {
+  "si": [
+   "Anchura defensiva = Media",
+   "Anchura ofensiva = Ancha",
+   "Salida de balón = Salida lenta"
+  ],
+  "entonces": "Nivel = Bajo",
+  "soporte": 0.0215,
+  "confianza": 0.419,
+  "lift": 1.121
+ }
+]

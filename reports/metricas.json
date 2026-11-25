@@ -1,0 +1,121 @@
+{
+ "clustering": {
+  "k": 8,
+  "silueta": 0.154,
+  "curva": [
+   [
+    3,
+    339434.0,
+    0.224
+   ],
+   [
+    4,
+    304715.0,
+    0.186
+   ],
+   [
+    5,
+    279763.0,
+    0.175
+   ],
+   [
+    6,
+    261468.0,
+    0.173
+   ],
+   [
+    7,
+    245376.0,
+    0.161
+   ],
+   [
+    8,
+    233756.0,
+    0.153
+   ],
+   [
+    9,
+    224704.0,
+    0.145
+   ],
+   [
+    10,
+    217866.0,
+    0.139
+   ]
+  ],
+  "roles": {
+   "0": "Defensa · fuerza/defensa",
+   "1": "Medio · intercepción/entrada",
+   "2": "Medio · pase/pase corto",
+   "3": "Delantero · definición/tiro",
+   "4": "Defensa · defensa/juego aéreo",
+   "5": "Defensa · entrada/intercepción",
+   "6": "Medio · tiro/definición",
+   "7": "Medio · agilidad/velocidad"
+  }
+ },
+ "regresion": {
+  "Regresión lineal": {
+   "R2_log": 0.9677,
+   "MAE_eur": 651618
+  },
+  "Gradient Boosting": {
+   "R2_log": 0.9986,
+   "MAE_eur": 126692
+  }
+ },
+ "arbol_posicion": {
+  "accuracy_arbol": 0.8449,
+  "accuracy_random_forest": 0.8827,
+  "matriz_confusion": [
+   [
+    406,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1107,
+    122,
+    0
+   ],
+   [
+    0,
+    147,
+    1050,
+    130
+   ],
+   [
+    0,
+    8,
+    159,
+    521
+   ]
+  ],
+  "orden": [
+   "POR",
+   "DEF",
+   "MED",
+   "DEL"
+  ]
+ },
+ "reglas_tacticas": {
+  "transacciones": 2050,
+  "reglas": 253,
+  "soporte_min": 0.015,
+  "confianza_min": 0.3
+ },
+ "reglas_rasgos": {
+  "jugadores": 8550,
+  "reglas": 2
+ },
+ "arbol_partido": {
+  "profundidad": 3,
+  "accuracy": 0.5088,
+  "linea_base": 0.4343,
+  "partidos_entrenamiento": 8000,
+  "nota": "datos simulados"
+ }
+}

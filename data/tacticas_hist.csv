@@ -1,0 +1,2051 @@
+team_id,fifa_version,league_id,league_level,overall,def_style,def_team_width,def_team_depth,off_build_up_play,off_chance_creation,off_team_width
+10,24,13,1.0,85,Press after possession loss,71.0,61.0,Balanced,Balanced,81.0
+243,24,53,1.0,85,Balanced,51.0,71.0,Balanced,Balanced,51.0
+21,24,19,1.0,84,Pressure on heavy touch,51.0,81.0,Slow build up,Possession,71.0
+241,24,53,1.0,84,Balanced,61.0,81.0,Slow build up,Possession,51.0
+9,24,13,1.0,83,Press after possession loss,61.0,71.0,Balanced,Balanced,71.0
+73,24,16,1.0,83,Press after possession loss,51.0,71.0,Slow build up,Possession,51.0
+240,24,53,1.0,83,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,51.0
+1,24,13,1.0,82,Press after possession loss,51.0,61.0,Slow build up,Possession,61.0
+11,24,13,1.0,82,Pressure on heavy touch,71.0,71.0,Slow build up,Possession,71.0
+44,24,31,1.0,82,Balanced,51.0,61.0,Fast build up,Forward runs,51.0
+13,24,13,1.0,81,Press after possession loss,51.0,61.0,Balanced,Balanced,51.0
+18,24,13,1.0,81,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,71.0
+22,24,19,1.0,81,Press after possession loss,51.0,81.0,Fast build up,Forward runs,41.0
+48,24,31,1.0,81,Balanced,61.0,61.0,Fast build up,Forward runs,61.0
+2,24,13,1.0,80,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,51.0
+5,24,13,1.0,80,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,71.0
+32,24,19,1.0,80,Balanced,61.0,51.0,Slow build up,Possession,51.0
+45,24,31,1.0,80,Pressure on heavy touch,51.0,41.0,Long ball,Direct passing,61.0
+46,24,31,1.0,80,Press after possession loss,61.0,61.0,Slow build up,Possession,71.0
+47,24,31,1.0,80,Press after possession loss,51.0,61.0,Fast build up,Forward runs,51.0
+52,24,31,1.0,80,Balanced,61.0,41.0,Slow build up,Possession,61.0
+481,24,53,1.0,80,Pressure on heavy touch,71.0,71.0,Slow build up,Possession,81.0
+112172,24,19,1.0,80,Press after possession loss,51.0,71.0,Balanced,Balanced,51.0
+234,24,308,1.0,79,Press after possession loss,51.0,71.0,Balanced,Balanced,61.0
+448,24,53,1.0,79,Press after possession loss,51.0,61.0,Fast build up,Forward runs,71.0
+449,24,53,1.0,79,Press after possession loss,61.0,71.0,Slow build up,Possession,61.0
+457,24,53,1.0,79,Balanced,41.0,51.0,Slow build up,Possession,61.0
+483,24,53,1.0,79,Balanced,61.0,51.0,Balanced,Balanced,61.0
+19,24,13,1.0,78,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+39,24,31,1.0,78,Press after possession loss,41.0,71.0,Fast build up,Forward runs,61.0
+219,24,16,1.0,78,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+236,24,308,1.0,78,Press after possession loss,51.0,61.0,Balanced,Balanced,71.0
+325,24,68,1.0,78,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,61.0
+110374,24,31,1.0,78,Balanced,41.0,51.0,Fast build up,Forward runs,61.0
+7,24,13,1.0,77,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+14,24,13,1.0,77,Balanced,61.0,41.0,Fast build up,Forward runs,71.0
+64,24,16,1.0,77,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+69,24,16,1.0,77,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,51.0
+144,24,13,1.0,77,Press after possession loss,51.0,71.0,Balanced,Balanced,61.0
+175,24,19,1.0,77,Press after possession loss,71.0,51.0,Slow build up,Possession,61.0
+237,24,308,1.0,77,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,61.0
+326,24,68,1.0,77,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,61.0
+479,24,53,1.0,77,Balanced,71.0,71.0,Fast build up,Forward runs,61.0
+605,24,350,1.0,77,Press after possession loss,51.0,71.0,Balanced,Balanced,61.0
+607,24,350,1.0,77,Pressure on heavy touch,41.0,51.0,Fast build up,Forward runs,41.0
+1808,24,13,1.0,77,Press after possession loss,51.0,61.0,Balanced,Balanced,51.0
+1831,24,19,1.0,77,Pressure on heavy touch,31.0,37.0,Long ball,Direct passing,51.0
+23,24,19,1.0,76,Balanced,61.0,61.0,Long ball,Direct passing,61.0
+25,24,19,1.0,76,Balanced,41.0,51.0,Slow build up,Possession,61.0
+65,24,16,1.0,76,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,71.0
+66,24,16,1.0,76,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,51.0
+72,24,16,1.0,76,Press after possession loss,61.0,71.0,Slow build up,Possession,61.0
+74,24,16,1.0,76,Balanced,51.0,51.0,Balanced,Balanced,51.0
+110,24,13,1.0,76,Press after possession loss,61.0,81.0,Fast build up,Forward runs,51.0
+246,24,10,1.0,76,Press after possession loss,61.0,61.0,Balanced,Balanced,61.0
+247,24,10,1.0,76,Pressure on heavy touch,51.0,71.0,Fast build up,Forward runs,51.0
+383,24,7,1.0,76,Pressure on heavy touch,41.0,71.0,Balanced,Balanced,61.0
+450,24,53,1.0,76,Pressure on heavy touch,71.0,61.0,Balanced,Balanced,51.0
+453,24,53,1.0,76,Balanced,51.0,41.0,Balanced,Balanced,61.0
+480,24,53,1.0,76,Balanced,61.0,71.0,Slow build up,Possession,61.0
+1043,24,7,1.0,76,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,61.0
+1799,24,13,1.0,76,Balanced,51.0,41.0,Balanced,Balanced,61.0
+1824,24,19,1.0,76,Balanced,61.0,51.0,Balanced,Balanced,51.0
+1860,24,53,1.0,76,Pressure on heavy touch,41.0,71.0,Fast build up,Forward runs,71.0
+1876,24,353,1.0,76,Pressure on heavy touch,41.0,71.0,Slow build up,Possession,51.0
+1896,24,308,1.0,76,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,61.0
+1925,24,13,1.0,76,Balanced,51.0,51.0,Balanced,Balanced,51.0
+10029,24,19,1.0,76,Balanced,61.0,51.0,Balanced,Balanced,61.0
+110062,24,53,1.0,76,Balanced,41.0,51.0,Slow build up,Possession,51.0
+112139,24,350,1.0,76,Pressure on heavy touch,41.0,61.0,Fast build up,Forward runs,51.0
+54,24,31,1.0,75,Press after possession loss,31.0,51.0,Fast build up,Forward runs,61.0
+95,24,14,2.0,75,Balanced,51.0,61.0,Slow build up,Possession,81.0
+169,24,19,1.0,75,Press after possession loss,51.0,61.0,Long ball,Direct passing,61.0
+245,24,10,1.0,75,Balanced,61.0,81.0,Slow build up,Possession,71.0
+278,24,63,1.0,75,Press after possession loss,51.0,61.0,Slow build up,Possession,51.0
+327,24,68,1.0,75,Press after possession loss,51.0,71.0,Slow build up,Possession,71.0
+461,24,53,1.0,75,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1035,24,7,1.0,75,Pressure on heavy touch,61.0,51.0,Slow build up,Possession,71.0
+1861,24,53,1.0,75,Balanced,41.0,51.0,Slow build up,Possession,71.0
+1877,24,353,1.0,75,Balanced,51.0,61.0,Fast build up,Forward runs,71.0
+1943,24,13,1.0,75,Press after possession loss,61.0,51.0,Slow build up,Possession,81.0
+1968,24,53,1.0,75,Balanced,41.0,41.0,Long ball,Direct passing,81.0
+111811,24,31,1.0,75,Balanced,61.0,51.0,Slow build up,Possession,61.0
+111974,24,31,1.0,75,Press after possession loss,51.0,61.0,Slow build up,Possession,61.0
+31,24,19,1.0,74,Press after possession loss,41.0,71.0,Long ball,Direct passing,71.0
+38,24,19,1.0,74,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,61.0
+55,24,31,1.0,74,Balanced,41.0,51.0,Slow build up,Possession,71.0
+78,24,50,1.0,74,Press after possession loss,61.0,81.0,Slow build up,Possession,81.0
+189,24,31,1.0,74,Balanced,61.0,61.0,Slow build up,Possession,61.0
+206,24,31,1.0,74,Pressure on heavy touch,51.0,61.0,Long ball,Direct passing,61.0
+229,24,4,1.0,74,Pressure on heavy touch,61.0,71.0,Balanced,Balanced,61.0
+231,24,4,1.0,74,Pressure on heavy touch,41.0,61.0,Balanced,Balanced,61.0
+436,24,68,1.0,74,Balanced,61.0,51.0,Slow build up,Possession,61.0
+452,24,54,2.0,74,Press after possession loss,61.0,51.0,Slow build up,Possession,61.0
+472,24,53,1.0,74,Press after possession loss,41.0,71.0,Slow build up,Possession,61.0
+1039,24,7,1.0,74,Balanced,51.0,61.0,Slow build up,Possession,51.0
+1048,24,7,1.0,74,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+1796,24,13,1.0,74,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,71.0
+1884,24,63,1.0,74,Pressure on heavy touch,41.0,51.0,Slow build up,Possession,61.0
+100409,24,19,1.0,74,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+112387,24,350,1.0,74,Pressure on heavy touch,71.0,61.0,Balanced,Balanced,71.0
+112472,24,7,1.0,74,Press after possession loss,61.0,61.0,Balanced,Balanced,71.0
+8,24,14,2.0,73,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+17,24,14,2.0,73,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+36,24,19,1.0,73,Balanced,51.0,51.0,Balanced,Balanced,71.0
+70,24,16,1.0,73,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+71,24,16,1.0,73,Balanced,51.0,41.0,Balanced,Balanced,71.0
+86,24,50,1.0,73,Press after possession loss,51.0,71.0,Slow build up,Possession,51.0
+160,24,19,1.0,73,Press after possession loss,51.0,61.0,Long ball,Direct passing,81.0
+191,24,80,1.0,73,Press after possession loss,51.0,71.0,Fast build up,Forward runs,61.0
+217,24,16,1.0,73,Balanced,61.0,51.0,Balanced,Balanced,61.0
+230,24,4,1.0,73,Balanced,51.0,51.0,Balanced,Balanced,51.0
+266,24,319,1.0,73,Press after possession loss,51.0,61.0,Balanced,Balanced,71.0
+267,24,319,1.0,73,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,61.0
+379,24,16,1.0,73,Pressure on heavy touch,61.0,51.0,Fast build up,Forward runs,71.0
+598,24,7,1.0,73,Pressure on heavy touch,41.0,71.0,Slow build up,Possession,61.0
+673,24,4,1.0,73,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,61.0
+1041,24,7,1.0,73,Balanced,51.0,61.0,Balanced,Balanced,51.0
+1053,24,7,1.0,73,Balanced,51.0,61.0,Fast build up,Forward runs,51.0
+1746,24,31,1.0,73,Press after possession loss,41.0,71.0,Slow build up,Possession,51.0
+1794,24,13,1.0,73,Balanced,61.0,61.0,Fast build up,Forward runs,51.0
+1906,24,10,1.0,73,Press after possession loss,61.0,61.0,Slow build up,Possession,61.0
+101085,24,353,1.0,73,Balanced,61.0,71.0,Slow build up,Possession,61.0
+110373,24,31,1.0,73,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,71.0
+110468,24,319,1.0,73,Balanced,61.0,51.0,Balanced,Balanced,71.0
+110556,24,31,1.0,73,Press after possession loss,51.0,61.0,Slow build up,Possession,61.0
+110832,24,53,1.0,73,Balanced,41.0,51.0,Fast build up,Forward runs,71.0
+112893,24,39,1.0,73,Balanced,61.0,51.0,Slow build up,Possession,71.0
+76,24,16,1.0,72,Balanced,41.0,71.0,Balanced,Balanced,71.0
+347,24,31,1.0,72,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,71.0
+378,24,16,1.0,72,Balanced,61.0,51.0,Slow build up,Possession,71.0
+393,24,63,1.0,72,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+462,24,54,2.0,72,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,51.0
+463,24,53,1.0,72,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+468,24,54,2.0,72,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+567,24,7,1.0,72,Balanced,51.0,51.0,Slow build up,Possession,51.0
+674,24,4,1.0,72,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+819,24,1,1.0,72,Press after possession loss,61.0,61.0,Slow build up,Possession,71.0
+1013,24,353,1.0,72,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+1792,24,14,2.0,72,Press after possession loss,41.0,51.0,Slow build up,Possession,71.0
+1815,24,16,1.0,72,Pressure on heavy touch,61.0,51.0,Slow build up,Possession,61.0
+1842,24,31,1.0,72,Pressure on heavy touch,51.0,61.0,Long ball,Direct passing,61.0
+1923,24,13,1.0,72,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,71.0
+101016,24,68,1.0,72,Balanced,51.0,51.0,Balanced,Balanced,51.0
+101083,24,353,1.0,72,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,51.0
+112670,24,353,1.0,72,Balanced,71.0,51.0,Balanced,Balanced,71.0
+112996,24,39,1.0,72,Press after possession loss,41.0,61.0,Balanced,Balanced,51.0
+12,24,14,2.0,71,Balanced,61.0,41.0,Balanced,Balanced,71.0
+28,24,20,2.0,71,Pressure on heavy touch,61.0,71.0,Slow build up,Possession,71.0
+34,24,20,2.0,71,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,61.0
+109,24,14,2.0,71,Press after possession loss,51.0,71.0,Slow build up,Possession,61.0
+166,24,20,2.0,71,Balanced,51.0,61.0,Long ball,Direct passing,61.0
+211,24,317,1.0,71,Balanced,51.0,51.0,Balanced,Balanced,61.0
+263,24,317,1.0,71,Balanced,51.0,61.0,Fast build up,Forward runs,51.0
+467,24,54,2.0,71,Press after possession loss,51.0,71.0,Slow build up,Possession,61.0
+517,24,7,1.0,71,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+900,24,189,1.0,71,Press after possession loss,51.0,61.0,Fast build up,Forward runs,71.0
+1516,24,1,1.0,71,Pressure on heavy touch,71.0,51.0,Fast build up,Forward runs,51.0
+1809,24,16,1.0,71,Balanced,61.0,51.0,Slow build up,Possession,61.0
+1819,24,17,2.0,71,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+1853,24,54,2.0,71,Balanced,61.0,61.0,Balanced,Balanced,71.0
+1874,24,64,1.0,71,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+1887,24,308,1.0,71,Balanced,51.0,61.0,Fast build up,Forward runs,71.0
+1908,24,10,1.0,71,Press after possession loss,51.0,61.0,Long ball,Direct passing,61.0
+101014,24,68,1.0,71,Balanced,61.0,61.0,Slow build up,Possession,61.0
+101047,24,332,1.0,71,Pressure on heavy touch,61.0,51.0,Balanced,Balanced,71.0
+101059,24,332,1.0,71,Pressure on heavy touch,41.0,61.0,Slow build up,Possession,51.0
+101105,24,336,1.0,71,Balanced,51.0,51.0,Slow build up,Possession,51.0
+110093,24,353,1.0,71,Balanced,51.0,41.0,Long ball,Direct passing,71.0
+110395,24,353,1.0,71,Balanced,61.0,61.0,Balanced,Balanced,61.0
+110406,24,353,1.0,71,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+110502,24,19,1.0,71,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,61.0
+110981,24,2018,1.0,71,Press after possession loss,51.0,61.0,Balanced,Balanced,51.0
+111008,24,337,1.0,71,Balanced,51.0,37.0,Slow build up,Possession,61.0
+111019,24,353,1.0,71,Press after possession loss,41.0,61.0,Balanced,Balanced,61.0
+111052,24,7,1.0,71,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,61.0
+111235,24,19,1.0,71,Balanced,61.0,41.0,Long ball,Direct passing,61.0
+111434,24,32,2.0,71,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+111674,24,350,1.0,71,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+111710,24,353,1.0,71,Press after possession loss,51.0,71.0,Balanced,Balanced,61.0
+112134,24,39,1.0,71,Press after possession loss,41.0,51.0,Slow build up,Possession,41.0
+112908,24,2018,1.0,71,Press after possession loss,51.0,71.0,Fast build up,Forward runs,61.0
+50,24,32,2.0,70,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+68,24,16,1.0,70,Balanced,51.0,61.0,Fast build up,Forward runs,51.0
+80,24,50,1.0,70,Press after possession loss,41.0,61.0,Fast build up,Forward runs,61.0
+97,24,14,2.0,70,Balanced,51.0,41.0,Long ball,Direct passing,51.0
+209,24,80,1.0,70,Press after possession loss,71.0,71.0,Fast build up,Forward runs,61.0
+232,24,4,1.0,70,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,51.0
+244,24,54,2.0,70,Pressure on heavy touch,61.0,51.0,Slow build up,Possession,61.0
+260,24,54,2.0,70,Pressure on heavy touch,71.0,61.0,Balanced,Balanced,71.0
+271,24,1,1.0,70,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+320,24,56,1.0,70,Press after possession loss,51.0,61.0,Slow build up,Possession,31.0
+459,24,54,2.0,70,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+485,24,20,2.0,70,Balanced,41.0,51.0,Fast build up,Forward runs,81.0
+670,24,4,1.0,70,Balanced,41.0,37.0,Fast build up,Forward runs,51.0
+691,24,39,1.0,70,Press after possession loss,41.0,61.0,Slow build up,Possession,61.0
+697,24,39,1.0,70,Balanced,71.0,51.0,Slow build up,Possession,81.0
+744,24,308,1.0,70,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,51.0
+748,24,68,1.0,70,Balanced,61.0,51.0,Slow build up,Possession,51.0
+918,24,41,1.0,70,Press after possession loss,61.0,81.0,Fast build up,Forward runs,71.0
+1473,24,83,1.0,70,Balanced,51.0,51.0,Slow build up,Possession,61.0
+1477,24,83,1.0,70,Press after possession loss,61.0,61.0,Slow build up,Possession,61.0
+1738,24,16,1.0,70,Balanced,61.0,41.0,Balanced,Balanced,61.0
+1745,24,32,2.0,70,Balanced,41.0,51.0,Balanced,Balanced,41.0
+1795,24,14,2.0,70,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+1800,24,14,2.0,70,Press after possession loss,51.0,61.0,Fast build up,Forward runs,71.0
+1801,24,14,2.0,70,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+1806,24,14,2.0,70,Press after possession loss,61.0,61.0,Fast build up,Forward runs,61.0
+1843,24,32,2.0,70,Balanced,41.0,51.0,Slow build up,Possession,61.0
+1903,24,10,1.0,70,Balanced,41.0,41.0,Balanced,Balanced,61.0
+1952,24,14,2.0,70,Balanced,41.0,51.0,Slow build up,Possession,61.0
+1961,24,14,2.0,70,Balanced,51.0,41.0,Balanced,Balanced,61.0
+2014,24,4,1.0,70,Press after possession loss,51.0,51.0,Long ball,Direct passing,61.0
+101007,24,68,1.0,70,Balanced,51.0,51.0,Balanced,Balanced,61.0
+101033,24,68,1.0,70,Balanced,61.0,51.0,Balanced,Balanced,61.0
+101088,24,353,1.0,70,Press after possession loss,51.0,61.0,Balanced,Balanced,51.0
+101100,24,336,1.0,70,Press after possession loss,41.0,51.0,Slow build up,Possession,71.0
+101103,24,336,1.0,70,Balanced,51.0,51.0,Slow build up,Possession,51.0
+101108,24,337,1.0,70,Balanced,61.0,51.0,Slow build up,Possession,61.0
+101110,24,338,1.0,70,Press after possession loss,61.0,61.0,Fast build up,Forward runs,71.0
+110580,24,353,1.0,70,Pressure on heavy touch,71.0,51.0,Balanced,Balanced,71.0
+110636,24,20,2.0,70,Balanced,41.0,37.0,Fast build up,Forward runs,51.0
+110738,24,32,2.0,70,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+110741,24,32,2.0,70,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,61.0
+110827,24,54,2.0,70,Pressure on heavy touch,41.0,51.0,Long ball,Direct passing,81.0
+110980,24,335,1.0,70,Balanced,61.0,41.0,Balanced,Balanced,71.0
+110986,24,2018,1.0,70,Balanced,51.0,71.0,Balanced,Balanced,61.0
+111010,24,2020,1.0,70,Balanced,61.0,41.0,Fast build up,Forward runs,51.0
+111117,24,68,1.0,70,Balanced,61.0,51.0,Balanced,Balanced,61.0
+111138,24,39,1.0,70,Balanced,41.0,37.0,Balanced,Balanced,61.0
+111140,24,39,1.0,70,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,61.0
+111144,24,39,1.0,70,Balanced,41.0,51.0,Balanced,Balanced,51.0
+111325,24,338,1.0,70,Balanced,61.0,61.0,Fast build up,Forward runs,61.0
+111657,24,31,1.0,70,Balanced,61.0,51.0,Fast build up,Forward runs,71.0
+111708,24,353,1.0,70,Balanced,51.0,41.0,Long ball,Direct passing,41.0
+111711,24,353,1.0,70,Balanced,51.0,37.0,Fast build up,Forward runs,61.0
+111715,24,353,1.0,70,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+111928,24,39,1.0,70,Press after possession loss,81.0,61.0,Slow build up,Possession,81.0
+112001,24,7,1.0,70,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+112096,24,350,1.0,70,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,51.0
+112513,24,308,1.0,70,Balanced,41.0,51.0,Balanced,Balanced,51.0
+112809,24,308,1.0,70,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,51.0
+113149,24,39,1.0,70,Balanced,41.0,41.0,Balanced,Balanced,41.0
+3,24,14,2.0,69,Balanced,51.0,61.0,Fast build up,Forward runs,61.0
+15,24,14,2.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+29,24,20,2.0,69,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+59,24,17,2.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+88,24,14,2.0,69,Balanced,51.0,41.0,Long ball,Direct passing,81.0
+94,24,14,2.0,69,Press after possession loss,61.0,61.0,Slow build up,Possession,61.0
+106,24,14,2.0,69,Balanced,51.0,51.0,Slow build up,Possession,61.0
+171,24,20,2.0,69,Balanced,51.0,61.0,Balanced,Balanced,51.0
+205,24,32,2.0,69,Press after possession loss,61.0,51.0,Slow build up,Possession,61.0
+252,24,80,1.0,69,Press after possession loss,41.0,61.0,Fast build up,Forward runs,61.0
+269,24,1,1.0,69,Press after possession loss,51.0,51.0,Balanced,Balanced,51.0
+456,24,54,2.0,69,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+489,24,308,1.0,69,Balanced,41.0,51.0,Fast build up,Forward runs,61.0
+518,24,308,1.0,69,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,61.0
+681,24,4,1.0,69,Balanced,41.0,41.0,Slow build up,Possession,51.0
+695,24,39,1.0,69,Pressure on heavy touch,41.0,71.0,Balanced,Balanced,71.0
+696,24,39,1.0,69,Press after possession loss,71.0,71.0,Slow build up,Possession,71.0
+711,24,56,1.0,69,Press after possession loss,61.0,51.0,Fast build up,Forward runs,61.0
+741,24,68,1.0,69,Pressure on heavy touch,61.0,51.0,Balanced,Balanced,61.0
+873,24,66,1.0,69,Balanced,61.0,61.0,Balanced,Balanced,61.0
+896,24,189,1.0,69,Press after possession loss,61.0,61.0,Slow build up,Possession,61.0
+1530,24,17,2.0,69,Balanced,41.0,51.0,Balanced,Balanced,61.0
+1832,24,20,2.0,69,Balanced,41.0,51.0,Balanced,Balanced,71.0
+1837,24,32,2.0,69,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+1848,24,32,2.0,69,Balanced,41.0,61.0,Long ball,Direct passing,41.0
+1854,24,54,2.0,69,Balanced,51.0,41.0,Fast build up,Forward runs,51.0
+1898,24,308,1.0,69,Pressure on heavy touch,41.0,51.0,Long ball,Direct passing,51.0
+1910,24,10,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1913,24,10,1.0,69,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+1919,24,14,2.0,69,Balanced,71.0,41.0,Fast build up,Forward runs,71.0
+1960,24,14,2.0,69,Balanced,41.0,51.0,Slow build up,Possession,61.0
+10020,24,308,1.0,69,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+10030,24,20,2.0,69,Pressure on heavy touch,51.0,71.0,Fast build up,Forward runs,61.0
+10031,24,308,1.0,69,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+10846,24,54,2.0,69,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+100087,24,4,1.0,69,Balanced,51.0,41.0,Long ball,Direct passing,41.0
+100135,24,318,1.0,69,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,51.0
+100851,24,54,2.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+101041,24,68,1.0,69,Balanced,61.0,51.0,Long ball,Direct passing,71.0
+101101,24,336,1.0,69,Press after possession loss,51.0,51.0,Balanced,Balanced,51.0
+110329,24,20,2.0,69,Balanced,61.0,41.0,Slow build up,Possession,51.0
+110396,24,353,1.0,69,Balanced,51.0,51.0,Slow build up,Possession,61.0
+110404,24,353,1.0,69,Balanced,61.0,51.0,Fast build up,Forward runs,71.0
+110776,24,68,1.0,69,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+110839,24,54,2.0,69,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+110953,24,353,1.0,69,Balanced,51.0,51.0,Slow build up,Possession,51.0
+110975,24,335,1.0,69,Press after possession loss,61.0,41.0,Slow build up,Possession,81.0
+110984,24,2018,1.0,69,Pressure on heavy touch,61.0,61.0,Fast build up,Forward runs,61.0
+111013,24,2020,1.0,69,Pressure on heavy touch,51.0,71.0,Slow build up,Possession,61.0
+111014,24,2020,1.0,69,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+111022,24,353,1.0,69,Balanced,61.0,41.0,Long ball,Direct passing,71.0
+111042,24,7,1.0,69,Balanced,51.0,41.0,Balanced,Balanced,51.0
+111065,24,39,1.0,69,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+111701,24,2013,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,61.0
+111706,24,353,1.0,69,Balanced,61.0,61.0,Slow build up,Possession,51.0
+111722,24,336,1.0,69,Balanced,71.0,51.0,Fast build up,Forward runs,71.0
+112390,24,350,1.0,69,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+112606,24,39,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+112689,24,353,1.0,69,Balanced,61.0,41.0,Long ball,Direct passing,61.0
+112744,24,336,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112828,24,39,1.0,69,Pressure on heavy touch,41.0,61.0,Slow build up,Possession,41.0
+112885,24,39,1.0,69,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,61.0
+112965,24,353,1.0,69,Balanced,61.0,41.0,Long ball,Direct passing,61.0
+114162,24,39,1.0,69,Balanced,51.0,41.0,Fast build up,Forward runs,41.0
+114326,24,66,1.0,69,Pressure on heavy touch,51.0,81.0,Balanced,Balanced,61.0
+114510,24,308,1.0,69,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+131389,24,68,1.0,69,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+27,24,20,2.0,68,Pressure on heavy touch,61.0,61.0,Long ball,Direct passing,61.0
+57,24,17,2.0,68,Balanced,41.0,61.0,Balanced,Balanced,61.0
+165,24,20,2.0,68,Pressure on heavy touch,61.0,81.0,Balanced,Balanced,51.0
+190,24,32,2.0,68,Balanced,51.0,51.0,Slow build up,Possession,51.0
+210,24,17,2.0,68,Balanced,41.0,51.0,Fast build up,Forward runs,61.0
+254,24,80,1.0,68,Press after possession loss,71.0,51.0,Slow build up,Possession,61.0
+256,24,80,1.0,68,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+294,24,17,2.0,68,Balanced,41.0,51.0,Balanced,Balanced,61.0
+324,24,189,1.0,68,Balanced,51.0,41.0,Fast build up,Forward runs,81.0
+417,24,41,1.0,68,Balanced,41.0,41.0,Balanced,Balanced,61.0
+576,24,20,2.0,68,Balanced,61.0,41.0,Balanced,Balanced,71.0
+614,24,17,2.0,68,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+634,24,10,1.0,68,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+687,24,39,1.0,68,Press after possession loss,51.0,71.0,Fast build up,Forward runs,51.0
+688,24,39,1.0,68,Pressure on heavy touch,51.0,61.0,Long ball,Direct passing,51.0
+689,24,39,1.0,68,Press after possession loss,61.0,61.0,Long ball,Direct passing,61.0
+693,24,39,1.0,68,Balanced,51.0,41.0,Balanced,Balanced,61.0
+694,24,39,1.0,68,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+698,24,39,1.0,68,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,71.0
+718,24,308,1.0,68,Balanced,51.0,51.0,Slow build up,Possession,51.0
+898,24,189,1.0,68,Press after possession loss,51.0,51.0,Balanced,Balanced,51.0
+1788,24,1,1.0,68,Balanced,51.0,61.0,Slow build up,Possession,61.0
+1807,24,14,2.0,68,Press after possession loss,61.0,51.0,Balanced,Balanced,81.0
+1816,24,17,2.0,68,Balanced,71.0,37.0,Fast build up,Forward runs,61.0
+1847,24,32,2.0,68,Balanced,61.0,41.0,Balanced,Balanced,51.0
+1871,24,66,1.0,68,Press after possession loss,51.0,71.0,Balanced,Balanced,71.0
+1888,24,308,1.0,68,Balanced,41.0,51.0,Fast build up,Forward runs,71.0
+1900,24,308,1.0,68,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+1909,24,10,1.0,68,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1939,24,14,2.0,68,Balanced,61.0,61.0,Fast build up,Forward runs,61.0
+8001,24,4,1.0,68,Balanced,51.0,61.0,Fast build up,Forward runs,41.0
+100081,24,4,1.0,68,Balanced,51.0,41.0,Balanced,Balanced,51.0
+100761,24,330,1.0,68,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+100888,24,54,2.0,68,Balanced,51.0,61.0,Balanced,Balanced,51.0
+101084,24,353,1.0,68,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+101112,24,39,1.0,68,Pressure on heavy touch,31.0,37.0,Fast build up,Forward runs,51.0
+110588,24,20,2.0,68,Balanced,61.0,71.0,Slow build up,Possession,71.0
+110724,24,4,1.0,68,Balanced,61.0,41.0,Balanced,Balanced,61.0
+110746,24,66,1.0,68,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,81.0
+111334,24,2020,1.0,68,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+111539,24,308,1.0,68,Balanced,51.0,61.0,Slow build up,Possession,61.0
+111651,24,39,1.0,68,Balanced,51.0,51.0,Balanced,Balanced,61.0
+111716,24,353,1.0,68,Balanced,61.0,61.0,Balanced,Balanced,61.0
+111724,24,2012,1.0,68,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112408,24,350,1.0,68,Balanced,51.0,51.0,Fast build up,Forward runs,71.0
+112540,24,2012,1.0,68,Press after possession loss,51.0,71.0,Slow build up,Possession,61.0
+112578,24,336,1.0,68,Balanced,61.0,41.0,Fast build up,Forward runs,71.0
+112713,24,353,1.0,68,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,61.0
+113018,24,39,1.0,68,Press after possession loss,61.0,71.0,Fast build up,Forward runs,51.0
+113044,24,353,1.0,68,Pressure on heavy touch,61.0,41.0,Balanced,Balanced,61.0
+113057,24,350,1.0,68,Balanced,41.0,41.0,Balanced,Balanced,51.0
+113142,24,68,1.0,68,Balanced,51.0,51.0,Slow build up,Possession,61.0
+113217,24,350,1.0,68,Balanced,41.0,41.0,Balanced,Balanced,51.0
+114161,24,39,1.0,68,Balanced,71.0,81.0,Slow build up,Possession,81.0
+114554,24,54,2.0,68,Balanced,61.0,41.0,Slow build up,Possession,51.0
+114640,24,39,1.0,68,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+116361,24,2012,1.0,68,Balanced,51.0,51.0,Balanced,Balanced,51.0
+131110,24,54,2.0,68,Balanced,61.0,51.0,Slow build up,Possession,61.0
+62,24,17,2.0,67,Balanced,51.0,61.0,Fast build up,Forward runs,61.0
+77,24,50,1.0,67,Balanced,61.0,51.0,Balanced,Balanced,71.0
+81,24,50,1.0,67,Balanced,51.0,61.0,Fast build up,Forward runs,61.0
+91,24,60,3.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,71.0
+298,24,41,1.0,67,Balanced,61.0,71.0,Balanced,Balanced,71.0
+300,24,41,1.0,67,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+308,24,330,1.0,67,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+433,24,56,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+487,24,20,2.0,67,Balanced,41.0,61.0,Long ball,Direct passing,61.0
+570,24,32,2.0,67,Press after possession loss,41.0,61.0,Slow build up,Possession,61.0
+894,24,189,1.0,67,Balanced,61.0,51.0,Slow build up,Possession,81.0
+897,24,189,1.0,67,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,61.0
+982,24,83,1.0,67,Press after possession loss,51.0,61.0,Fast build up,Forward runs,51.0
+1474,24,83,1.0,67,Balanced,41.0,51.0,Balanced,Balanced,61.0
+1478,24,83,1.0,67,Pressure on heavy touch,41.0,51.0,Fast build up,Forward runs,51.0
+1744,24,32,2.0,67,Balanced,61.0,51.0,Slow build up,Possession,61.0
+1750,24,4,1.0,67,Press after possession loss,31.0,51.0,Fast build up,Forward runs,61.0
+1786,24,1,1.0,67,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1797,24,14,2.0,67,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+1805,24,17,2.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+1814,24,17,2.0,67,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+1862,24,189,1.0,67,Balanced,61.0,41.0,Fast build up,Forward runs,61.0
+1929,24,14,2.0,67,Balanced,61.0,41.0,Balanced,Balanced,51.0
+10032,24,189,1.0,67,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,61.0
+100634,24,10,1.0,67,Balanced,51.0,61.0,Balanced,Balanced,51.0
+100646,24,10,1.0,67,Balanced,41.0,51.0,Fast build up,Forward runs,51.0
+100831,24,54,2.0,67,Balanced,61.0,41.0,Balanced,Balanced,51.0
+101028,24,68,1.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+101037,24,68,1.0,67,Balanced,61.0,41.0,Balanced,Balanced,51.0
+101104,24,336,1.0,67,Balanced,41.0,51.0,Fast build up,Forward runs,61.0
+110075,24,330,1.0,67,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,71.0
+110242,24,54,2.0,67,Balanced,61.0,41.0,Fast build up,Forward runs,61.0
+110321,24,17,2.0,67,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+110500,24,20,2.0,67,Balanced,51.0,37.0,Long ball,Direct passing,71.0
+110740,24,32,2.0,67,Balanced,41.0,37.0,Slow build up,Possession,51.0
+110765,24,83,1.0,67,Balanced,71.0,41.0,Balanced,Balanced,61.0
+110816,24,330,1.0,67,Balanced,41.0,51.0,Balanced,Balanced,51.0
+110968,24,2017,1.0,67,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+110969,24,2017,1.0,67,Balanced,51.0,41.0,Fast build up,Forward runs,51.0
+110978,24,335,1.0,67,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+110982,24,2018,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,51.0
+110987,24,2018,1.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+110998,24,338,1.0,67,Press after possession loss,51.0,51.0,Slow build up,Possession,61.0
+111011,24,2020,1.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+111139,24,39,1.0,67,Balanced,51.0,51.0,Slow build up,Possession,71.0
+111326,24,338,1.0,67,Balanced,51.0,51.0,Slow build up,Possession,81.0
+111328,24,335,1.0,67,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+111329,24,337,1.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+111339,24,68,1.0,67,Balanced,41.0,51.0,Balanced,Balanced,61.0
+111817,24,17,2.0,67,Balanced,61.0,51.0,Slow build up,Possession,61.0
+112168,24,32,2.0,67,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+112184,24,338,1.0,67,Balanced,61.0,51.0,Balanced,Balanced,71.0
+112499,24,32,2.0,67,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+112558,24,83,1.0,67,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+112585,24,335,1.0,67,Balanced,41.0,37.0,Fast build up,Forward runs,61.0
+113058,24,350,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,51.0
+114611,24,2019,1.0,67,Balanced,61.0,51.0,Long ball,Direct passing,41.0
+4,24,60,3.0,66,Press after possession loss,51.0,51.0,Slow build up,Possession,71.0
+58,24,17,2.0,66,Balanced,51.0,51.0,Balanced,Balanced,61.0
+89,24,60,3.0,66,Balanced,61.0,51.0,Slow build up,Possession,61.0
+270,24,1,1.0,66,Balanced,51.0,61.0,Fast build up,Forward runs,61.0
+310,24,330,1.0,66,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+319,24,56,1.0,66,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+492,24,20,2.0,66,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,51.0
+523,24,2076,3.0,66,Balanced,41.0,51.0,Long ball,Direct passing,71.0
+580,24,20,2.0,66,Pressure on heavy touch,51.0,71.0,Fast build up,Forward runs,51.0
+700,24,56,1.0,66,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+710,24,56,1.0,66,Press after possession loss,51.0,61.0,Fast build up,Forward runs,61.0
+746,24,68,1.0,66,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+920,24,41,1.0,66,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+980,24,83,1.0,66,Balanced,51.0,61.0,Slow build up,Possession,41.0
+983,24,83,1.0,66,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+1443,24,1,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,71.0
+1793,24,60,3.0,66,Balanced,41.0,41.0,Long ball,Direct passing,51.0
+1905,24,10,1.0,66,Balanced,51.0,41.0,Balanced,Balanced,61.0
+1914,24,10,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,71.0
+1926,24,60,3.0,66,Pressure on heavy touch,51.0,51.0,Long ball,Direct passing,61.0
+1932,24,60,3.0,66,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,71.0
+1971,24,10,1.0,66,Balanced,41.0,41.0,Long ball,Direct passing,41.0
+2013,24,4,1.0,66,Balanced,51.0,41.0,Balanced,Balanced,71.0
+2056,24,83,1.0,66,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+100632,24,10,1.0,66,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+101020,24,68,1.0,66,Press after possession loss,71.0,51.0,Long ball,Direct passing,61.0
+110069,24,54,2.0,66,Press after possession loss,51.0,51.0,Balanced,Balanced,61.0
+110394,24,353,1.0,66,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+110456,24,17,2.0,66,Balanced,41.0,51.0,Balanced,Balanced,61.0
+110749,24,66,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,71.0
+110908,24,32,2.0,66,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+110955,24,2012,1.0,66,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+110989,24,2019,1.0,66,Balanced,41.0,51.0,Long ball,Direct passing,51.0
+110990,24,2019,1.0,66,Balanced,61.0,51.0,Long ball,Direct passing,51.0
+111086,24,66,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111088,24,66,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,61.0
+111768,24,2012,1.0,66,Balanced,41.0,51.0,Slow build up,Possession,51.0
+111822,24,80,1.0,66,Pressure on heavy touch,41.0,51.0,Fast build up,Forward runs,41.0
+112115,24,83,1.0,66,Pressure on heavy touch,71.0,51.0,Long ball,Direct passing,61.0
+112224,24,351,1.0,66,Balanced,61.0,61.0,Slow build up,Possession,61.0
+112392,24,350,1.0,66,Balanced,61.0,51.0,Fast build up,Forward runs,71.0
+112393,24,350,1.0,66,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,61.0
+112494,24,32,2.0,66,Pressure on heavy touch,51.0,41.0,Long ball,Direct passing,61.0
+112552,24,17,2.0,66,Balanced,41.0,41.0,Long ball,Direct passing,61.0
+112707,24,335,1.0,66,Balanced,61.0,61.0,Fast build up,Forward runs,51.0
+112716,24,337,1.0,66,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+112883,24,350,1.0,66,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+113029,24,2020,1.0,66,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+113060,24,350,1.0,66,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+113356,24,54,2.0,66,Balanced,51.0,37.0,Long ball,Direct passing,51.0
+113378,24,330,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+115716,24,330,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,61.0
+33,24,2076,3.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+159,24,2076,3.0,65,Pressure on heavy touch,41.0,61.0,Fast build up,Forward runs,41.0
+272,24,1,1.0,65,Balanced,71.0,51.0,Fast build up,Forward runs,71.0
+299,24,41,1.0,65,Balanced,61.0,51.0,Balanced,Balanced,61.0
+322,24,189,1.0,65,Balanced,71.0,51.0,Fast build up,Forward runs,61.0
+420,24,66,1.0,65,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+503,24,2076,3.0,65,Balanced,61.0,41.0,Long ball,Direct passing,71.0
+680,24,4,1.0,65,Balanced,41.0,41.0,Fast build up,Forward runs,51.0
+702,24,56,1.0,65,Press after possession loss,51.0,71.0,Slow build up,Possession,61.0
+708,24,56,1.0,65,Pressure on heavy touch,61.0,51.0,Slow build up,Possession,61.0
+781,24,80,1.0,65,Balanced,51.0,41.0,Fast build up,Forward runs,51.0
+919,24,41,1.0,65,Balanced,51.0,41.0,Balanced,Balanced,61.0
+1704,24,189,1.0,65,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1787,24,80,1.0,65,Balanced,51.0,41.0,Balanced,Balanced,61.0
+1790,24,60,3.0,65,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,61.0
+1846,24,32,2.0,65,Balanced,41.0,51.0,Balanced,Balanced,51.0
+1917,24,60,3.0,65,Balanced,61.0,41.0,Long ball,Direct passing,61.0
+1933,24,60,3.0,65,Press after possession loss,61.0,51.0,Balanced,Balanced,71.0
+1938,24,60,3.0,65,Balanced,61.0,61.0,Balanced,Balanced,61.0
+1947,24,61,4.0,65,Balanced,51.0,61.0,Slow build up,Possession,71.0
+1951,24,60,3.0,65,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,71.0
+2017,24,80,1.0,65,Pressure on heavy touch,51.0,41.0,Long ball,Direct passing,51.0
+15001,24,1,1.0,65,Press after possession loss,51.0,61.0,Fast build up,Forward runs,61.0
+15040,24,80,1.0,65,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+100325,24,322,1.0,65,Press after possession loss,61.0,51.0,Slow build up,Possession,51.0
+101097,24,335,1.0,65,Balanced,61.0,51.0,Fast build up,Forward runs,81.0
+110178,24,2076,3.0,65,Balanced,51.0,41.0,Long ball,Direct passing,51.0
+110645,24,2076,3.0,65,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+110745,24,66,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,71.0
+110747,24,66,1.0,65,Balanced,61.0,41.0,Long ball,Direct passing,71.0
+110751,24,330,1.0,65,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+110902,24,54,2.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110967,24,2017,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110993,24,2019,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111239,24,2076,3.0,65,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+111332,24,2019,1.0,65,Balanced,71.0,51.0,Long ball,Direct passing,71.0
+111380,24,10,1.0,65,Balanced,61.0,41.0,Balanced,Balanced,51.0
+111397,24,351,1.0,65,Balanced,41.0,41.0,Balanced,Balanced,61.0
+111659,24,17,2.0,65,Balanced,41.0,51.0,Long ball,Direct passing,71.0
+111993,24,32,2.0,65,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+112199,24,41,1.0,65,Balanced,41.0,61.0,Slow build up,Possession,51.0
+112258,24,83,1.0,65,Balanced,51.0,51.0,Fast build up,Forward runs,61.0
+112511,24,66,1.0,65,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+112572,24,350,1.0,65,Balanced,51.0,41.0,Long ball,Direct passing,51.0
+112914,24,2019,1.0,65,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+113037,24,350,1.0,65,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+113182,24,330,1.0,65,Balanced,61.0,41.0,Long ball,Direct passing,51.0
+113222,24,350,1.0,65,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+114147,24,330,1.0,65,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+114580,24,2018,1.0,65,Balanced,61.0,51.0,Long ball,Direct passing,51.0
+114582,24,2020,1.0,65,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+115494,24,17,2.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+116360,24,2012,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+127,24,60,3.0,64,Balanced,61.0,41.0,Balanced,Balanced,71.0
+149,24,60,3.0,64,Balanced,51.0,41.0,Balanced,Balanced,51.0
+301,24,66,1.0,64,Balanced,71.0,51.0,Balanced,Balanced,71.0
+506,24,2076,3.0,64,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,71.0
+526,24,2076,3.0,64,Pressure on heavy touch,51.0,51.0,Long ball,Direct passing,61.0
+543,24,2076,3.0,64,Press after possession loss,61.0,61.0,Fast build up,Forward runs,51.0
+621,24,50,1.0,64,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+645,24,10,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+822,24,1,1.0,64,Balanced,61.0,41.0,Long ball,Direct passing,51.0
+917,24,41,1.0,64,Balanced,61.0,41.0,Long ball,Direct passing,51.0
+922,24,41,1.0,64,Pressure on heavy touch,71.0,61.0,Fast build up,Forward runs,61.0
+1439,24,56,1.0,64,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+1713,24,189,1.0,64,Balanced,61.0,37.0,Fast build up,Forward runs,61.0
+1756,24,41,1.0,64,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+1798,24,61,4.0,64,Balanced,51.0,61.0,Slow build up,Possession,71.0
+1825,24,2076,3.0,64,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+1829,24,2076,3.0,64,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+1931,24,61,4.0,64,Press after possession loss,51.0,81.0,Slow build up,Possession,61.0
+1958,24,60,3.0,64,Balanced,51.0,51.0,Slow build up,Possession,51.0
+1962,24,60,3.0,64,Pressure on heavy touch,51.0,71.0,Balanced,Balanced,51.0
+15009,24,80,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,61.0
+15015,24,60,3.0,64,Balanced,41.0,51.0,Long ball,Direct passing,61.0
+100757,24,330,1.0,64,Balanced,61.0,51.0,Balanced,Balanced,61.0
+100804,24,50,1.0,64,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,61.0
+100805,24,50,1.0,64,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+110078,24,330,1.0,64,Balanced,51.0,41.0,Balanced,Balanced,51.0
+110482,24,2076,3.0,64,Press after possession loss,51.0,71.0,Slow build up,Possession,61.0
+110501,24,2076,3.0,64,Press after possession loss,61.0,61.0,Slow build up,Possession,51.0
+110532,24,2076,3.0,64,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+110750,24,330,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+110970,24,2017,1.0,64,Balanced,51.0,51.0,Slow build up,Possession,51.0
+111083,24,66,1.0,64,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+111085,24,66,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,61.0
+111092,24,66,1.0,64,Press after possession loss,51.0,51.0,Balanced,Balanced,61.0
+111769,24,2012,1.0,64,Balanced,51.0,37.0,Long ball,Direct passing,51.0
+111779,24,2012,1.0,64,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+112163,24,2012,1.0,64,Balanced,61.0,41.0,Balanced,Balanced,51.0
+112260,24,60,3.0,64,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,61.0
+112427,24,351,1.0,64,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+113742,24,17,2.0,64,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+114004,24,66,1.0,64,Balanced,61.0,41.0,Long ball,Direct passing,71.0
+114023,24,351,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,61.0
+114600,24,2017,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+115201,24,189,1.0,64,Balanced,61.0,61.0,Fast build up,Forward runs,61.0
+116007,24,337,1.0,64,Balanced,51.0,51.0,Fast build up,Forward runs,51.0
+116295,24,337,1.0,64,Balanced,41.0,41.0,Balanced,Balanced,61.0
+82,24,50,1.0,63,Balanced,41.0,51.0,Balanced,Balanced,61.0
+83,24,50,1.0,63,Balanced,51.0,41.0,Fast build up,Forward runs,51.0
+143,24,60,3.0,63,Pressure on heavy touch,61.0,61.0,Fast build up,Forward runs,81.0
+306,24,65,1.0,63,Balanced,61.0,71.0,Slow build up,Possession,71.0
+321,24,56,1.0,63,Balanced,41.0,41.0,Slow build up,Possession,41.0
+361,24,60,3.0,63,Pressure on heavy touch,51.0,61.0,Long ball,Direct passing,61.0
+418,24,41,1.0,63,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,61.0
+531,24,2076,3.0,63,Pressure on heavy touch,61.0,61.0,Long ball,Direct passing,61.0
+561,24,61,4.0,63,Balanced,51.0,37.0,Balanced,Balanced,61.0
+631,24,50,1.0,63,Balanced,41.0,37.0,Long ball,Direct passing,51.0
+1463,24,41,1.0,63,Balanced,51.0,51.0,Balanced,Balanced,61.0
+1480,24,60,3.0,63,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+1755,24,41,1.0,63,Balanced,71.0,51.0,Fast build up,Forward runs,51.0
+1802,24,61,4.0,63,Balanced,41.0,51.0,Long ball,Direct passing,51.0
+1804,24,61,4.0,63,Balanced,51.0,61.0,Slow build up,Possession,61.0
+1928,24,60,3.0,63,Pressure on heavy touch,41.0,61.0,Long ball,Direct passing,61.0
+1930,24,60,3.0,63,Pressure on heavy touch,41.0,71.0,Slow build up,Possession,61.0
+1936,24,60,3.0,63,Balanced,61.0,41.0,Long ball,Direct passing,51.0
+1940,24,61,4.0,63,Press after possession loss,41.0,61.0,Slow build up,Possession,51.0
+1944,24,60,3.0,63,Balanced,41.0,41.0,Long ball,Direct passing,51.0
+110581,24,353,1.0,63,Press after possession loss,51.0,51.0,Fast build up,Forward runs,61.0
+110676,24,2076,3.0,63,Press after possession loss,41.0,71.0,Fast build up,Forward runs,41.0
+110752,24,330,1.0,63,Balanced,51.0,41.0,Fast build up,Forward runs,61.0
+110815,24,330,1.0,63,Balanced,61.0,51.0,Balanced,Balanced,61.0
+111004,24,337,1.0,63,Balanced,41.0,51.0,Long ball,Direct passing,51.0
+111276,24,17,2.0,63,Balanced,41.0,41.0,Balanced,Balanced,61.0
+111393,24,351,1.0,63,Balanced,61.0,61.0,Balanced,Balanced,71.0
+111399,24,351,1.0,63,Balanced,51.0,41.0,Balanced,Balanced,61.0
+111400,24,351,1.0,63,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,61.0
+111705,24,56,1.0,63,Balanced,51.0,41.0,Slow build up,Possession,61.0
+111774,24,2012,1.0,63,Pressure on heavy touch,51.0,51.0,Balanced,Balanced,61.0
+112126,24,56,1.0,63,Balanced,41.0,51.0,Fast build up,Forward runs,51.0
+112985,24,2012,1.0,63,Balanced,41.0,51.0,Fast build up,Forward runs,51.0
+113146,24,2149,1.0,63,Pressure on heavy touch,51.0,61.0,Fast build up,Forward runs,71.0
+113458,24,56,1.0,63,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,51.0
+113892,24,56,1.0,63,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+113926,24,61,4.0,63,Balanced,61.0,61.0,Slow build up,Possession,71.0
+114604,24,351,1.0,63,Balanced,41.0,41.0,Fast build up,Forward runs,61.0
+115358,24,2017,1.0,63,Balanced,51.0,41.0,Balanced,Balanced,71.0
+92,24,61,4.0,62,Press after possession loss,51.0,81.0,Balanced,Balanced,61.0
+172,24,2076,3.0,62,Balanced,51.0,51.0,Slow build up,Possession,61.0
+180,24,50,1.0,62,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+381,24,61,4.0,62,Balanced,51.0,61.0,Fast build up,Forward runs,71.0
+445,24,65,1.0,62,Balanced,51.0,51.0,Balanced,Balanced,61.0
+874,24,66,1.0,62,Balanced,71.0,41.0,Long ball,Direct passing,71.0
+1456,24,41,1.0,62,Pressure on heavy touch,61.0,61.0,Balanced,Balanced,51.0
+1803,24,61,4.0,62,Pressure on heavy touch,51.0,51.0,Long ball,Direct passing,61.0
+1934,24,61,4.0,62,Balanced,61.0,41.0,Slow build up,Possession,71.0
+1935,24,61,4.0,62,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,61.0
+1937,24,61,4.0,62,Press after possession loss,51.0,81.0,Slow build up,Possession,81.0
+110072,24,330,1.0,62,Balanced,51.0,51.0,Balanced,Balanced,51.0
+110176,24,2076,3.0,62,Balanced,61.0,51.0,Long ball,Direct passing,51.0
+110691,24,2076,3.0,62,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,61.0
+110720,24,80,1.0,62,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111395,24,351,1.0,62,Balanced,41.0,37.0,Long ball,Direct passing,61.0
+111396,24,351,1.0,62,Balanced,61.0,51.0,Balanced,Balanced,61.0
+111398,24,351,1.0,62,Balanced,61.0,51.0,Slow build up,Possession,61.0
+112072,24,56,1.0,62,Balanced,61.0,51.0,Balanced,Balanced,61.0
+112222,24,61,4.0,62,Balanced,51.0,61.0,Balanced,Balanced,51.0
+112259,24,61,4.0,62,Press after possession loss,41.0,51.0,Balanced,Balanced,41.0
+113300,24,2149,1.0,62,Pressure on heavy touch,51.0,61.0,Balanced,Balanced,61.0
+131173,24,2012,1.0,62,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+142,24,61,4.0,61,Balanced,51.0,41.0,Balanced,Balanced,61.0
+423,24,65,1.0,61,Balanced,51.0,51.0,Fast build up,Forward runs,71.0
+837,24,65,1.0,61,Pressure on heavy touch,51.0,61.0,Slow build up,Possession,71.0
+1757,24,41,1.0,61,Balanced,51.0,41.0,Balanced,Balanced,51.0
+15048,24,61,4.0,61,Balanced,61.0,51.0,Balanced,Balanced,51.0
+110313,24,61,4.0,61,Press after possession loss,61.0,41.0,Long ball,Direct passing,61.0
+110799,24,61,4.0,61,Press after possession loss,51.0,81.0,Fast build up,Forward runs,51.0
+111766,24,351,1.0,61,Balanced,61.0,41.0,Fast build up,Forward runs,61.0
+111773,24,2012,1.0,61,Balanced,51.0,51.0,Slow build up,Possession,51.0
+112378,24,2012,1.0,61,Press after possession loss,61.0,51.0,Balanced,Balanced,61.0
+112979,24,2012,1.0,61,Balanced,51.0,51.0,Balanced,Balanced,51.0
+113298,24,2149,1.0,61,Pressure on heavy touch,61.0,61.0,Slow build up,Possession,61.0
+113299,24,2149,1.0,61,Pressure on heavy touch,51.0,51.0,Slow build up,Possession,61.0
+113743,24,56,1.0,61,Balanced,71.0,41.0,Long ball,Direct passing,71.0
+114393,24,66,1.0,61,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+114628,24,2012,1.0,61,Balanced,51.0,51.0,Balanced,Balanced,51.0
+121,24,61,4.0,60,Balanced,61.0,41.0,Long ball,Direct passing,61.0
+305,24,65,1.0,60,Balanced,41.0,51.0,Balanced,Balanced,61.0
+357,24,61,4.0,60,Balanced,41.0,37.0,Long ball,Direct passing,51.0
+110890,24,61,4.0,60,Press after possession loss,61.0,61.0,Slow build up,Possession,71.0
+112254,24,61,4.0,60,Balanced,41.0,51.0,Long ball,Direct passing,81.0
+113302,24,2149,1.0,60,Pressure on heavy touch,51.0,51.0,Fast build up,Forward runs,51.0
+563,24,65,1.0,59,Press after possession loss,41.0,51.0,Balanced,Balanced,51.0
+834,24,65,1.0,59,Balanced,61.0,51.0,Slow build up,Possession,71.0
+111629,24,2149,1.0,59,Balanced,51.0,51.0,Long ball,Direct passing,61.0
+113257,24,2149,1.0,59,Balanced,51.0,51.0,Slow build up,Possession,51.0
+113301,24,2149,1.0,58,Balanced,61.0,51.0,Slow build up,Possession,71.0
+114168,24,2149,1.0,58,Balanced,61.0,51.0,Fast build up,Forward runs,61.0
+422,24,65,1.0,57,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1572,24,65,1.0,57,Balanced,61.0,51.0,Long ball,Direct passing,61.0
+113040,24,2149,1.0,57,Balanced,61.0,61.0,Long ball,Direct passing,51.0
+113297,24,2149,1.0,57,Balanced,61.0,51.0,Fast build up,Forward runs,51.0
+111132,24,65,1.0,55,Balanced,51.0,41.0,Long ball,Direct passing,61.0
+115202,24,2149,1.0,55,Balanced,51.0,51.0,Long ball,Direct passing,51.0
+9,23,13,1.0,85,Press After Possession Loss,61.0,71.0,Slow Build Up,Possession,71.0
+10,23,13,1.0,85,Press After Possession Loss,71.0,81.0,Slow Build Up,Possession,71.0
+73,23,16,1.0,85,Press After Possession Loss,61.0,71.0,Slow Build Up,Possession,41.0
+243,23,53,1.0,85,Balanced,51.0,71.0,Balanced,Balanced,51.0
+5,23,13,1.0,84,Balanced,61.0,71.0,Balanced,Balanced,61.0
+21,23,19,1.0,84,Pressure On Heavy Touch,41.0,81.0,Slow Build Up,Possession,81.0
+241,23,53,1.0,84,Pressure On Heavy Touch,61.0,81.0,Slow Build Up,Possession,51.0
+44,23,31,1.0,83,Balanced,51.0,61.0,Fast Build Up,Forward Runs,51.0
+240,23,53,1.0,83,Press After Possession Loss,61.0,61.0,Balanced,Balanced,51.0
+11,23,13,1.0,82,Balanced,41.0,51.0,Slow Build Up,Possession,61.0
+45,23,31,1.0,82,Pressure On Heavy Touch,51.0,41.0,Balanced,Balanced,61.0
+18,23,13,1.0,81,Balanced,61.0,41.0,Balanced,Balanced,61.0
+22,23,19,1.0,81,Press After Possession Loss,51.0,81.0,Fast Build Up,Forward Runs,41.0
+47,23,31,1.0,81,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,51.0
+481,23,53,1.0,81,Press After Possession Loss,71.0,71.0,Slow Build Up,Possession,81.0
+112172,23,19,1.0,81,Press After Possession Loss,51.0,81.0,Balanced,Balanced,31.0
+1,23,13,1.0,80,Balanced,51.0,61.0,Slow Build Up,Possession,51.0
+19,23,13,1.0,80,Balanced,41.0,41.0,Fast Build Up,Forward Runs,61.0
+32,23,19,1.0,80,Press After Possession Loss,51.0,71.0,Balanced,Balanced,71.0
+52,23,31,1.0,80,Press After Possession Loss,61.0,41.0,Balanced,Balanced,61.0
+483,23,53,1.0,80,Balanced,61.0,51.0,Balanced,Balanced,61.0
+2,23,13,1.0,79,Balanced,51.0,61.0,Balanced,Balanced,41.0
+39,23,31,1.0,79,Press After Possession Loss,41.0,71.0,Fast Build Up,Forward Runs,61.0
+46,23,31,1.0,79,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,71.0
+48,23,31,1.0,79,Balanced,61.0,61.0,Slow Build Up,Possession,71.0
+95,23,13,1.0,79,Balanced,41.0,51.0,Slow Build Up,Possession,51.0
+110,23,13,1.0,79,Pressure On Heavy Touch,61.0,51.0,Fast Build Up,Forward Runs,61.0
+448,23,53,1.0,79,Balanced,51.0,51.0,Fast Build Up,Forward Runs,71.0
+449,23,53,1.0,79,Press After Possession Loss,61.0,71.0,Slow Build Up,Possession,61.0
+7,23,13,1.0,78,Balanced,51.0,51.0,Balanced,Balanced,51.0
+13,23,13,1.0,78,Balanced,51.0,61.0,Balanced,Balanced,51.0
+66,23,16,1.0,78,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,51.0
+219,23,16,1.0,78,Pressure On Heavy Touch,51.0,61.0,Long Ball,Direct Passing,61.0
+234,23,308,1.0,78,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+237,23,308,1.0,78,Pressure On Heavy Touch,51.0,61.0,Long Ball,Direct Passing,61.0
+245,23,10,1.0,78,Pressure On Heavy Touch,61.0,81.0,Slow Build Up,Possession,71.0
+457,23,53,1.0,78,Balanced,41.0,51.0,Slow Build Up,Possession,61.0
+23,23,19,1.0,77,Balanced,61.0,61.0,Slow Build Up,Possession,61.0
+69,23,16,1.0,77,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,51.0
+72,23,16,1.0,77,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,71.0
+74,23,16,1.0,77,Balanced,51.0,51.0,Balanced,Balanced,51.0
+175,23,19,1.0,77,Press After Possession Loss,71.0,51.0,Slow Build Up,Possession,61.0
+236,23,308,1.0,77,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+247,23,10,1.0,77,Pressure On Heavy Touch,51.0,71.0,Balanced,Balanced,51.0
+450,23,53,1.0,77,Pressure On Heavy Touch,71.0,61.0,Balanced,Balanced,51.0
+1824,23,19,1.0,77,Press After Possession Loss,61.0,51.0,Fast Build Up,Forward Runs,61.0
+1860,23,53,1.0,77,Pressure On Heavy Touch,41.0,71.0,Fast Build Up,Forward Runs,71.0
+110374,23,31,1.0,77,Balanced,41.0,51.0,Balanced,Balanced,61.0
+8,23,13,1.0,76,Press After Possession Loss,41.0,61.0,Fast Build Up,Forward Runs,51.0
+14,23,13,1.0,76,Balanced,61.0,51.0,Balanced,Balanced,71.0
+25,23,19,1.0,76,Balanced,41.0,51.0,Slow Build Up,Possession,61.0
+144,23,13,1.0,76,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+231,23,4,1.0,76,Pressure On Heavy Touch,41.0,61.0,Balanced,Balanced,61.0
+325,23,68,1.0,76,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+383,23,7,1.0,76,Pressure On Heavy Touch,41.0,71.0,Balanced,Balanced,61.0
+436,23,68,1.0,76,Pressure On Heavy Touch,61.0,71.0,Slow Build Up,Possession,61.0
+461,23,53,1.0,76,Balanced,61.0,51.0,Balanced,Balanced,61.0
+479,23,53,1.0,76,Balanced,71.0,71.0,Fast Build Up,Forward Runs,61.0
+1043,23,7,1.0,76,Pressure On Heavy Touch,61.0,61.0,Balanced,Balanced,61.0
+1799,23,13,1.0,76,Balanced,51.0,41.0,Balanced,Balanced,71.0
+1808,23,13,1.0,76,Balanced,61.0,61.0,Slow Build Up,Possession,71.0
+1876,23,353,1.0,76,Pressure On Heavy Touch,41.0,71.0,Slow Build Up,Possession,41.0
+10029,23,19,1.0,76,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+17,23,13,1.0,75,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,51.0
+55,23,31,1.0,75,Balanced,61.0,51.0,Slow Build Up,Possession,71.0
+64,23,16,1.0,75,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,61.0
+65,23,16,1.0,75,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,71.0
+70,23,16,1.0,75,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+76,23,16,1.0,75,Balanced,41.0,71.0,Balanced,Balanced,71.0
+169,23,19,1.0,75,Pressure On Heavy Touch,51.0,61.0,Long Ball,Direct Passing,61.0
+189,23,31,1.0,75,Balanced,61.0,61.0,Fast Build Up,Forward Runs,61.0
+206,23,31,1.0,75,Press After Possession Loss,51.0,61.0,Slow Build Up,Possession,61.0
+326,23,68,1.0,75,Press After Possession Loss,61.0,71.0,Fast Build Up,Forward Runs,51.0
+452,23,53,1.0,75,Press After Possession Loss,61.0,51.0,Fast Build Up,Forward Runs,61.0
+462,23,53,1.0,75,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,51.0
+480,23,53,1.0,75,Balanced,61.0,71.0,Slow Build Up,Possession,61.0
+1035,23,7,1.0,75,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,71.0
+1877,23,353,1.0,75,Balanced,51.0,61.0,Fast Build Up,Forward Runs,71.0
+1896,23,308,1.0,75,Pressure On Heavy Touch,41.0,51.0,Long Ball,Direct Passing,61.0
+1925,23,13,1.0,75,Press After Possession Loss,51.0,41.0,Fast Build Up,Forward Runs,51.0
+1968,23,53,1.0,75,Balanced,41.0,41.0,Long Ball,Direct Passing,81.0
+111811,23,31,1.0,75,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+111974,23,31,1.0,75,Press After Possession Loss,51.0,61.0,Slow Build Up,Possession,61.0
+31,23,19,1.0,74,Press After Possession Loss,51.0,61.0,Long Ball,Direct Passing,71.0
+36,23,19,1.0,74,Balanced,51.0,51.0,Balanced,Balanced,71.0
+54,23,31,1.0,74,Balanced,31.0,41.0,Fast Build Up,Forward Runs,61.0
+71,23,16,1.0,74,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,71.0
+78,23,50,1.0,74,Press After Possession Loss,61.0,81.0,Slow Build Up,Possession,71.0
+86,23,50,1.0,74,Pressure On Heavy Touch,51.0,71.0,Slow Build Up,Possession,71.0
+166,23,19,1.0,74,Pressure On Heavy Touch,41.0,51.0,Long Ball,Direct Passing,61.0
+246,23,10,1.0,74,Press After Possession Loss,61.0,61.0,Balanced,Balanced,61.0
+266,23,319,1.0,74,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,71.0
+278,23,63,1.0,74,Balanced,51.0,61.0,Slow Build Up,Possession,51.0
+327,23,68,1.0,74,Press After Possession Loss,51.0,71.0,Fast Build Up,Forward Runs,71.0
+453,23,53,1.0,74,Balanced,51.0,51.0,Balanced,Balanced,61.0
+468,23,53,1.0,74,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+605,23,350,1.0,74,Press After Possession Loss,51.0,61.0,Fast Build Up,Forward Runs,51.0
+1039,23,7,1.0,74,Balanced,51.0,61.0,Slow Build Up,Possession,51.0
+1048,23,7,1.0,74,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+1831,23,19,1.0,74,Pressure On Heavy Touch,41.0,41.0,Long Ball,Direct Passing,71.0
+1837,23,31,1.0,74,Balanced,51.0,61.0,Slow Build Up,Possession,51.0
+1861,23,53,1.0,74,Balanced,41.0,51.0,Slow Build Up,Possession,71.0
+1943,23,13,1.0,74,Press After Possession Loss,61.0,51.0,Slow Build Up,Possession,71.0
+100409,23,19,1.0,74,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+101085,23,353,1.0,74,Balanced,61.0,71.0,Slow Build Up,Possession,61.0
+110062,23,53,1.0,74,Balanced,41.0,51.0,Slow Build Up,Possession,51.0
+110373,23,31,1.0,74,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,71.0
+110832,23,54,2.0,74,Balanced,41.0,51.0,Fast Build Up,Forward Runs,71.0
+112472,23,7,1.0,74,Press After Possession Loss,61.0,61.0,Balanced,Balanced,71.0
+112996,23,39,1.0,74,Press After Possession Loss,41.0,61.0,Balanced,Balanced,51.0
+34,23,19,1.0,73,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,51.0
+38,23,19,1.0,73,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,61.0
+160,23,19,1.0,73,Pressure On Heavy Touch,41.0,51.0,Long Ball,Direct Passing,71.0
+211,23,317,1.0,73,Balanced,51.0,51.0,Balanced,Balanced,61.0
+230,23,4,1.0,73,Balanced,51.0,51.0,Balanced,Balanced,61.0
+267,23,319,1.0,73,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,61.0
+378,23,16,1.0,73,Balanced,61.0,51.0,Slow Build Up,Possession,71.0
+598,23,7,1.0,73,Pressure On Heavy Touch,41.0,71.0,Slow Build Up,Possession,61.0
+674,23,4,1.0,73,Pressure On Heavy Touch,51.0,71.0,Slow Build Up,Possession,61.0
+1041,23,7,1.0,73,Balanced,51.0,61.0,Balanced,Balanced,51.0
+1053,23,7,1.0,73,Balanced,51.0,61.0,Fast Build Up,Forward Runs,51.0
+1746,23,31,1.0,73,Press After Possession Loss,41.0,71.0,Slow Build Up,Possession,51.0
+1795,23,14,2.0,73,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1796,23,14,2.0,73,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,61.0
+1853,23,54,2.0,73,Balanced,61.0,51.0,Balanced,Balanced,71.0
+1884,23,63,1.0,73,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+1906,23,10,1.0,73,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,51.0
+101014,23,68,1.0,73,Balanced,61.0,51.0,Slow Build Up,Possession,61.0
+101047,23,332,1.0,73,Pressure On Heavy Touch,61.0,51.0,Balanced,Balanced,71.0
+101088,23,353,1.0,73,Press After Possession Loss,61.0,61.0,Balanced,Balanced,61.0
+110468,23,319,1.0,73,Balanced,51.0,51.0,Long Ball,Direct Passing,71.0
+109,23,14,2.0,72,Press After Possession Loss,51.0,61.0,Fast Build Up,Forward Runs,61.0
+191,23,80,1.0,72,Press After Possession Loss,51.0,71.0,Fast Build Up,Forward Runs,61.0
+229,23,4,1.0,72,Pressure On Heavy Touch,61.0,71.0,Balanced,Balanced,61.0
+294,23,16,1.0,72,Balanced,41.0,51.0,Balanced,Balanced,61.0
+379,23,16,1.0,72,Balanced,61.0,41.0,Fast Build Up,Forward Runs,71.0
+393,23,63,1.0,72,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,51.0
+467,23,54,2.0,72,Press After Possession Loss,51.0,71.0,Slow Build Up,Possession,61.0
+472,23,54,2.0,72,Press After Possession Loss,41.0,71.0,Slow Build Up,Possession,61.0
+567,23,7,1.0,72,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+673,23,4,1.0,72,Pressure On Heavy Touch,61.0,61.0,Balanced,Balanced,61.0
+741,23,68,1.0,72,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+819,23,1,1.0,72,Balanced,51.0,61.0,Fast Build Up,Forward Runs,61.0
+1530,23,16,1.0,72,Balanced,41.0,51.0,Balanced,Balanced,61.0
+1792,23,14,2.0,72,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,61.0
+1794,23,14,2.0,72,Balanced,61.0,61.0,Balanced,Balanced,51.0
+101016,23,68,1.0,72,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+101083,23,353,1.0,72,Balanced,51.0,51.0,Balanced,Balanced,71.0
+110093,23,353,1.0,72,Balanced,51.0,51.0,Slow Build Up,Possession,71.0
+110406,23,353,1.0,72,Balanced,41.0,51.0,Fast Build Up,Forward Runs,51.0
+110741,23,31,1.0,72,Balanced,51.0,61.0,Fast Build Up,Forward Runs,61.0
+111008,23,337,1.0,72,Balanced,51.0,37.0,Slow Build Up,Possession,61.0
+111059,23,7,1.0,72,Balanced,51.0,51.0,Balanced,Balanced,71.0
+111434,23,31,1.0,72,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112119,23,7,1.0,72,Balanced,41.0,41.0,Fast Build Up,Forward Runs,71.0
+112139,23,350,1.0,72,Pressure On Heavy Touch,41.0,61.0,Fast Build Up,Forward Runs,61.0
+12,23,14,2.0,71,Balanced,61.0,41.0,Balanced,Balanced,71.0
+28,23,20,2.0,71,Pressure On Heavy Touch,61.0,71.0,Slow Build Up,Possession,71.0
+57,23,16,1.0,71,Pressure On Heavy Touch,41.0,61.0,Balanced,Balanced,61.0
+205,23,32,2.0,71,Press After Possession Loss,61.0,51.0,Slow Build Up,Possession,71.0
+217,23,16,1.0,71,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+260,23,54,2.0,71,Pressure On Heavy Touch,71.0,61.0,Balanced,Balanced,51.0
+263,23,317,1.0,71,Balanced,51.0,61.0,Fast Build Up,Forward Runs,51.0
+347,23,31,1.0,71,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,71.0
+463,23,54,2.0,71,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+607,23,350,1.0,71,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,61.0
+900,23,189,1.0,71,Press After Possession Loss,51.0,61.0,Fast Build Up,Forward Runs,71.0
+1516,23,1,1.0,71,Pressure On Heavy Touch,71.0,71.0,Slow Build Up,Possession,61.0
+1809,23,16,1.0,71,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,61.0
+1874,23,64,1.0,71,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+1888,23,308,1.0,71,Balanced,41.0,51.0,Fast Build Up,Forward Runs,71.0
+1903,23,10,1.0,71,Balanced,51.0,51.0,Balanced,Balanced,61.0
+101007,23,68,1.0,71,Balanced,41.0,41.0,Long Ball,Direct Passing,61.0
+101059,23,332,1.0,71,Pressure On Heavy Touch,41.0,61.0,Slow Build Up,Possession,51.0
+101100,23,336,1.0,71,Press After Possession Loss,41.0,51.0,Slow Build Up,Possession,71.0
+110395,23,353,1.0,71,Balanced,61.0,61.0,Balanced,Balanced,61.0
+110556,23,32,2.0,71,Press After Possession Loss,51.0,61.0,Fast Build Up,Forward Runs,61.0
+111052,23,7,1.0,71,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+111144,23,39,1.0,71,Balanced,41.0,51.0,Balanced,Balanced,51.0
+111325,23,338,1.0,71,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,61.0
+112670,23,353,1.0,71,Balanced,71.0,51.0,Balanced,Balanced,71.0
+112885,23,39,1.0,71,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+113142,23,68,1.0,71,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+3,23,14,2.0,70,Press After Possession Loss,51.0,61.0,Long Ball,Direct Passing,61.0
+15,23,14,2.0,70,Balanced,61.0,61.0,Balanced,Balanced,61.0
+50,23,32,2.0,70,Balanced,41.0,41.0,Long Ball,Direct Passing,61.0
+68,23,17,2.0,70,Balanced,51.0,61.0,Fast Build Up,Forward Runs,51.0
+80,23,50,1.0,70,Pressure On Heavy Touch,41.0,51.0,Slow Build Up,Possession,81.0
+97,23,14,2.0,70,Press After Possession Loss,51.0,41.0,Long Ball,Direct Passing,51.0
+159,23,20,2.0,70,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+232,23,4,1.0,70,Pressure On Heavy Touch,61.0,51.0,Fast Build Up,Forward Runs,41.0
+244,23,54,2.0,70,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,61.0
+320,23,56,1.0,70,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,61.0
+485,23,20,2.0,70,Balanced,41.0,51.0,Fast Build Up,Forward Runs,81.0
+614,23,16,1.0,70,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+634,23,10,1.0,70,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+670,23,4,1.0,70,Balanced,41.0,41.0,Slow Build Up,Possession,61.0
+687,23,39,1.0,70,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+744,23,308,1.0,70,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,51.0
+1793,23,14,2.0,70,Balanced,41.0,41.0,Long Ball,Direct Passing,51.0
+1800,23,14,2.0,70,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,71.0
+1801,23,14,2.0,70,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1806,23,14,2.0,70,Balanced,61.0,41.0,Long Ball,Direct Passing,61.0
+1815,23,16,1.0,70,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,61.0
+1819,23,17,2.0,70,Balanced,41.0,41.0,Fast Build Up,Forward Runs,61.0
+1842,23,32,2.0,70,Balanced,61.0,51.0,Slow Build Up,Possession,61.0
+1847,23,32,2.0,70,Balanced,61.0,41.0,Balanced,Balanced,51.0
+1887,23,308,1.0,70,Balanced,51.0,61.0,Balanced,Balanced,71.0
+1893,23,308,1.0,70,Balanced,71.0,41.0,Long Ball,Direct Passing,51.0
+1908,23,10,1.0,70,Press After Possession Loss,51.0,61.0,Long Ball,Direct Passing,61.0
+1952,23,14,2.0,70,Pressure On Heavy Touch,41.0,51.0,Balanced,Balanced,61.0
+2014,23,4,1.0,70,Press After Possession Loss,51.0,51.0,Long Ball,Direct Passing,61.0
+101041,23,68,1.0,70,Balanced,61.0,51.0,Long Ball,Direct Passing,71.0
+101101,23,336,1.0,70,Press After Possession Loss,51.0,51.0,Balanced,Balanced,51.0
+110502,23,20,2.0,70,Balanced,51.0,61.0,Balanced,Balanced,61.0
+110580,23,353,1.0,70,Pressure On Heavy Touch,71.0,51.0,Balanced,Balanced,71.0
+110636,23,20,2.0,70,Balanced,41.0,37.0,Fast Build Up,Forward Runs,51.0
+110738,23,32,2.0,70,Balanced,61.0,51.0,Fast Build Up,Forward Runs,51.0
+110827,23,54,2.0,70,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110935,23,347,1.0,70,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,51.0
+110975,23,335,1.0,70,Pressure On Heavy Touch,71.0,81.0,Slow Build Up,Possession,71.0
+110980,23,335,1.0,70,Balanced,61.0,41.0,Balanced,Balanced,71.0
+111019,23,353,1.0,70,Balanced,41.0,51.0,Balanced,Balanced,61.0
+111117,23,68,1.0,70,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,81.0
+111138,23,39,1.0,70,Balanced,41.0,37.0,Balanced,Balanced,61.0
+111140,23,39,1.0,70,Pressure On Heavy Touch,61.0,51.0,Fast Build Up,Forward Runs,61.0
+111339,23,68,1.0,70,Balanced,51.0,61.0,Balanced,Balanced,61.0
+111674,23,350,1.0,70,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+111708,23,353,1.0,70,Balanced,51.0,41.0,Long Ball,Direct Passing,41.0
+111710,23,353,1.0,70,Press After Possession Loss,51.0,61.0,Slow Build Up,Possession,61.0
+111722,23,336,1.0,70,Balanced,71.0,51.0,Fast Build Up,Forward Runs,71.0
+112001,23,7,1.0,70,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+112026,23,32,2.0,70,Balanced,41.0,51.0,Slow Build Up,Possession,61.0
+112134,23,39,1.0,70,Press After Possession Loss,41.0,51.0,Slow Build Up,Possession,41.0
+112809,23,308,1.0,70,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,51.0
+112828,23,39,1.0,70,Pressure On Heavy Touch,41.0,61.0,Slow Build Up,Possession,41.0
+112908,23,2018,1.0,70,Balanced,41.0,61.0,Balanced,Balanced,71.0
+115530,23,7,1.0,70,Balanced,41.0,41.0,Balanced,Balanced,61.0
+59,23,17,2.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+88,23,14,2.0,69,Balanced,51.0,41.0,Fast Build Up,Forward Runs,81.0
+165,23,20,2.0,69,Balanced,61.0,61.0,Slow Build Up,Possession,51.0
+171,23,20,2.0,69,Balanced,51.0,41.0,Balanced,Balanced,51.0
+209,23,80,1.0,69,Press After Possession Loss,71.0,51.0,Fast Build Up,Forward Runs,61.0
+252,23,80,1.0,69,Press After Possession Loss,41.0,61.0,Fast Build Up,Forward Runs,61.0
+269,23,1,1.0,69,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+459,23,54,2.0,69,Balanced,41.0,41.0,Fast Build Up,Forward Runs,61.0
+573,23,54,2.0,69,Balanced,41.0,51.0,Balanced,Balanced,51.0
+688,23,39,1.0,69,Pressure On Heavy Touch,51.0,61.0,Long Ball,Direct Passing,51.0
+689,23,39,1.0,69,Press After Possession Loss,61.0,61.0,Long Ball,Direct Passing,61.0
+691,23,39,1.0,69,Press After Possession Loss,41.0,61.0,Slow Build Up,Possession,61.0
+695,23,39,1.0,69,Pressure On Heavy Touch,41.0,71.0,Balanced,Balanced,71.0
+697,23,39,1.0,69,Balanced,71.0,51.0,Slow Build Up,Possession,81.0
+873,23,66,1.0,69,Pressure On Heavy Touch,61.0,61.0,Long Ball,Direct Passing,61.0
+894,23,189,1.0,69,Balanced,61.0,51.0,Fast Build Up,Forward Runs,81.0
+896,23,189,1.0,69,Pressure On Heavy Touch,61.0,71.0,Slow Build Up,Possession,61.0
+918,23,41,1.0,69,Press After Possession Loss,61.0,81.0,Fast Build Up,Forward Runs,71.0
+1013,23,353,1.0,69,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+1473,23,83,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1477,23,83,1.0,69,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,61.0
+1745,23,32,2.0,69,Balanced,41.0,51.0,Balanced,Balanced,41.0
+1832,23,20,2.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+1892,23,308,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+1898,23,308,1.0,69,Pressure On Heavy Touch,41.0,51.0,Long Ball,Direct Passing,51.0
+1909,23,10,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1910,23,10,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1919,23,14,2.0,69,Balanced,71.0,41.0,Balanced,Balanced,71.0
+1923,23,14,2.0,69,Pressure On Heavy Touch,51.0,51.0,Long Ball,Direct Passing,41.0
+1960,23,14,2.0,69,Balanced,51.0,61.0,Slow Build Up,Possession,61.0
+2023,23,54,2.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+10020,23,308,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+10030,23,20,2.0,69,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+10031,23,308,1.0,69,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+100081,23,4,1.0,69,Balanced,51.0,41.0,Balanced,Balanced,51.0
+100087,23,4,1.0,69,Balanced,51.0,41.0,Long Ball,Direct Passing,41.0
+100135,23,318,1.0,69,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,51.0
+100851,23,54,2.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+100888,23,54,2.0,69,Balanced,51.0,61.0,Balanced,Balanced,51.0
+101020,23,68,1.0,69,Balanced,71.0,51.0,Long Ball,Direct Passing,61.0
+101028,23,68,1.0,69,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+101033,23,68,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+101084,23,353,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+101099,23,336,1.0,69,Balanced,51.0,61.0,Fast Build Up,Forward Runs,61.0
+101102,23,336,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+101103,23,336,1.0,69,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+101108,23,337,1.0,69,Balanced,61.0,61.0,Balanced,Balanced,61.0
+101112,23,39,1.0,69,Balanced,31.0,37.0,Long Ball,Direct Passing,51.0
+110178,23,20,2.0,69,Pressure On Heavy Touch,51.0,41.0,Long Ball,Direct Passing,51.0
+110329,23,20,2.0,69,Balanced,61.0,41.0,Fast Build Up,Forward Runs,61.0
+110396,23,353,1.0,69,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+110724,23,4,1.0,69,Balanced,61.0,41.0,Balanced,Balanced,61.0
+110776,23,68,1.0,69,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+110816,23,330,1.0,69,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+110839,23,54,2.0,69,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+110930,23,347,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+110981,23,2018,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+111010,23,2020,1.0,69,Balanced,61.0,41.0,Fast Build Up,Forward Runs,51.0
+111139,23,39,1.0,69,Balanced,51.0,51.0,Slow Build Up,Possession,71.0
+111334,23,2020,1.0,69,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+111539,23,308,1.0,69,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+111651,23,39,1.0,69,Balanced,51.0,61.0,Balanced,Balanced,61.0
+111701,23,2013,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111706,23,353,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111711,23,353,1.0,69,Balanced,51.0,37.0,Fast Build Up,Forward Runs,61.0
+111715,23,353,1.0,69,Balanced,41.0,51.0,Fast Build Up,Forward Runs,51.0
+111716,23,353,1.0,69,Balanced,71.0,61.0,Long Ball,Direct Passing,61.0
+111724,23,2012,1.0,69,Balanced,51.0,51.0,Balanced,Balanced,51.0
+111817,23,17,2.0,69,Balanced,61.0,51.0,Slow Build Up,Possession,61.0
+111928,23,39,1.0,69,Press After Possession Loss,81.0,41.0,Slow Build Up,Possession,81.0
+112606,23,39,1.0,69,Balanced,61.0,51.0,Balanced,Balanced,61.0
+112689,23,353,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+112716,23,337,1.0,69,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+114161,23,39,1.0,69,Balanced,71.0,81.0,Balanced,Balanced,81.0
+114162,23,39,1.0,69,Balanced,51.0,41.0,Fast Build Up,Forward Runs,41.0
+27,23,20,2.0,68,Balanced,61.0,61.0,Long Ball,Direct Passing,61.0
+29,23,20,2.0,68,Balanced,51.0,51.0,Balanced,Balanced,61.0
+106,23,14,2.0,68,Balanced,51.0,41.0,Balanced,Balanced,61.0
+190,23,32,2.0,68,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+199,23,32,2.0,68,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+203,23,32,2.0,68,Balanced,61.0,41.0,Balanced,Balanced,61.0
+210,23,17,2.0,68,Balanced,41.0,51.0,Fast Build Up,Forward Runs,61.0
+226,23,17,2.0,68,Balanced,51.0,51.0,Balanced,Balanced,61.0
+254,23,80,1.0,68,Balanced,71.0,61.0,Slow Build Up,Possession,71.0
+308,23,330,1.0,68,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+324,23,189,1.0,68,Balanced,51.0,41.0,Balanced,Balanced,81.0
+456,23,54,2.0,68,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+518,23,308,1.0,68,Pressure On Heavy Touch,61.0,61.0,Balanced,Balanced,61.0
+543,23,20,2.0,68,Press After Possession Loss,61.0,61.0,Fast Build Up,Forward Runs,51.0
+570,23,32,2.0,68,Press After Possession Loss,71.0,61.0,Balanced,Balanced,71.0
+576,23,20,2.0,68,Balanced,61.0,41.0,Slow Build Up,Possession,61.0
+680,23,4,1.0,68,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+681,23,4,1.0,68,Balanced,41.0,41.0,Slow Build Up,Possession,51.0
+682,23,4,1.0,68,Press After Possession Loss,51.0,61.0,Long Ball,Direct Passing,51.0
+694,23,39,1.0,68,Balanced,41.0,41.0,Long Ball,Direct Passing,61.0
+696,23,39,1.0,68,Press After Possession Loss,71.0,71.0,Slow Build Up,Possession,71.0
+698,23,39,1.0,68,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,71.0
+708,23,56,1.0,68,Pressure On Heavy Touch,61.0,51.0,Fast Build Up,Forward Runs,61.0
+710,23,56,1.0,68,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+1438,23,308,1.0,68,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+1478,23,83,1.0,68,Pressure On Heavy Touch,41.0,51.0,Fast Build Up,Forward Runs,51.0
+1750,23,4,1.0,68,Press After Possession Loss,31.0,51.0,Fast Build Up,Forward Runs,41.0
+1843,23,32,2.0,68,Pressure On Heavy Touch,51.0,71.0,Slow Build Up,Possession,51.0
+1848,23,32,2.0,68,Balanced,41.0,51.0,Balanced,Balanced,41.0
+1871,23,66,1.0,68,Press After Possession Loss,51.0,71.0,Fast Build Up,Forward Runs,81.0
+1913,23,10,1.0,68,Balanced,41.0,61.0,Balanced,Balanced,61.0
+1917,23,14,2.0,68,Balanced,61.0,41.0,Long Ball,Direct Passing,61.0
+1939,23,14,2.0,68,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,61.0
+1961,23,14,2.0,68,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+10846,23,54,2.0,68,Balanced,41.0,41.0,Long Ball,Direct Passing,61.0
+100761,23,330,1.0,68,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,51.0
+110404,23,353,1.0,68,Balanced,61.0,51.0,Fast Build Up,Forward Runs,71.0
+110569,23,17,2.0,68,Balanced,41.0,41.0,Long Ball,Direct Passing,41.0
+110746,23,66,1.0,68,Balanced,51.0,71.0,Slow Build Up,Possession,81.0
+110770,23,189,1.0,68,Balanced,61.0,51.0,Balanced,Balanced,51.0
+110929,23,347,1.0,68,Press After Possession Loss,71.0,61.0,Fast Build Up,Forward Runs,71.0
+110984,23,2018,1.0,68,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,61.0
+110986,23,2018,1.0,68,Pressure On Heavy Touch,51.0,71.0,Balanced,Balanced,61.0
+111013,23,2020,1.0,68,Pressure On Heavy Touch,51.0,71.0,Slow Build Up,Possession,61.0
+111065,23,39,1.0,68,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+111235,23,20,2.0,68,Balanced,61.0,41.0,Long Ball,Direct Passing,61.0
+111657,23,32,2.0,68,Balanced,61.0,51.0,Fast Build Up,Forward Runs,71.0
+111707,23,353,1.0,68,Balanced,51.0,51.0,Balanced,Balanced,61.0
+112096,23,350,1.0,68,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112390,23,350,1.0,68,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+112513,23,308,1.0,68,Balanced,41.0,51.0,Balanced,Balanced,51.0
+112540,23,2012,1.0,68,Press After Possession Loss,51.0,81.0,Slow Build Up,Possession,61.0
+112713,23,353,1.0,68,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,61.0
+112791,23,32,2.0,68,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+112893,23,39,1.0,68,Balanced,61.0,51.0,Slow Build Up,Possession,71.0
+112965,23,353,1.0,68,Balanced,61.0,41.0,Long Ball,Direct Passing,61.0
+113044,23,353,1.0,68,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,51.0
+113149,23,39,1.0,68,Balanced,41.0,41.0,Slow Build Up,Possession,41.0
+113981,23,54,2.0,68,Balanced,51.0,41.0,Balanced,Balanced,61.0
+114326,23,66,1.0,68,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+114510,23,308,1.0,68,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+114640,23,39,1.0,68,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+62,23,17,2.0,67,Balanced,51.0,61.0,Fast Build Up,Forward Runs,61.0
+81,23,50,1.0,67,Balanced,51.0,61.0,Balanced,Balanced,61.0
+91,23,60,3.0,67,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+94,23,60,3.0,67,Press After Possession Loss,61.0,61.0,Slow Build Up,Possession,61.0
+224,23,17,2.0,67,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+256,23,80,1.0,67,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+271,23,1,1.0,67,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+298,23,41,1.0,67,Balanced,61.0,61.0,Slow Build Up,Possession,71.0
+310,23,330,1.0,67,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+417,23,41,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,61.0
+433,23,56,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+693,23,39,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,51.0
+700,23,56,1.0,67,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+820,23,1,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+897,23,189,1.0,67,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,61.0
+982,23,83,1.0,67,Press After Possession Loss,41.0,51.0,Slow Build Up,Possession,51.0
+1474,23,83,1.0,67,Balanced,41.0,51.0,Balanced,Balanced,61.0
+1744,23,32,2.0,67,Balanced,61.0,51.0,Slow Build Up,Possession,61.0
+1786,23,1,1.0,67,Balanced,61.0,51.0,Balanced,Balanced,61.0
+1797,23,14,2.0,67,Press After Possession Loss,41.0,61.0,Long Ball,Direct Passing,61.0
+1807,23,60,3.0,67,Balanced,61.0,51.0,Balanced,Balanced,81.0
+1915,23,10,1.0,67,Balanced,61.0,51.0,Fast Build Up,Forward Runs,51.0
+1926,23,14,2.0,67,Balanced,51.0,71.0,Fast Build Up,Forward Runs,81.0
+1938,23,60,3.0,67,Balanced,61.0,41.0,Slow Build Up,Possession,61.0
+2013,23,4,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,71.0
+10032,23,189,1.0,67,Balanced,61.0,41.0,Fast Build Up,Forward Runs,71.0
+15005,23,4,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+100646,23,10,1.0,67,Balanced,41.0,51.0,Fast Build Up,Forward Runs,51.0
+101110,23,338,1.0,67,Press After Possession Loss,61.0,61.0,Fast Build Up,Forward Runs,71.0
+110069,23,54,2.0,67,Press After Possession Loss,51.0,41.0,Balanced,Balanced,61.0
+110394,23,353,1.0,67,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+110456,23,17,2.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110500,23,20,2.0,67,Balanced,51.0,41.0,Long Ball,Direct Passing,71.0
+110581,23,353,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110588,23,20,2.0,67,Pressure On Heavy Touch,61.0,71.0,Slow Build Up,Possession,61.0
+110831,23,54,2.0,67,Pressure On Heavy Touch,51.0,51.0,Long Ball,Direct Passing,71.0
+110969,23,2017,1.0,67,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+111011,23,2020,1.0,67,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+111086,23,66,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112120,23,68,1.0,67,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+112168,23,32,2.0,67,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+112392,23,350,1.0,67,Balanced,61.0,51.0,Fast Build Up,Forward Runs,71.0
+112393,23,350,1.0,67,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,61.0
+112523,23,336,1.0,67,Balanced,41.0,51.0,Long Ball,Direct Passing,61.0
+112533,23,335,1.0,67,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+112584,23,335,1.0,67,Pressure On Heavy Touch,51.0,41.0,Balanced,Balanced,61.0
+113057,23,350,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,51.0
+113217,23,350,1.0,67,Balanced,41.0,41.0,Balanced,Balanced,51.0
+113796,23,68,1.0,67,Pressure On Heavy Touch,51.0,51.0,Long Ball,Direct Passing,51.0
+116361,23,2012,1.0,67,Balanced,51.0,51.0,Balanced,Balanced,51.0
+33,23,2076,3.0,66,Balanced,51.0,61.0,Balanced,Balanced,51.0
+181,23,50,1.0,66,Balanced,51.0,41.0,Slow Build Up,Possession,51.0
+270,23,1,1.0,66,Balanced,51.0,61.0,Fast Build Up,Forward Runs,41.0
+299,23,41,1.0,66,Balanced,61.0,51.0,Balanced,Balanced,61.0
+300,23,41,1.0,66,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+319,23,56,1.0,66,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+322,23,189,1.0,66,Balanced,71.0,51.0,Fast Build Up,Forward Runs,61.0
+503,23,2076,3.0,66,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+647,23,10,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,61.0
+702,23,56,1.0,66,Press After Possession Loss,51.0,71.0,Slow Build Up,Possession,61.0
+711,23,56,1.0,66,Press After Possession Loss,61.0,51.0,Fast Build Up,Forward Runs,61.0
+898,23,189,1.0,66,Press After Possession Loss,51.0,51.0,Balanced,Balanced,41.0
+920,23,41,1.0,66,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,71.0
+983,23,83,1.0,66,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1738,23,17,2.0,66,Balanced,61.0,41.0,Balanced,Balanced,61.0
+1790,23,60,3.0,66,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+1805,23,17,2.0,66,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1816,23,17,2.0,66,Balanced,71.0,37.0,Fast Build Up,Forward Runs,61.0
+1854,23,54,2.0,66,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+1905,23,10,1.0,66,Balanced,51.0,41.0,Balanced,Balanced,51.0
+1933,23,60,3.0,66,Press After Possession Loss,71.0,51.0,Long Ball,Direct Passing,71.0
+1951,23,60,3.0,66,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,71.0
+2017,23,80,1.0,66,Balanced,61.0,51.0,Fast Build Up,Forward Runs,51.0
+100628,23,10,1.0,66,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+100632,23,10,1.0,66,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+110532,23,2076,3.0,66,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,61.0
+110745,23,66,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110765,23,83,1.0,66,Balanced,71.0,41.0,Balanced,Balanced,61.0
+110974,23,2017,1.0,66,Balanced,61.0,51.0,Balanced,Balanced,51.0
+110977,23,335,1.0,66,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+110989,23,2019,1.0,66,Balanced,41.0,51.0,Long Ball,Direct Passing,51.0
+111091,23,66,1.0,66,Balanced,51.0,61.0,Balanced,Balanced,61.0
+111239,23,2076,3.0,66,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+111326,23,338,1.0,66,Balanced,51.0,51.0,Slow Build Up,Possession,81.0
+111397,23,351,1.0,66,Balanced,41.0,51.0,Balanced,Balanced,61.0
+111768,23,2012,1.0,66,Balanced,41.0,51.0,Slow Build Up,Possession,51.0
+111822,23,80,1.0,66,Pressure On Heavy Touch,41.0,51.0,Fast Build Up,Forward Runs,41.0
+112184,23,338,1.0,66,Balanced,61.0,51.0,Balanced,Balanced,71.0
+112224,23,351,1.0,66,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+112408,23,350,1.0,66,Balanced,51.0,51.0,Fast Build Up,Forward Runs,71.0
+112427,23,351,1.0,66,Press After Possession Loss,51.0,51.0,Fast Build Up,Forward Runs,61.0
+112494,23,32,2.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112535,23,335,1.0,66,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+112585,23,335,1.0,66,Pressure On Heavy Touch,61.0,51.0,Fast Build Up,Forward Runs,61.0
+113058,23,350,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+113378,23,330,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+114023,23,351,1.0,66,Balanced,51.0,51.0,Balanced,Balanced,51.0
+114512,23,2020,1.0,66,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+114577,23,2017,1.0,66,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+114579,23,2017,1.0,66,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,61.0
+114581,23,2018,1.0,66,Balanced,61.0,61.0,Balanced,Balanced,61.0
+115536,23,338,1.0,66,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+4,23,60,3.0,65,Press After Possession Loss,51.0,51.0,Slow Build Up,Possession,71.0
+77,23,50,1.0,65,Pressure On Heavy Touch,61.0,51.0,Balanced,Balanced,71.0
+83,23,50,1.0,65,Balanced,41.0,41.0,Slow Build Up,Possession,41.0
+89,23,60,3.0,65,Pressure On Heavy Touch,61.0,51.0,Balanced,Balanced,61.0
+127,23,60,3.0,65,Balanced,61.0,61.0,Long Ball,Direct Passing,71.0
+272,23,1,1.0,65,Balanced,71.0,51.0,Fast Build Up,Forward Runs,71.0
+420,23,66,1.0,65,Balanced,41.0,51.0,Fast Build Up,Forward Runs,51.0
+487,23,2076,3.0,65,Pressure On Heavy Touch,51.0,81.0,Fast Build Up,Forward Runs,71.0
+506,23,2076,3.0,65,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,71.0
+523,23,2076,3.0,65,Balanced,41.0,51.0,Long Ball,Direct Passing,71.0
+645,23,10,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+780,23,80,1.0,65,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+981,23,83,1.0,65,Balanced,41.0,41.0,Slow Build Up,Possession,61.0
+1443,23,1,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,71.0
+1569,23,66,1.0,65,Balanced,61.0,51.0,Balanced,Balanced,71.0
+1787,23,80,1.0,65,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+1788,23,1,1.0,65,Balanced,51.0,61.0,Slow Build Up,Possession,61.0
+1798,23,60,3.0,65,Balanced,51.0,61.0,Slow Build Up,Possession,71.0
+1813,23,17,2.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+1814,23,17,2.0,65,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+1929,23,60,3.0,65,Balanced,61.0,61.0,Slow Build Up,Possession,61.0
+1932,23,60,3.0,65,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,41.0
+1971,23,10,1.0,65,Balanced,41.0,41.0,Long Ball,Direct Passing,41.0
+2056,23,83,1.0,65,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+100325,23,322,1.0,65,Press After Possession Loss,61.0,51.0,Slow Build Up,Possession,61.0
+100804,23,50,1.0,65,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,61.0
+110075,23,330,1.0,65,Balanced,51.0,61.0,Balanced,Balanced,51.0
+110321,23,17,2.0,65,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+110747,23,66,1.0,65,Balanced,61.0,41.0,Long Ball,Direct Passing,71.0
+110749,23,66,1.0,65,Balanced,61.0,61.0,Long Ball,Direct Passing,71.0
+110750,23,330,1.0,65,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+110902,23,54,2.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+110955,23,2012,1.0,65,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+110990,23,2019,1.0,65,Balanced,61.0,61.0,Balanced,Balanced,51.0
+111001,23,338,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,71.0
+111016,23,2020,1.0,65,Balanced,61.0,37.0,Slow Build Up,Possession,51.0
+111088,23,66,1.0,65,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,61.0
+111092,23,66,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+111332,23,2019,1.0,65,Balanced,71.0,51.0,Slow Build Up,Possession,71.0
+111400,23,351,1.0,65,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+111659,23,17,2.0,65,Balanced,41.0,51.0,Long Ball,Direct Passing,71.0
+111766,23,351,1.0,65,Balanced,61.0,41.0,Fast Build Up,Forward Runs,61.0
+111769,23,2012,1.0,65,Balanced,41.0,37.0,Long Ball,Direct Passing,41.0
+111779,23,2012,1.0,65,Balanced,41.0,41.0,Fast Build Up,Forward Runs,61.0
+111993,23,32,2.0,65,Balanced,61.0,51.0,Slow Build Up,Possession,61.0
+112115,23,83,1.0,65,Pressure On Heavy Touch,71.0,51.0,Slow Build Up,Possession,71.0
+112199,23,41,1.0,65,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+112505,23,66,1.0,65,Balanced,51.0,41.0,Balanced,Balanced,61.0
+112552,23,17,2.0,65,Balanced,41.0,41.0,Long Ball,Direct Passing,61.0
+112558,23,83,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+112572,23,350,1.0,65,Balanced,51.0,41.0,Long Ball,Direct Passing,51.0
+112671,23,337,1.0,65,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+112695,23,4,1.0,65,Balanced,51.0,41.0,Balanced,Balanced,51.0
+112853,23,2019,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+112914,23,2019,1.0,65,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+113182,23,330,1.0,65,Balanced,61.0,41.0,Long Ball,Direct Passing,51.0
+114554,23,54,2.0,65,Balanced,61.0,41.0,Long Ball,Direct Passing,51.0
+114580,23,2018,1.0,65,Pressure On Heavy Touch,61.0,51.0,Long Ball,Direct Passing,51.0
+114600,23,2017,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,51.0
+114615,23,2018,1.0,65,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,61.0
+114688,23,337,1.0,65,Balanced,61.0,41.0,Long Ball,Direct Passing,61.0
+115487,23,2018,1.0,65,Balanced,51.0,51.0,Balanced,Balanced,61.0
+115694,23,2019,1.0,65,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+115716,23,330,1.0,65,Balanced,51.0,61.0,Slow Build Up,Possession,51.0
+58,23,17,2.0,64,Balanced,51.0,51.0,Balanced,Balanced,61.0
+301,23,66,1.0,64,Balanced,71.0,51.0,Fast Build Up,Forward Runs,71.0
+492,23,2076,3.0,64,Balanced,51.0,61.0,Balanced,Balanced,51.0
+526,23,2076,3.0,64,Balanced,51.0,61.0,Long Ball,Direct Passing,61.0
+561,23,60,3.0,64,Pressure On Heavy Touch,51.0,61.0,Balanced,Balanced,61.0
+621,23,50,1.0,64,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+631,23,50,1.0,64,Pressure On Heavy Touch,41.0,37.0,Long Ball,Direct Passing,51.0
+746,23,68,1.0,64,Pressure On Heavy Touch,51.0,51.0,Fast Build Up,Forward Runs,51.0
+922,23,41,1.0,64,Pressure On Heavy Touch,51.0,61.0,Long Ball,Direct Passing,61.0
+1439,23,56,1.0,64,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,61.0
+1456,23,41,1.0,64,Pressure On Heavy Touch,61.0,61.0,Balanced,Balanced,51.0
+1755,23,41,1.0,64,Balanced,71.0,61.0,Slow Build Up,Possession,61.0
+1825,23,2076,3.0,64,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+1944,23,60,3.0,64,Balanced,41.0,41.0,Balanced,Balanced,41.0
+1962,23,60,3.0,64,Balanced,51.0,61.0,Slow Build Up,Possession,71.0
+15009,23,80,1.0,64,Balanced,51.0,41.0,Balanced,Balanced,51.0
+15015,23,60,3.0,64,Pressure On Heavy Touch,41.0,51.0,Long Ball,Direct Passing,61.0
+15040,23,80,1.0,64,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+100759,23,330,1.0,64,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+100805,23,50,1.0,64,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+110078,23,330,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+110592,23,2076,3.0,64,Pressure On Heavy Touch,61.0,51.0,Long Ball,Direct Passing,71.0
+110597,23,2076,3.0,64,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+110645,23,2076,3.0,64,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,71.0
+110751,23,330,1.0,64,Balanced,51.0,51.0,Long Ball,Direct Passing,51.0
+110752,23,330,1.0,64,Balanced,61.0,41.0,Balanced,Balanced,61.0
+110970,23,2017,1.0,64,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+111393,23,351,1.0,64,Balanced,61.0,61.0,Balanced,Balanced,71.0
+111773,23,2012,1.0,64,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+112260,23,60,3.0,64,Balanced,61.0,41.0,Balanced,Balanced,61.0
+112511,23,66,1.0,64,Balanced,61.0,41.0,Fast Build Up,Forward Runs,61.0
+112883,23,350,1.0,64,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+113345,23,350,1.0,64,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+113387,23,330,1.0,64,Pressure On Heavy Touch,51.0,41.0,Long Ball,Direct Passing,61.0
+115494,23,17,2.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+115517,23,2017,1.0,64,Balanced,51.0,51.0,Balanced,Balanced,51.0
+82,23,50,1.0,63,Balanced,41.0,51.0,Balanced,Balanced,51.0
+142,23,61,4.0,63,Balanced,51.0,51.0,Balanced,Balanced,61.0
+143,23,60,3.0,63,Balanced,51.0,51.0,Long Ball,Direct Passing,71.0
+149,23,60,3.0,63,Balanced,41.0,41.0,Slow Build Up,Possession,51.0
+306,23,65,1.0,63,Balanced,61.0,71.0,Slow Build Up,Possession,71.0
+357,23,60,3.0,63,Balanced,41.0,37.0,Long Ball,Direct Passing,51.0
+418,23,41,1.0,63,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,61.0
+432,23,56,1.0,63,Balanced,41.0,51.0,Balanced,Balanced,51.0
+580,23,2076,3.0,63,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,51.0
+781,23,80,1.0,63,Pressure On Heavy Touch,51.0,41.0,Long Ball,Direct Passing,51.0
+1446,23,1,1.0,63,Balanced,51.0,37.0,Balanced,Balanced,61.0
+1463,23,41,1.0,63,Balanced,51.0,51.0,Balanced,Balanced,61.0
+1596,23,56,1.0,63,Balanced,41.0,51.0,Slow Build Up,Possession,51.0
+1713,23,189,1.0,63,Balanced,61.0,37.0,Long Ball,Direct Passing,61.0
+1756,23,41,1.0,63,Balanced,51.0,41.0,Fast Build Up,Forward Runs,61.0
+1757,23,41,1.0,63,Balanced,51.0,41.0,Balanced,Balanced,51.0
+1804,23,61,4.0,63,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+1928,23,60,3.0,63,Balanced,41.0,61.0,Balanced,Balanced,61.0
+1930,23,61,4.0,63,Pressure On Heavy Touch,41.0,61.0,Long Ball,Direct Passing,61.0
+1936,23,60,3.0,63,Balanced,71.0,41.0,Balanced,Balanced,61.0
+1940,23,61,4.0,63,Press After Possession Loss,41.0,71.0,Fast Build Up,Forward Runs,51.0
+2055,23,83,1.0,63,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+15001,23,1,1.0,63,Press After Possession Loss,51.0,61.0,Fast Build Up,Forward Runs,61.0
+110482,23,2076,3.0,63,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+110587,23,2076,3.0,63,Balanced,51.0,61.0,Long Ball,Direct Passing,61.0
+110676,23,2076,3.0,63,Pressure On Heavy Touch,41.0,61.0,Long Ball,Direct Passing,51.0
+111083,23,66,1.0,63,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+111396,23,351,1.0,63,Balanced,61.0,51.0,Balanced,Balanced,61.0
+111398,23,351,1.0,63,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+111399,23,351,1.0,63,Balanced,51.0,41.0,Balanced,Balanced,61.0
+112080,23,337,1.0,63,Balanced,61.0,61.0,Long Ball,Direct Passing,51.0
+112163,23,2012,1.0,63,Balanced,61.0,51.0,Balanced,Balanced,61.0
+113458,23,56,1.0,63,Pressure On Heavy Touch,51.0,61.0,Slow Build Up,Possession,51.0
+113459,23,41,1.0,63,Balanced,41.0,41.0,Fast Build Up,Forward Runs,41.0
+113926,23,61,4.0,63,Balanced,61.0,51.0,Balanced,Balanced,71.0
+114004,23,66,1.0,63,Pressure On Heavy Touch,61.0,41.0,Balanced,Balanced,71.0
+114147,23,330,1.0,63,Balanced,61.0,51.0,Fast Build Up,Forward Runs,61.0
+114604,23,351,1.0,63,Balanced,41.0,41.0,Balanced,Balanced,71.0
+116007,23,337,1.0,63,Balanced,51.0,51.0,Slow Build Up,Possession,51.0
+116360,23,2012,1.0,63,Balanced,51.0,51.0,Balanced,Balanced,51.0
+361,23,61,4.0,62,Balanced,51.0,51.0,Slow Build Up,Possession,61.0
+1802,23,61,4.0,62,Balanced,41.0,51.0,Long Ball,Direct Passing,51.0
+1803,23,61,4.0,62,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+1931,23,61,4.0,62,Balanced,51.0,61.0,Balanced,Balanced,61.0
+1935,23,61,4.0,62,Balanced,51.0,41.0,Balanced,Balanced,51.0
+1947,23,62,5.0,62,Balanced,51.0,61.0,Long Ball,Direct Passing,71.0
+1958,23,61,4.0,62,Balanced,41.0,51.0,Slow Build Up,Possession,41.0
+15048,23,61,4.0,62,Pressure On Heavy Touch,61.0,61.0,Balanced,Balanced,61.0
+110194,23,2076,3.0,62,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+110313,23,60,3.0,62,Balanced,61.0,51.0,Long Ball,Direct Passing,61.0
+110501,23,2076,3.0,62,Pressure On Heavy Touch,61.0,61.0,Slow Build Up,Possession,51.0
+110890,23,61,4.0,62,Balanced,61.0,51.0,Balanced,Balanced,51.0
+111395,23,351,1.0,62,Balanced,51.0,41.0,Fast Build Up,Forward Runs,71.0
+112072,23,56,1.0,62,Balanced,41.0,51.0,Balanced,Balanced,61.0
+112126,23,56,1.0,62,Balanced,41.0,41.0,Fast Build Up,Forward Runs,51.0
+112222,23,61,4.0,62,Balanced,51.0,41.0,Balanced,Balanced,51.0
+112259,23,61,4.0,62,Balanced,41.0,51.0,Balanced,Balanced,41.0
+112541,23,2012,1.0,62,Balanced,51.0,51.0,Balanced,Balanced,51.0
+112985,23,2012,1.0,62,Balanced,41.0,51.0,Balanced,Balanced,51.0
+113146,23,2149,1.0,62,Pressure On Heavy Touch,51.0,61.0,Fast Build Up,Forward Runs,71.0
+113380,23,330,1.0,62,Balanced,51.0,41.0,Long Ball,Direct Passing,51.0
+113743,23,56,1.0,62,Balanced,71.0,41.0,Long Ball,Direct Passing,71.0
+113892,23,56,1.0,62,Balanced,61.0,51.0,Slow Build Up,Possession,51.0
+115489,23,41,1.0,62,Balanced,51.0,41.0,Long Ball,Direct Passing,51.0
+92,23,61,4.0,61,Balanced,51.0,51.0,Balanced,Balanced,61.0
+121,23,61,4.0,61,Balanced,61.0,41.0,Slow Build Up,Possession,61.0
+381,23,61,4.0,61,Balanced,51.0,51.0,Slow Build Up,Possession,71.0
+423,23,65,1.0,61,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+1480,23,61,4.0,61,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+1934,23,61,4.0,61,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,71.0
+1941,23,61,4.0,61,Balanced,51.0,41.0,Long Ball,Direct Passing,61.0
+1955,23,61,4.0,61,Balanced,51.0,41.0,Slow Build Up,Possession,61.0
+110691,23,2076,3.0,61,Balanced,51.0,37.0,Fast Build Up,Forward Runs,61.0
+110799,23,61,4.0,61,Balanced,51.0,41.0,Fast Build Up,Forward Runs,51.0
+111774,23,2012,1.0,61,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,61.0
+112254,23,61,4.0,61,Balanced,41.0,51.0,Slow Build Up,Possession,81.0
+112429,23,2012,1.0,61,Balanced,51.0,41.0,Slow Build Up,Possession,61.0
+113299,23,2149,1.0,61,Pressure On Heavy Touch,51.0,51.0,Slow Build Up,Possession,61.0
+113300,23,2149,1.0,61,Pressure On Heavy Touch,51.0,51.0,Balanced,Balanced,61.0
+113302,23,2149,1.0,61,Pressure On Heavy Touch,61.0,61.0,Fast Build Up,Forward Runs,51.0
+114628,23,2012,1.0,61,Balanced,51.0,51.0,Balanced,Balanced,51.0
+305,23,65,1.0,60,Balanced,41.0,51.0,Balanced,Balanced,61.0
+445,23,65,1.0,60,Balanced,51.0,51.0,Balanced,Balanced,61.0
+563,23,65,1.0,60,Press After Possession Loss,41.0,51.0,Slow Build Up,Possession,41.0
+837,23,65,1.0,60,Pressure On Heavy Touch,51.0,71.0,Balanced,Balanced,71.0
+111839,23,2012,1.0,60,Press After Possession Loss,51.0,61.0,Balanced,Balanced,61.0
+113301,23,2149,1.0,60,Balanced,61.0,51.0,Fast Build Up,Forward Runs,51.0
+112378,23,2012,1.0,59,Balanced,61.0,41.0,Balanced,Balanced,61.0
+112990,23,350,1.0,59,Balanced,41.0,41.0,Long Ball,Direct Passing,41.0
+113297,23,2149,1.0,59,Balanced,51.0,51.0,Fast Build Up,Forward Runs,61.0
+113298,23,2149,1.0,59,Pressure On Heavy Touch,61.0,51.0,Slow Build Up,Possession,61.0
+834,23,65,1.0,58,Balanced,61.0,51.0,Slow Build Up,Possession,71.0
+113257,23,2149,1.0,58,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+114168,23,2149,1.0,58,Balanced,51.0,51.0,Fast Build Up,Forward Runs,51.0
+1572,23,65,1.0,57,Pressure On Heavy Touch,61.0,51.0,Long Ball,Direct Passing,61.0
+111131,23,65,1.0,57,Balanced,41.0,41.0,Balanced,Balanced,61.0
+111629,23,2149,1.0,57,Pressure On Heavy Touch,61.0,51.0,Long Ball,Direct Passing,61.0
+113040,23,2149,1.0,56,Balanced,61.0,61.0,Fast Build Up,Forward Runs,51.0
+111132,23,65,1.0,55,Balanced,51.0,51.0,Long Ball,Direct Passing,61.0
+112978,23,2012,1.0,55,Balanced,61.0,51.0,Fast Build Up,Forward Runs,51.0
+73,22,16,1.0,86,Press After Possession Loss,60.0,70.0,Slow Build Up,Possession,60.0
+10,22,13,1.0,85,Pressure On Heavy Touch,70.0,80.0,Slow Build Up,Possession,60.0
+9,22,13,1.0,84,Press After Possession Loss,60.0,70.0,Slow Build Up,Possession,70.0
+11,22,13,1.0,84,Pressure On Heavy Touch,40.0,50.0,Slow Build Up,Possession,60.0
+21,22,19,1.0,84,Pressure On Heavy Touch,40.0,80.0,Slow Build Up,Possession,80.0
+240,22,53,1.0,84,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,40.0
+243,22,53,1.0,84,Balanced,50.0,80.0,Slow Build Up,Possession,50.0
+5,22,13,1.0,83,Balanced,60.0,70.0,Slow Build Up,Possession,50.0
+45,22,31,1.0,83,Balanced,50.0,70.0,Slow Build Up,Possession,60.0
+241,22,53,1.0,83,Balanced,60.0,80.0,Slow Build Up,Possession,30.0
+18,22,13,1.0,82,Balanced,50.0,40.0,Slow Build Up,Possession,50.0
+44,22,31,1.0,82,Balanced,60.0,70.0,Slow Build Up,Possession,60.0
+481,22,53,1.0,82,Pressure On Heavy Touch,70.0,70.0,Slow Build Up,Possession,80.0
+22,22,19,1.0,81,Press After Possession Loss,50.0,70.0,Fast Build Up,Forward Runs,40.0
+39,22,31,1.0,80,Balanced,50.0,80.0,Fast Build Up,Forward Runs,60.0
+46,22,31,1.0,80,Press After Possession Loss,60.0,60.0,Fast Build Up,Forward Runs,70.0
+47,22,31,1.0,80,Balanced,50.0,50.0,Balanced,Balanced,50.0
+48,22,31,1.0,80,Balanced,50.0,60.0,Balanced,Balanced,70.0
+95,22,13,1.0,80,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+457,22,53,1.0,80,Balanced,40.0,50.0,Slow Build Up,Possession,60.0
+483,22,53,1.0,80,Balanced,60.0,50.0,Balanced,Balanced,60.0
+112172,22,19,1.0,80,Press After Possession Loss,50.0,80.0,Fast Build Up,Forward Runs,30.0
+1,22,13,1.0,79,Balanced,50.0,40.0,Slow Build Up,Possession,60.0
+7,22,13,1.0,79,Balanced,60.0,50.0,Balanced,Balanced,60.0
+19,22,13,1.0,79,Drop Back,50.0,50.0,Balanced,Balanced,70.0
+23,22,19,1.0,79,Pressure On Heavy Touch,70.0,60.0,Balanced,Balanced,60.0
+52,22,31,1.0,79,Balanced,40.0,50.0,Balanced,Balanced,60.0
+66,22,16,1.0,79,Pressure On Heavy Touch,40.0,50.0,Slow Build Up,Possession,50.0
+234,22,308,1.0,79,Pressure On Heavy Touch,40.0,50.0,Slow Build Up,Possession,60.0
+448,22,53,1.0,79,Balanced,50.0,50.0,Fast Build Up,Forward Runs,70.0
+449,22,53,1.0,79,Press After Possession Loss,60.0,70.0,Slow Build Up,Possession,60.0
+2,22,13,1.0,78,Balanced,50.0,60.0,Fast Build Up,Forward Runs,50.0
+32,22,19,1.0,78,Press After Possession Loss,50.0,70.0,Fast Build Up,Forward Runs,80.0
+65,22,16,1.0,78,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,70.0
+69,22,16,1.0,78,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,60.0
+110,22,13,1.0,78,Drop Back,70.0,50.0,Balanced,Balanced,80.0
+175,22,19,1.0,78,Pressure On Heavy Touch,70.0,50.0,Slow Build Up,Possession,60.0
+219,22,16,1.0,78,Pressure On Heavy Touch,60.0,50.0,Balanced,Balanced,60.0
+236,22,308,1.0,78,Press After Possession Loss,40.0,60.0,Balanced,Balanced,60.0
+237,22,308,1.0,78,Pressure On Heavy Touch,50.0,50.0,Long Ball,Direct Passing,60.0
+245,22,10,1.0,78,Pressure On Heavy Touch,60.0,80.0,Slow Build Up,Possession,70.0
+461,22,53,1.0,78,Balanced,40.0,40.0,Balanced,Balanced,40.0
+8,22,13,1.0,77,Press After Possession Loss,60.0,60.0,Balanced,Balanced,60.0
+1824,22,19,1.0,77,Press After Possession Loss,60.0,60.0,Fast Build Up,Forward Runs,60.0
+1853,22,53,1.0,77,Balanced,50.0,60.0,Balanced,Balanced,70.0
+110832,22,53,1.0,77,Drop Back,40.0,50.0,Fast Build Up,Forward Runs,70.0
+13,22,13,1.0,76,Drop Back,40.0,30.0,Fast Build Up,Forward Runs,60.0
+17,22,13,1.0,76,Balanced,50.0,50.0,Balanced,Balanced,50.0
+54,22,31,1.0,76,Balanced,30.0,40.0,Fast Build Up,Forward Runs,60.0
+72,22,16,1.0,76,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,70.0
+74,22,16,1.0,76,Balanced,50.0,50.0,Balanced,Balanced,50.0
+247,22,10,1.0,76,Pressure On Heavy Touch,50.0,70.0,Balanced,Balanced,50.0
+280,22,63,1.0,76,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,70.0
+450,22,53,1.0,76,Pressure On Heavy Touch,70.0,60.0,Balanced,Balanced,40.0
+452,22,53,1.0,76,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+479,22,53,1.0,76,Drop Back,70.0,70.0,Fast Build Up,Forward Runs,60.0
+1043,22,7,1.0,76,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,60.0
+1796,22,13,1.0,76,Balanced,40.0,50.0,Long Ball,Direct Passing,50.0
+1799,22,13,1.0,76,Balanced,50.0,60.0,Fast Build Up,Forward Runs,50.0
+1808,22,13,1.0,76,Balanced,60.0,50.0,Balanced,Balanced,70.0
+1860,22,53,1.0,76,Pressure On Heavy Touch,40.0,70.0,Fast Build Up,Forward Runs,70.0
+10029,22,19,1.0,76,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+110374,22,31,1.0,76,Balanced,40.0,50.0,Balanced,Balanced,60.0
+166,22,19,1.0,75,Balanced,50.0,40.0,Balanced,Balanced,50.0
+189,22,31,1.0,75,Balanced,60.0,60.0,Fast Build Up,Forward Runs,60.0
+206,22,31,1.0,75,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,60.0
+231,22,4,1.0,75,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,60.0
+266,22,319,1.0,75,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,70.0
+326,22,68,1.0,75,Balanced,60.0,60.0,Slow Build Up,Possession,60.0
+327,22,68,1.0,75,Pressure On Heavy Touch,40.0,70.0,Slow Build Up,Possession,70.0
+468,22,53,1.0,75,Drop Back,50.0,50.0,Long Ball,Direct Passing,50.0
+1032,22,341,1.0,75,Press After Possession Loss,60.0,60.0,Fast Build Up,Forward Runs,60.0
+1035,22,7,1.0,75,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,70.0
+1795,22,13,1.0,75,Balanced,50.0,50.0,Fast Build Up,Forward Runs,70.0
+1837,22,31,1.0,75,Balanced,50.0,60.0,Long Ball,Direct Passing,60.0
+1842,22,31,1.0,75,Balanced,50.0,50.0,Balanced,Balanced,60.0
+1876,22,353,1.0,75,Press After Possession Loss,50.0,70.0,Slow Build Up,Possession,60.0
+1877,22,353,1.0,75,Balanced,50.0,60.0,Fast Build Up,Forward Runs,70.0
+1896,22,308,1.0,75,Pressure On Heavy Touch,40.0,50.0,Long Ball,Direct Passing,60.0
+1970,22,341,1.0,75,Balanced,70.0,70.0,Slow Build Up,Possession,70.0
+101059,22,332,1.0,75,Pressure On Heavy Touch,40.0,60.0,Slow Build Up,Possession,50.0
+111974,22,31,1.0,75,Pressure On Heavy Touch,40.0,50.0,Slow Build Up,Possession,50.0
+25,22,19,1.0,74,Balanced,40.0,50.0,Balanced,Balanced,40.0
+36,22,19,1.0,74,Balanced,50.0,60.0,Balanced,Balanced,70.0
+55,22,31,1.0,74,Balanced,60.0,50.0,Slow Build Up,Possession,70.0
+59,22,16,1.0,74,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+64,22,16,1.0,74,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,60.0
+70,22,16,1.0,74,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+76,22,16,1.0,74,Balanced,40.0,70.0,Balanced,Balanced,70.0
+86,22,50,1.0,74,Press After Possession Loss,50.0,70.0,Slow Build Up,Possession,50.0
+144,22,14,2.0,74,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,80.0
+246,22,10,1.0,74,Press After Possession Loss,60.0,60.0,Balanced,Balanced,60.0
+325,22,68,1.0,74,Balanced,50.0,70.0,Slow Build Up,Possession,60.0
+383,22,7,1.0,74,Pressure On Heavy Touch,40.0,70.0,Balanced,Balanced,60.0
+436,22,68,1.0,74,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,60.0
+453,22,53,1.0,74,Drop Back,50.0,50.0,Balanced,Balanced,60.0
+462,22,54,2.0,74,Balanced,50.0,60.0,Long Ball,Direct Passing,60.0
+463,22,53,1.0,74,Drop Back,50.0,30.0,Long Ball,Direct Passing,70.0
+480,22,53,1.0,74,Balanced,60.0,70.0,Slow Build Up,Possession,60.0
+598,22,7,1.0,74,Pressure On Heavy Touch,40.0,70.0,Slow Build Up,Possession,60.0
+1048,22,7,1.0,74,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+1530,22,16,1.0,74,Drop Back,40.0,50.0,Balanced,Balanced,60.0
+1792,22,13,1.0,74,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+1831,22,19,1.0,74,Balanced,40.0,50.0,Long Ball,Direct Passing,60.0
+1878,22,341,1.0,74,Press After Possession Loss,60.0,60.0,Long Ball,Direct Passing,60.0
+1879,22,341,1.0,74,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,60.0
+1968,22,53,1.0,74,Drop Back,70.0,50.0,Long Ball,Direct Passing,80.0
+100409,22,19,1.0,74,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+100765,22,67,1.0,74,Pressure On Heavy Touch,50.0,70.0,Balanced,Balanced,50.0
+100767,22,67,1.0,74,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,60.0
+101047,22,332,1.0,74,Pressure On Heavy Touch,60.0,50.0,Balanced,Balanced,60.0
+110556,22,31,1.0,74,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,70.0
+112472,22,7,1.0,74,Press After Possession Loss,60.0,60.0,Balanced,Balanced,70.0
+31,22,19,1.0,73,Drop Back,40.0,40.0,Long Ball,Direct Passing,60.0
+68,22,16,1.0,73,Balanced,50.0,60.0,Fast Build Up,Forward Runs,50.0
+71,22,16,1.0,73,Balanced,40.0,40.0,Balanced,Balanced,70.0
+169,22,19,1.0,73,Pressure On Heavy Touch,50.0,60.0,Long Ball,Direct Passing,60.0
+211,22,317,1.0,73,Balanced,50.0,50.0,Balanced,Balanced,60.0
+267,22,319,1.0,73,Balanced,60.0,50.0,Balanced,Balanced,50.0
+278,22,63,1.0,73,Drop Back,50.0,50.0,Balanced,Balanced,60.0
+315,22,67,1.0,73,Balanced,40.0,60.0,Slow Build Up,Possession,50.0
+378,22,16,1.0,73,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,70.0
+379,22,16,1.0,73,Drop Back,60.0,40.0,Balanced,Balanced,70.0
+393,22,63,1.0,73,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+605,22,350,1.0,73,Press After Possession Loss,70.0,60.0,Slow Build Up,Possession,80.0
+673,22,4,1.0,73,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,60.0
+1039,22,7,1.0,73,Balanced,50.0,60.0,Slow Build Up,Possession,50.0
+1041,22,7,1.0,73,Balanced,50.0,60.0,Balanced,Balanced,50.0
+1053,22,7,1.0,73,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,60.0
+1629,22,7,1.0,73,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,60.0
+1794,22,14,2.0,73,Balanced,60.0,60.0,Fast Build Up,Forward Runs,60.0
+1819,22,16,1.0,73,Balanced,40.0,40.0,Balanced,Balanced,60.0
+1925,22,13,1.0,73,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,60.0
+1943,22,14,2.0,73,Balanced,50.0,40.0,Slow Build Up,Possession,70.0
+101014,22,68,1.0,73,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+101085,22,353,1.0,73,Balanced,60.0,70.0,Balanced,Balanced,60.0
+101088,22,353,1.0,73,Balanced,60.0,60.0,Balanced,Balanced,60.0
+110781,22,341,1.0,73,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,70.0
+111008,22,337,1.0,73,Balanced,50.0,30.0,Slow Build Up,Possession,60.0
+111117,22,68,1.0,73,Balanced,50.0,50.0,Slow Build Up,Possession,80.0
+38,22,20,2.0,72,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+78,22,50,1.0,72,Press After Possession Loss,60.0,80.0,Slow Build Up,Possession,40.0
+109,22,14,2.0,72,Press After Possession Loss,50.0,60.0,Fast Build Up,Forward Runs,60.0
+159,22,19,1.0,72,Pressure On Heavy Touch,60.0,60.0,Long Ball,Direct Passing,60.0
+160,22,19,1.0,72,Balanced,40.0,60.0,Balanced,Balanced,70.0
+191,22,80,1.0,72,Press After Possession Loss,50.0,70.0,Slow Build Up,Possession,60.0
+229,22,4,1.0,72,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,60.0
+230,22,4,1.0,72,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,50.0
+294,22,16,1.0,72,Balanced,40.0,50.0,Balanced,Balanced,60.0
+467,22,54,2.0,72,Press After Possession Loss,50.0,80.0,Fast Build Up,Forward Runs,60.0
+567,22,7,1.0,72,Drop Back,60.0,50.0,Slow Build Up,Possession,60.0
+674,22,4,1.0,72,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,60.0
+900,22,189,1.0,72,Press After Possession Loss,50.0,60.0,Fast Build Up,Forward Runs,70.0
+1793,22,14,2.0,72,Balanced,50.0,50.0,Balanced,Balanced,40.0
+1861,22,54,2.0,72,Balanced,40.0,50.0,Slow Build Up,Possession,70.0
+1884,22,63,1.0,72,Drop Back,50.0,60.0,Slow Build Up,Possession,60.0
+1887,22,308,1.0,72,Drop Back,40.0,40.0,Balanced,Balanced,60.0
+1906,22,10,1.0,72,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,50.0
+100888,22,54,2.0,72,Balanced,50.0,60.0,Balanced,Balanced,50.0
+110093,22,353,1.0,72,Balanced,50.0,50.0,Slow Build Up,Possession,70.0
+110144,22,341,1.0,72,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+110406,22,353,1.0,72,Balanced,40.0,50.0,Fast Build Up,Forward Runs,60.0
+111052,22,7,1.0,72,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+111059,22,7,1.0,72,Balanced,50.0,50.0,Balanced,Balanced,70.0
+112139,22,350,1.0,72,Pressure On Heavy Touch,40.0,60.0,Slow Build Up,Possession,60.0
+113142,22,68,1.0,72,Press After Possession Loss,50.0,50.0,Balanced,Balanced,60.0
+34,22,20,2.0,71,Balanced,40.0,50.0,Fast Build Up,Forward Runs,70.0
+50,22,32,2.0,71,Drop Back,40.0,40.0,Long Ball,Direct Passing,60.0
+165,22,19,1.0,71,Balanced,50.0,60.0,Slow Build Up,Possession,40.0
+217,22,16,1.0,71,Pressure On Heavy Touch,60.0,50.0,Fast Build Up,Forward Runs,60.0
+232,22,4,1.0,71,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,40.0
+687,22,39,1.0,71,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+819,22,1,1.0,71,Balanced,50.0,60.0,Balanced,Balanced,50.0
+896,22,189,1.0,71,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,50.0
+1598,22,7,1.0,71,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+1746,22,31,1.0,71,Press After Possession Loss,40.0,70.0,Slow Build Up,Possession,50.0
+1815,22,16,1.0,71,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,70.0
+1874,22,64,1.0,71,Press After Possession Loss,50.0,50.0,Fast Build Up,Forward Runs,50.0
+1880,22,341,1.0,71,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+1882,22,341,1.0,71,Balanced,60.0,60.0,Fast Build Up,Forward Runs,60.0
+1892,22,308,1.0,71,Balanced,50.0,40.0,Fast Build Up,Forward Runs,70.0
+101016,22,68,1.0,71,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+101037,22,68,1.0,71,Balanced,60.0,40.0,Balanced,Balanced,50.0
+101041,22,68,1.0,71,Balanced,70.0,60.0,Fast Build Up,Forward Runs,70.0
+101108,22,337,1.0,71,Balanced,70.0,60.0,Balanced,Balanced,70.0
+110062,22,54,2.0,71,Balanced,40.0,50.0,Slow Build Up,Possession,50.0
+110147,22,341,1.0,71,Balanced,70.0,50.0,Slow Build Up,Possession,60.0
+110395,22,353,1.0,71,Balanced,50.0,50.0,Balanced,Balanced,60.0
+110468,22,319,1.0,71,Balanced,50.0,50.0,Balanced,Balanced,70.0
+110741,22,31,1.0,71,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+110839,22,54,2.0,71,Balanced,60.0,50.0,Balanced,Balanced,60.0
+111019,22,353,1.0,71,Balanced,50.0,50.0,Balanced,Balanced,50.0
+111140,22,39,1.0,71,Drop Back,60.0,50.0,Fast Build Up,Forward Runs,60.0
+111144,22,39,1.0,71,Balanced,40.0,50.0,Balanced,Balanced,40.0
+111678,22,341,1.0,71,Balanced,50.0,50.0,Balanced,Balanced,60.0
+111710,22,353,1.0,71,Balanced,50.0,60.0,Slow Build Up,Possession,60.0
+112119,22,7,1.0,71,Balanced,40.0,40.0,Fast Build Up,Forward Runs,70.0
+112606,22,39,1.0,71,Drop Back,60.0,50.0,Balanced,Balanced,60.0
+112670,22,353,1.0,71,Balanced,70.0,50.0,Balanced,Balanced,70.0
+112893,22,39,1.0,71,Balanced,60.0,50.0,Slow Build Up,Possession,70.0
+12,22,14,2.0,70,Balanced,50.0,30.0,Fast Build Up,Forward Runs,50.0
+14,22,14,2.0,70,Balanced,50.0,30.0,Balanced,Balanced,50.0
+15,22,14,2.0,70,Balanced,60.0,60.0,Balanced,Balanced,60.0
+28,22,20,2.0,70,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,70.0
+88,22,14,2.0,70,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,80.0
+97,22,14,2.0,70,Balanced,50.0,40.0,Long Ball,Direct Passing,60.0
+205,22,31,1.0,70,Balanced,60.0,50.0,Slow Build Up,Possession,70.0
+224,22,17,2.0,70,Press After Possession Loss,50.0,50.0,Fast Build Up,Forward Runs,60.0
+244,22,54,2.0,70,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+252,22,80,1.0,70,Press After Possession Loss,40.0,60.0,Fast Build Up,Forward Runs,50.0
+260,22,54,2.0,70,Pressure On Heavy Touch,70.0,60.0,Balanced,Balanced,50.0
+263,22,317,1.0,70,Drop Back,50.0,50.0,Slow Build Up,Possession,50.0
+320,22,56,1.0,70,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,60.0
+459,22,54,2.0,70,Balanced,40.0,40.0,Balanced,Balanced,60.0
+472,22,54,2.0,70,Balanced,40.0,60.0,Slow Build Up,Possession,60.0
+485,22,20,2.0,70,Balanced,40.0,50.0,Fast Build Up,Forward Runs,80.0
+573,22,54,2.0,70,Balanced,40.0,50.0,Balanced,Balanced,60.0
+607,22,350,1.0,70,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,40.0
+670,22,4,1.0,70,Balanced,40.0,40.0,Long Ball,Direct Passing,50.0
+688,22,39,1.0,70,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,50.0
+696,22,39,1.0,70,Pressure On Heavy Touch,70.0,70.0,Slow Build Up,Possession,70.0
+697,22,39,1.0,70,Pressure On Heavy Touch,70.0,50.0,Slow Build Up,Possession,80.0
+741,22,68,1.0,70,Drop Back,60.0,50.0,Long Ball,Direct Passing,60.0
+1013,22,353,1.0,70,Balanced,60.0,60.0,Slow Build Up,Possession,60.0
+1438,22,308,1.0,70,Balanced,50.0,50.0,Long Ball,Direct Passing,60.0
+1477,22,83,1.0,70,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,60.0
+1516,22,1,1.0,70,Pressure On Heavy Touch,40.0,70.0,Slow Build Up,Possession,60.0
+1801,22,14,2.0,70,Press After Possession Loss,40.0,60.0,Fast Build Up,Forward Runs,50.0
+1806,22,14,2.0,70,Balanced,60.0,40.0,Balanced,Balanced,60.0
+1893,22,308,1.0,70,Balanced,70.0,50.0,Fast Build Up,Forward Runs,60.0
+1900,22,308,1.0,70,Balanced,50.0,40.0,Fast Build Up,Forward Runs,60.0
+1903,22,10,1.0,70,Balanced,50.0,50.0,Balanced,Balanced,50.0
+1909,22,10,1.0,70,Pressure On Heavy Touch,40.0,50.0,Balanced,Balanced,60.0
+10031,22,308,1.0,70,Balanced,50.0,50.0,Long Ball,Direct Passing,60.0
+101020,22,68,1.0,70,Drop Back,70.0,50.0,Long Ball,Direct Passing,60.0
+101026,22,68,1.0,70,Balanced,60.0,40.0,Fast Build Up,Forward Runs,60.0
+101083,22,353,1.0,70,Balanced,50.0,50.0,Balanced,Balanced,70.0
+101101,22,336,1.0,70,Press After Possession Loss,40.0,50.0,Balanced,Balanced,50.0
+101114,22,341,1.0,70,Balanced,50.0,50.0,Slow Build Up,Possession,50.0
+110373,22,31,1.0,70,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,70.0
+110396,22,353,1.0,70,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,60.0
+110569,22,17,2.0,70,Balanced,40.0,40.0,Long Ball,Direct Passing,40.0
+110580,22,353,1.0,70,Pressure On Heavy Touch,70.0,50.0,Balanced,Balanced,70.0
+110636,22,20,2.0,70,Drop Back,40.0,30.0,Fast Build Up,Forward Runs,50.0
+110776,22,68,1.0,70,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,60.0
+110929,22,347,1.0,70,Press After Possession Loss,70.0,60.0,Slow Build Up,Possession,70.0
+110975,22,335,1.0,70,Pressure On Heavy Touch,70.0,80.0,Slow Build Up,Possession,70.0
+110981,22,2018,1.0,70,Balanced,60.0,50.0,Balanced,Balanced,60.0
+111041,22,7,1.0,70,Drop Back,50.0,30.0,Fast Build Up,Forward Runs,60.0
+111138,22,39,1.0,70,Balanced,40.0,30.0,Balanced,Balanced,60.0
+111325,22,338,1.0,70,Press After Possession Loss,60.0,60.0,Fast Build Up,Forward Runs,60.0
+111339,22,68,1.0,70,Balanced,50.0,60.0,Balanced,Balanced,60.0
+111730,22,349,1.0,70,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,60.0
+111811,22,32,2.0,70,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+111839,22,2012,1.0,70,Balanced,50.0,80.0,Balanced,Balanced,50.0
+112134,22,39,1.0,70,Press After Possession Loss,40.0,50.0,Slow Build Up,Possession,50.0
+112809,22,308,1.0,70,Balanced,40.0,60.0,Slow Build Up,Possession,70.0
+112828,22,39,1.0,70,Pressure On Heavy Touch,40.0,60.0,Slow Build Up,Possession,40.0
+112885,22,39,1.0,70,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,50.0
+113134,22,341,1.0,70,Balanced,40.0,40.0,Balanced,Balanced,60.0
+115530,22,7,1.0,70,Balanced,40.0,40.0,Balanced,Balanced,60.0
+3,22,14,2.0,69,Press After Possession Loss,50.0,60.0,Slow Build Up,Possession,60.0
+57,22,17,2.0,69,Balanced,40.0,60.0,Slow Build Up,Possession,60.0
+91,22,14,2.0,69,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+171,22,20,2.0,69,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,50.0
+209,22,80,1.0,69,Press After Possession Loss,70.0,50.0,Fast Build Up,Forward Runs,60.0
+254,22,80,1.0,69,Balanced,70.0,60.0,Slow Build Up,Possession,70.0
+347,22,32,2.0,69,Balanced,50.0,60.0,Balanced,Balanced,70.0
+417,22,41,1.0,69,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,50.0
+576,22,20,2.0,69,Balanced,60.0,40.0,Slow Build Up,Possession,70.0
+691,22,39,1.0,69,Press After Possession Loss,40.0,50.0,Slow Build Up,Possession,60.0
+694,22,39,1.0,69,Balanced,50.0,40.0,Fast Build Up,Forward Runs,60.0
+695,22,39,1.0,69,Pressure On Heavy Touch,40.0,70.0,Balanced,Balanced,70.0
+873,22,66,1.0,69,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,50.0
+897,22,189,1.0,69,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,60.0
+1473,22,83,1.0,69,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+1800,22,14,2.0,69,Press After Possession Loss,50.0,60.0,Balanced,Balanced,70.0
+1816,22,17,2.0,69,Drop Back,70.0,30.0,Fast Build Up,Forward Runs,50.0
+1871,22,66,1.0,69,Balanced,50.0,70.0,Slow Build Up,Possession,80.0
+1881,22,341,1.0,69,Balanced,40.0,60.0,Slow Build Up,Possession,60.0
+1889,22,308,1.0,69,Balanced,40.0,60.0,Slow Build Up,Possession,70.0
+1898,22,308,1.0,69,Balanced,40.0,70.0,Fast Build Up,Forward Runs,50.0
+1908,22,10,1.0,69,Balanced,50.0,60.0,Balanced,Balanced,60.0
+1919,22,14,2.0,69,Pressure On Heavy Touch,60.0,50.0,Balanced,Balanced,60.0
+1960,22,14,2.0,69,Balanced,50.0,60.0,Balanced,Balanced,60.0
+1961,22,14,2.0,69,Balanced,40.0,50.0,Long Ball,Direct Passing,60.0
+2023,22,54,2.0,69,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,60.0
+10020,22,308,1.0,69,Balanced,50.0,60.0,Fast Build Up,Forward Runs,60.0
+10030,22,20,2.0,69,Pressure On Heavy Touch,50.0,50.0,Fast Build Up,Forward Runs,60.0
+15005,22,4,1.0,69,Balanced,50.0,50.0,Balanced,Balanced,60.0
+100087,22,4,1.0,69,Drop Back,50.0,40.0,Long Ball,Direct Passing,40.0
+100135,22,318,1.0,69,Balanced,40.0,50.0,Balanced,Balanced,50.0
+100761,22,330,1.0,69,Balanced,40.0,50.0,Long Ball,Direct Passing,50.0
+100851,22,54,2.0,69,Drop Back,40.0,40.0,Long Ball,Direct Passing,60.0
+101028,22,68,1.0,69,Balanced,40.0,50.0,Long Ball,Direct Passing,50.0
+101033,22,68,1.0,69,Balanced,60.0,50.0,Balanced,Balanced,60.0
+101084,22,353,1.0,69,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+101121,22,341,1.0,69,Balanced,70.0,80.0,Fast Build Up,Forward Runs,70.0
+101146,22,349,1.0,69,Pressure On Heavy Touch,60.0,70.0,Balanced,Balanced,60.0
+101147,22,349,1.0,69,Press After Possession Loss,40.0,60.0,Balanced,Balanced,70.0
+101148,22,349,1.0,69,Balanced,60.0,50.0,Balanced,Balanced,60.0
+101151,22,349,1.0,69,Balanced,70.0,70.0,Slow Build Up,Possession,70.0
+110065,22,54,2.0,69,Pressure On Heavy Touch,40.0,60.0,Fast Build Up,Forward Runs,60.0
+110404,22,353,1.0,69,Balanced,60.0,50.0,Fast Build Up,Forward Runs,70.0
+110724,22,4,1.0,69,Balanced,60.0,50.0,Balanced,Balanced,60.0
+110816,22,330,1.0,69,Press After Possession Loss,50.0,60.0,Balanced,Balanced,60.0
+110827,22,54,2.0,69,Balanced,40.0,40.0,Fast Build Up,Forward Runs,70.0
+110930,22,347,1.0,69,Drop Back,60.0,50.0,Balanced,Balanced,60.0
+110986,22,2018,1.0,69,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,60.0
+111235,22,20,2.0,69,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+111539,22,308,1.0,69,Press After Possession Loss,60.0,50.0,Slow Build Up,Possession,60.0
+111575,22,349,1.0,69,Balanced,40.0,40.0,Fast Build Up,Forward Runs,50.0
+111651,22,39,1.0,69,Balanced,50.0,60.0,Long Ball,Direct Passing,70.0
+111674,22,350,1.0,69,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+111706,22,353,1.0,69,Balanced,60.0,50.0,Balanced,Balanced,60.0
+111708,22,353,1.0,69,Balanced,60.0,50.0,Fast Build Up,Forward Runs,40.0
+111716,22,353,1.0,69,Balanced,70.0,60.0,Long Ball,Direct Passing,60.0
+112026,22,32,2.0,69,Balanced,40.0,50.0,Slow Build Up,Possession,60.0
+112387,22,350,1.0,69,Pressure On Heavy Touch,70.0,60.0,Balanced,Balanced,70.0
+112476,22,7,1.0,69,Balanced,70.0,50.0,Fast Build Up,Forward Runs,80.0
+112516,22,308,1.0,69,Drop Back,60.0,50.0,Long Ball,Direct Passing,70.0
+112678,22,341,1.0,69,Balanced,50.0,50.0,Balanced,Balanced,50.0
+112996,22,39,1.0,69,Press After Possession Loss,40.0,40.0,Slow Build Up,Possession,50.0
+77,22,50,1.0,68,Balanced,60.0,50.0,Fast Build Up,Forward Runs,70.0
+271,22,1,1.0,68,Balanced,60.0,60.0,Fast Build Up,Forward Runs,70.0
+298,22,41,1.0,68,Balanced,60.0,50.0,Balanced,Balanced,60.0
+308,22,330,1.0,68,Pressure On Heavy Touch,40.0,50.0,Balanced,Balanced,60.0
+324,22,189,1.0,68,Balanced,50.0,40.0,Balanced,Balanced,70.0
+433,22,56,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+506,22,20,2.0,68,Press After Possession Loss,30.0,70.0,Fast Build Up,Forward Runs,70.0
+543,22,20,2.0,68,Press After Possession Loss,60.0,60.0,Fast Build Up,Forward Runs,50.0
+634,22,10,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+675,22,4,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+680,22,4,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+682,22,4,1.0,68,Press After Possession Loss,50.0,70.0,Fast Build Up,Forward Runs,50.0
+689,22,39,1.0,68,Press After Possession Loss,60.0,60.0,Balanced,Balanced,60.0
+693,22,39,1.0,68,Balanced,40.0,40.0,Balanced,Balanced,40.0
+698,22,39,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,70.0
+820,22,1,1.0,68,Press After Possession Loss,50.0,60.0,Balanced,Balanced,40.0
+918,22,41,1.0,68,Press After Possession Loss,60.0,80.0,Slow Build Up,Possession,60.0
+1750,22,4,1.0,68,Balanced,50.0,40.0,Fast Build Up,Forward Runs,40.0
+1807,22,60,3.0,68,Pressure On Heavy Touch,60.0,50.0,Fast Build Up,Forward Runs,80.0
+1832,22,20,2.0,68,Balanced,40.0,50.0,Balanced,Balanced,50.0
+1888,22,308,1.0,68,Balanced,40.0,50.0,Fast Build Up,Forward Runs,70.0
+1913,22,10,1.0,68,Balanced,50.0,60.0,Balanced,Balanced,50.0
+1923,22,14,2.0,68,Balanced,50.0,50.0,Balanced,Balanced,40.0
+1932,22,14,2.0,68,Press After Possession Loss,50.0,70.0,Fast Build Up,Forward Runs,40.0
+1939,22,14,2.0,68,Press After Possession Loss,60.0,60.0,Slow Build Up,Possession,60.0
+2013,22,4,1.0,68,Balanced,40.0,40.0,Balanced,Balanced,60.0
+2014,22,4,1.0,68,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+100081,22,4,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,50.0
+100646,22,10,1.0,68,Balanced,40.0,50.0,Fast Build Up,Forward Runs,50.0
+101006,22,68,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+101100,22,336,1.0,68,Press After Possession Loss,40.0,50.0,Slow Build Up,Possession,70.0
+101110,22,338,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,70.0
+101112,22,39,1.0,68,Drop Back,30.0,30.0,Long Ball,Direct Passing,50.0
+101149,22,349,1.0,68,Pressure On Heavy Touch,40.0,50.0,Balanced,Balanced,70.0
+101150,22,349,1.0,68,Balanced,40.0,40.0,Fast Build Up,Forward Runs,50.0
+110150,22,341,1.0,68,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,60.0
+110152,22,341,1.0,68,Drop Back,40.0,40.0,Balanced,Balanced,60.0
+110178,22,20,2.0,68,Balanced,50.0,40.0,Long Ball,Direct Passing,50.0
+110329,22,20,2.0,68,Balanced,60.0,40.0,Fast Build Up,Forward Runs,60.0
+110394,22,353,1.0,68,Balanced,40.0,40.0,Fast Build Up,Forward Runs,50.0
+110456,22,17,2.0,68,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,70.0
+110502,22,20,2.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+110770,22,189,1.0,68,Balanced,70.0,50.0,Balanced,Balanced,50.0
+110955,22,2012,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+111013,22,2020,1.0,68,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,50.0
+111065,22,39,1.0,68,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+111139,22,39,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,70.0
+111328,22,335,1.0,68,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+111707,22,353,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+111711,22,353,1.0,68,Balanced,50.0,30.0,Fast Build Up,Forward Runs,60.0
+111722,22,336,1.0,68,Balanced,70.0,50.0,Fast Build Up,Forward Runs,70.0
+111724,22,2012,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+111928,22,39,1.0,68,Press After Possession Loss,70.0,50.0,Slow Build Up,Possession,80.0
+112092,22,349,1.0,68,Pressure On Heavy Touch,60.0,70.0,Slow Build Up,Possession,50.0
+112093,22,349,1.0,68,Balanced,50.0,50.0,Balanced,Balanced,60.0
+112120,22,68,1.0,68,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+112513,22,308,1.0,68,Drop Back,40.0,50.0,Long Ball,Direct Passing,40.0
+112540,22,2012,1.0,68,Press After Possession Loss,50.0,80.0,Slow Build Up,Possession,60.0
+112716,22,337,1.0,68,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+112908,22,2018,1.0,68,Balanced,50.0,60.0,Balanced,Balanced,70.0
+112965,22,353,1.0,68,Drop Back,60.0,40.0,Long Ball,Direct Passing,60.0
+113259,22,68,1.0,68,Balanced,40.0,40.0,Balanced,Balanced,50.0
+113981,22,54,2.0,68,Balanced,50.0,40.0,Balanced,Balanced,60.0
+114161,22,39,1.0,68,Balanced,70.0,80.0,Balanced,Balanced,80.0
+114162,22,39,1.0,68,Balanced,50.0,40.0,Fast Build Up,Forward Runs,40.0
+114899,22,341,1.0,68,Drop Back,60.0,50.0,Balanced,Balanced,60.0
+27,22,20,2.0,67,Balanced,40.0,40.0,Long Ball,Direct Passing,60.0
+62,22,17,2.0,67,Balanced,50.0,60.0,Fast Build Up,Forward Runs,60.0
+81,22,50,1.0,67,Pressure On Heavy Touch,50.0,60.0,Long Ball,Direct Passing,60.0
+94,22,60,3.0,67,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+210,22,17,2.0,67,Balanced,40.0,50.0,Fast Build Up,Forward Runs,60.0
+269,22,1,1.0,67,Press After Possession Loss,50.0,60.0,Balanced,Balanced,60.0
+319,22,56,1.0,67,Press After Possession Loss,50.0,50.0,Fast Build Up,Forward Runs,60.0
+322,22,189,1.0,67,Balanced,70.0,50.0,Balanced,Balanced,60.0
+503,22,20,2.0,67,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,70.0
+614,22,17,2.0,67,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+708,22,56,1.0,67,Pressure On Heavy Touch,60.0,50.0,Fast Build Up,Forward Runs,60.0
+894,22,189,1.0,67,Balanced,40.0,50.0,Slow Build Up,Possession,60.0
+982,22,83,1.0,67,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+983,22,83,1.0,67,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,70.0
+1805,22,17,2.0,67,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+1809,22,17,2.0,67,Balanced,60.0,50.0,Balanced,Balanced,60.0
+1907,22,10,1.0,67,Balanced,60.0,60.0,Slow Build Up,Possession,60.0
+1910,22,10,1.0,67,Balanced,60.0,40.0,Balanced,Balanced,60.0
+1915,22,10,1.0,67,Balanced,60.0,50.0,Fast Build Up,Forward Runs,50.0
+1938,22,14,2.0,67,Drop Back,60.0,50.0,Slow Build Up,Possession,50.0
+1952,22,14,2.0,67,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,60.0
+10846,22,54,2.0,67,Drop Back,40.0,30.0,Long Ball,Direct Passing,60.0
+100634,22,10,1.0,67,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,60.0
+100831,22,54,2.0,67,Balanced,60.0,40.0,Balanced,Balanced,50.0
+110581,22,353,1.0,67,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+110734,22,32,2.0,67,Balanced,60.0,30.0,Fast Build Up,Forward Runs,70.0
+110745,22,66,1.0,67,Balanced,40.0,40.0,Balanced,Balanced,60.0
+110746,22,66,1.0,67,Pressure On Heavy Touch,40.0,70.0,Slow Build Up,Possession,60.0
+110831,22,54,2.0,67,Pressure On Heavy Touch,60.0,70.0,Fast Build Up,Forward Runs,60.0
+110968,22,2017,1.0,67,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+110969,22,2017,1.0,67,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+110984,22,2018,1.0,67,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,60.0
+111014,22,2020,1.0,67,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,50.0
+111239,22,20,2.0,67,Balanced,40.0,70.0,Balanced,Balanced,50.0
+111400,22,351,1.0,67,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+111701,22,2013,1.0,67,Balanced,50.0,50.0,Balanced,Balanced,50.0
+111817,22,17,2.0,67,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+111822,22,80,1.0,67,Pressure On Heavy Touch,40.0,50.0,Fast Build Up,Forward Runs,40.0
+112393,22,350,1.0,67,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,60.0
+112535,22,335,1.0,67,Balanced,50.0,50.0,Balanced,Balanced,60.0
+112689,22,353,1.0,67,Drop Back,50.0,50.0,Long Ball,Direct Passing,50.0
+112713,22,353,1.0,67,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+113149,22,39,1.0,67,Balanced,40.0,40.0,Slow Build Up,Possession,40.0
+113157,22,349,1.0,67,Balanced,50.0,40.0,Balanced,Balanced,60.0
+114326,22,66,1.0,67,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,60.0
+33,22,2076,3.0,66,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,50.0
+80,22,50,1.0,66,Balanced,40.0,50.0,Slow Build Up,Possession,80.0
+89,22,60,3.0,66,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,50.0
+106,22,60,3.0,66,Balanced,40.0,40.0,Slow Build Up,Possession,60.0
+226,22,17,2.0,66,Balanced,50.0,50.0,Balanced,Balanced,60.0
+256,22,80,1.0,66,Balanced,50.0,60.0,Balanced,Balanced,60.0
+300,22,41,1.0,66,Press After Possession Loss,50.0,50.0,Fast Build Up,Forward Runs,60.0
+710,22,56,1.0,66,Press After Possession Loss,50.0,60.0,Balanced,Balanced,60.0
+1474,22,83,1.0,66,Balanced,40.0,50.0,Balanced,Balanced,60.0
+1478,22,83,1.0,66,Pressure On Heavy Touch,40.0,50.0,Fast Build Up,Forward Runs,50.0
+1738,22,17,2.0,66,Balanced,60.0,40.0,Balanced,Balanced,60.0
+1786,22,1,1.0,66,Balanced,60.0,50.0,Balanced,Balanced,60.0
+1790,22,60,3.0,66,Press After Possession Loss,50.0,70.0,Balanced,Balanced,60.0
+1797,22,60,3.0,66,Press After Possession Loss,40.0,60.0,Fast Build Up,Forward Runs,60.0
+1873,22,66,1.0,66,Pressure On Heavy Touch,50.0,50.0,Long Ball,Direct Passing,60.0
+1905,22,10,1.0,66,Balanced,50.0,50.0,Balanced,Balanced,50.0
+1914,22,10,1.0,66,Balanced,50.0,50.0,Slow Build Up,Possession,70.0
+1917,22,60,3.0,66,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,60.0
+1926,22,14,2.0,66,Pressure On Heavy Touch,50.0,70.0,Balanced,Balanced,60.0
+1933,22,60,3.0,66,Balanced,70.0,40.0,Long Ball,Direct Passing,70.0
+10032,22,189,1.0,66,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+100632,22,10,1.0,66,Drop Back,40.0,40.0,Fast Build Up,Forward Runs,50.0
+101102,22,336,1.0,66,Balanced,50.0,50.0,Balanced,Balanced,50.0
+101145,22,349,1.0,66,Press After Possession Loss,60.0,70.0,Slow Build Up,Possession,70.0
+110711,22,54,2.0,66,Balanced,50.0,50.0,Long Ball,Direct Passing,60.0
+110765,22,83,1.0,66,Drop Back,70.0,40.0,Balanced,Balanced,60.0
+110974,22,2017,1.0,66,Balanced,60.0,60.0,Balanced,Balanced,50.0
+111086,22,66,1.0,66,Balanced,50.0,50.0,Balanced,Balanced,50.0
+111091,22,66,1.0,66,Balanced,50.0,50.0,Slow Build Up,Possession,70.0
+111092,22,66,1.0,66,Balanced,50.0,40.0,Balanced,Balanced,50.0
+111334,22,2020,1.0,66,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+111768,22,2012,1.0,66,Balanced,40.0,50.0,Slow Build Up,Possession,50.0
+111773,22,2012,1.0,66,Balanced,50.0,50.0,Slow Build Up,Possession,50.0
+111779,22,2012,1.0,66,Drop Back,60.0,50.0,Fast Build Up,Forward Runs,30.0
+112096,22,350,1.0,66,Balanced,50.0,50.0,Balanced,Balanced,50.0
+112224,22,351,1.0,66,Drop Back,60.0,50.0,Slow Build Up,Possession,60.0
+112389,22,350,1.0,66,Drop Back,40.0,50.0,Long Ball,Direct Passing,50.0
+112392,22,350,1.0,66,Balanced,60.0,50.0,Fast Build Up,Forward Runs,70.0
+112444,22,349,1.0,66,Press After Possession Loss,50.0,70.0,Balanced,Balanced,50.0
+112523,22,336,1.0,66,Drop Back,40.0,50.0,Balanced,Balanced,60.0
+112533,22,335,1.0,66,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+112853,22,2019,1.0,66,Balanced,40.0,50.0,Balanced,Balanced,40.0
+113186,22,349,1.0,66,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,60.0
+113217,22,350,1.0,66,Balanced,40.0,40.0,Balanced,Balanced,50.0
+114617,22,2020,1.0,66,Balanced,60.0,40.0,Long Ball,Direct Passing,40.0
+114688,22,337,1.0,66,Drop Back,80.0,50.0,Long Ball,Direct Passing,60.0
+4,22,60,3.0,65,Press After Possession Loss,50.0,40.0,Slow Build Up,Possession,60.0
+29,22,2076,3.0,65,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,50.0
+142,22,60,3.0,65,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+181,22,50,1.0,65,Balanced,50.0,40.0,Balanced,Balanced,50.0
+272,22,1,1.0,65,Balanced,70.0,50.0,Fast Build Up,Forward Runs,70.0
+420,22,66,1.0,65,Balanced,40.0,60.0,Fast Build Up,Forward Runs,50.0
+487,22,2076,3.0,65,Press After Possession Loss,40.0,70.0,Long Ball,Direct Passing,70.0
+492,22,2076,3.0,65,Pressure On Heavy Touch,60.0,50.0,Fast Build Up,Forward Runs,70.0
+647,22,10,1.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+700,22,56,1.0,65,Press After Possession Loss,50.0,50.0,Long Ball,Direct Passing,50.0
+702,22,56,1.0,65,Press After Possession Loss,50.0,70.0,Slow Build Up,Possession,60.0
+711,22,56,1.0,65,Balanced,60.0,50.0,Slow Build Up,Possession,60.0
+822,22,1,1.0,65,Balanced,70.0,40.0,Balanced,Balanced,60.0
+898,22,189,1.0,65,Balanced,50.0,60.0,Balanced,Balanced,30.0
+919,22,41,1.0,65,Balanced,40.0,40.0,Balanced,Balanced,60.0
+920,22,41,1.0,65,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,70.0
+1813,22,17,2.0,65,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,60.0
+1823,22,17,2.0,65,Press After Possession Loss,50.0,50.0,Balanced,Balanced,50.0
+1862,22,189,1.0,65,Balanced,60.0,40.0,Balanced,Balanced,60.0
+1951,22,60,3.0,65,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,70.0
+2017,22,80,1.0,65,Drop Back,60.0,50.0,Fast Build Up,Forward Runs,50.0
+2056,22,83,1.0,65,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+15040,22,80,1.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+100804,22,50,1.0,65,Pressure On Heavy Touch,50.0,60.0,Fast Build Up,Forward Runs,60.0
+100805,22,50,1.0,65,Balanced,50.0,50.0,Long Ball,Direct Passing,70.0
+101099,22,336,1.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+110069,22,54,2.0,65,Drop Back,50.0,40.0,Slow Build Up,Possession,50.0
+110075,22,330,1.0,65,Balanced,50.0,60.0,Balanced,Balanced,50.0
+110321,22,17,2.0,65,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+110482,22,2076,3.0,65,Drop Back,40.0,50.0,Long Ball,Direct Passing,60.0
+110500,22,2076,3.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+110532,22,2076,3.0,65,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,60.0
+110645,22,2076,3.0,65,Balanced,50.0,60.0,Slow Build Up,Possession,60.0
+110747,22,66,1.0,65,Balanced,60.0,40.0,Slow Build Up,Possession,70.0
+110749,22,66,1.0,65,Balanced,60.0,60.0,Slow Build Up,Possession,70.0
+110752,22,330,1.0,65,Balanced,60.0,40.0,Balanced,Balanced,60.0
+110978,22,335,1.0,65,Balanced,50.0,40.0,Fast Build Up,Forward Runs,60.0
+111007,22,337,1.0,65,Balanced,40.0,50.0,Balanced,Balanced,60.0
+111659,22,17,2.0,65,Drop Back,50.0,60.0,Long Ball,Direct Passing,60.0
+111769,22,2012,1.0,65,Drop Back,50.0,30.0,Long Ball,Direct Passing,50.0
+112115,22,83,1.0,65,Pressure On Heavy Touch,70.0,50.0,Slow Build Up,Possession,70.0
+112258,22,83,1.0,65,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+112390,22,350,1.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+112427,22,351,1.0,65,Balanced,50.0,40.0,Fast Build Up,Forward Runs,60.0
+112541,22,2012,1.0,65,Balanced,40.0,40.0,Balanced,Balanced,60.0
+112558,22,83,1.0,65,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+112671,22,337,1.0,65,Balanced,50.0,50.0,Slow Build Up,Possession,50.0
+112783,22,349,1.0,65,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,70.0
+112836,22,349,1.0,65,Pressure On Heavy Touch,50.0,60.0,Fast Build Up,Forward Runs,60.0
+112914,22,2019,1.0,65,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+112990,22,350,1.0,65,Drop Back,40.0,60.0,Balanced,Balanced,40.0
+113057,22,350,1.0,65,Balanced,40.0,40.0,Fast Build Up,Forward Runs,50.0
+113143,22,338,1.0,65,Press After Possession Loss,50.0,50.0,Slow Build Up,Possession,50.0
+113160,22,349,1.0,65,Pressure On Heavy Touch,50.0,70.0,Fast Build Up,Forward Runs,50.0
+113161,22,349,1.0,65,Balanced,30.0,40.0,Fast Build Up,Forward Runs,50.0
+113183,22,349,1.0,65,Balanced,50.0,40.0,Slow Build Up,Possession,80.0
+113197,22,349,1.0,65,Balanced,50.0,40.0,Long Ball,Direct Passing,50.0
+113356,22,54,2.0,65,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+113378,22,330,1.0,65,Balanced,50.0,50.0,Balanced,Balanced,50.0
+114398,22,2076,3.0,65,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,50.0
+114511,22,2020,1.0,65,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+114577,22,2017,1.0,65,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+114600,22,2017,1.0,65,Drop Back,50.0,50.0,Balanced,Balanced,50.0
+114619,22,2020,1.0,65,Balanced,50.0,40.0,Fast Build Up,Forward Runs,50.0
+115358,22,2017,1.0,65,Balanced,60.0,60.0,Balanced,Balanced,70.0
+115535,22,338,1.0,65,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+58,22,17,2.0,64,Balanced,50.0,50.0,Balanced,Balanced,60.0
+83,22,50,1.0,64,Balanced,50.0,40.0,Slow Build Up,Possession,50.0
+127,22,60,3.0,64,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,70.0
+149,22,60,3.0,64,Drop Back,40.0,40.0,Slow Build Up,Possession,50.0
+180,22,50,1.0,64,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+299,22,41,1.0,64,Balanced,50.0,50.0,Balanced,Balanced,60.0
+310,22,330,1.0,64,Drop Back,40.0,40.0,Fast Build Up,Forward Runs,60.0
+523,22,2076,3.0,64,Balanced,50.0,60.0,Balanced,Balanced,60.0
+621,22,50,1.0,64,Balanced,50.0,40.0,Long Ball,Direct Passing,60.0
+705,22,56,1.0,64,Drop Back,40.0,30.0,Long Ball,Direct Passing,50.0
+780,22,80,1.0,64,Drop Back,60.0,40.0,Fast Build Up,Forward Runs,60.0
+917,22,41,1.0,64,Drop Back,60.0,40.0,Fast Build Up,Forward Runs,50.0
+922,22,41,1.0,64,Pressure On Heavy Touch,50.0,60.0,Long Ball,Direct Passing,70.0
+981,22,83,1.0,64,Balanced,40.0,40.0,Fast Build Up,Forward Runs,60.0
+1447,22,1,1.0,64,Balanced,30.0,40.0,Long Ball,Direct Passing,30.0
+1456,22,41,1.0,64,Pressure On Heavy Touch,60.0,70.0,Balanced,Balanced,50.0
+1569,22,66,1.0,64,Balanced,40.0,60.0,Slow Build Up,Possession,70.0
+1787,22,80,1.0,64,Balanced,50.0,40.0,Fast Build Up,Forward Runs,50.0
+1788,22,1,1.0,64,Pressure On Heavy Touch,50.0,60.0,Fast Build Up,Forward Runs,60.0
+1798,22,60,3.0,64,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+1802,22,60,3.0,64,Balanced,40.0,60.0,Long Ball,Direct Passing,40.0
+1825,22,2076,3.0,64,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,60.0
+1929,22,60,3.0,64,Balanced,60.0,60.0,Slow Build Up,Possession,60.0
+1962,22,61,4.0,64,Drop Back,50.0,30.0,Long Ball,Direct Passing,70.0
+15009,22,80,1.0,64,Drop Back,50.0,50.0,Long Ball,Direct Passing,50.0
+15015,22,60,3.0,64,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,60.0
+100325,22,322,1.0,64,Press After Possession Loss,60.0,50.0,Slow Build Up,Possession,60.0
+100757,22,330,1.0,64,Balanced,60.0,50.0,Balanced,Balanced,60.0
+100759,22,330,1.0,64,Balanced,60.0,40.0,Balanced,Balanced,50.0
+101104,22,336,1.0,64,Balanced,40.0,50.0,Fast Build Up,Forward Runs,60.0
+110197,22,2076,3.0,64,Balanced,70.0,50.0,Fast Build Up,Forward Runs,70.0
+110597,22,2076,3.0,64,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,50.0
+111088,22,66,1.0,64,Balanced,50.0,50.0,Long Ball,Direct Passing,50.0
+111276,22,17,2.0,64,Drop Back,40.0,40.0,Balanced,Balanced,60.0
+111327,22,335,1.0,64,Drop Back,40.0,40.0,Fast Build Up,Forward Runs,60.0
+111393,22,351,1.0,64,Balanced,60.0,60.0,Balanced,Balanced,70.0
+111397,22,351,1.0,64,Balanced,40.0,50.0,Balanced,Balanced,60.0
+111723,22,336,1.0,64,Pressure On Heavy Touch,40.0,60.0,Balanced,Balanced,60.0
+111821,22,80,1.0,64,Drop Back,40.0,40.0,Long Ball,Direct Passing,50.0
+112199,22,41,1.0,64,Balanced,40.0,40.0,Fast Build Up,Forward Runs,50.0
+112260,22,60,3.0,64,Drop Back,60.0,40.0,Balanced,Balanced,60.0
+112429,22,2012,1.0,64,Balanced,50.0,40.0,Slow Build Up,Possession,60.0
+112511,22,66,1.0,64,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+112552,22,17,2.0,64,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+112572,22,350,1.0,64,Drop Back,50.0,40.0,Long Ball,Direct Passing,50.0
+112637,22,330,1.0,64,Balanced,50.0,50.0,Balanced,Balanced,60.0
+112667,22,2017,1.0,64,Balanced,50.0,50.0,Fast Build Up,Forward Runs,70.0
+112695,22,4,1.0,64,Balanced,50.0,40.0,Balanced,Balanced,50.0
+113058,22,350,1.0,64,Drop Back,50.0,50.0,Balanced,Balanced,50.0
+113182,22,330,1.0,64,Balanced,70.0,50.0,Balanced,Balanced,60.0
+113222,22,350,1.0,64,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+113387,22,330,1.0,64,Balanced,50.0,40.0,Balanced,Balanced,60.0
+113391,22,330,1.0,64,Drop Back,40.0,40.0,Fast Build Up,Forward Runs,60.0
+113459,22,41,1.0,64,Balanced,40.0,80.0,Balanced,Balanced,40.0
+113723,22,2018,1.0,64,Drop Back,50.0,40.0,Balanced,Balanced,60.0
+114023,22,351,1.0,64,Balanced,50.0,50.0,Balanced,Balanced,50.0
+114575,22,337,1.0,64,Drop Back,40.0,40.0,Balanced,Balanced,50.0
+114578,22,2018,1.0,64,Pressure On Heavy Touch,60.0,60.0,Balanced,Balanced,60.0
+114604,22,351,1.0,64,Balanced,40.0,50.0,Balanced,Balanced,50.0
+115716,22,330,1.0,64,Balanced,50.0,60.0,Slow Build Up,Possession,50.0
+121,22,60,3.0,63,Balanced,60.0,40.0,Slow Build Up,Possession,60.0
+270,22,1,1.0,63,Balanced,50.0,60.0,Long Ball,Direct Passing,40.0
+306,22,65,1.0,63,Balanced,60.0,70.0,Slow Build Up,Possession,70.0
+357,22,60,3.0,63,Balanced,40.0,40.0,Fast Build Up,Forward Runs,40.0
+418,22,41,1.0,63,Balanced,60.0,40.0,Slow Build Up,Possession,60.0
+631,22,50,1.0,63,Drop Back,40.0,30.0,Long Ball,Direct Passing,50.0
+837,22,65,1.0,63,Pressure On Heavy Touch,50.0,70.0,Balanced,Balanced,70.0
+1439,22,56,1.0,63,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,50.0
+1443,22,1,1.0,63,Drop Back,50.0,50.0,Balanced,Balanced,70.0
+1463,22,41,1.0,63,Balanced,50.0,60.0,Balanced,Balanced,60.0
+1757,22,41,1.0,63,Balanced,50.0,40.0,Balanced,Balanced,50.0
+1804,22,61,4.0,63,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+1930,22,61,4.0,63,Balanced,40.0,40.0,Long Ball,Direct Passing,60.0
+1935,22,61,4.0,63,Balanced,50.0,40.0,Balanced,Balanced,50.0
+1936,22,60,3.0,63,Drop Back,70.0,40.0,Long Ball,Direct Passing,60.0
+1944,22,60,3.0,63,Drop Back,40.0,40.0,Long Ball,Direct Passing,30.0
+15048,22,61,4.0,63,Balanced,60.0,60.0,Balanced,Balanced,70.0
+110313,22,60,3.0,63,Balanced,60.0,50.0,Long Ball,Direct Passing,60.0
+110501,22,2076,3.0,63,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,60.0
+110588,22,2076,3.0,63,Pressure On Heavy Touch,60.0,60.0,Fast Build Up,Forward Runs,60.0
+110592,22,2076,3.0,63,Drop Back,50.0,50.0,Long Ball,Direct Passing,60.0
+110750,22,330,1.0,63,Balanced,50.0,60.0,Balanced,Balanced,50.0
+110987,22,2018,1.0,63,Drop Back,50.0,40.0,Balanced,Balanced,60.0
+110990,22,2019,1.0,63,Balanced,60.0,60.0,Balanced,Balanced,50.0
+111002,22,338,1.0,63,Drop Back,60.0,40.0,Long Ball,Direct Passing,70.0
+111399,22,351,1.0,63,Balanced,70.0,50.0,Slow Build Up,Possession,60.0
+111766,22,351,1.0,63,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,40.0
+112259,22,60,3.0,63,Balanced,40.0,50.0,Long Ball,Direct Passing,40.0
+112378,22,2012,1.0,63,Balanced,60.0,40.0,Balanced,Balanced,60.0
+112510,22,66,1.0,63,Balanced,60.0,40.0,Slow Build Up,Possession,60.0
+112916,22,2019,1.0,63,Drop Back,50.0,40.0,Long Ball,Direct Passing,60.0
+112978,22,2012,1.0,63,Balanced,60.0,80.0,Fast Build Up,Forward Runs,50.0
+112985,22,2012,1.0,63,Balanced,50.0,50.0,Balanced,Balanced,50.0
+113173,22,56,1.0,63,Drop Back,60.0,60.0,Long Ball,Direct Passing,50.0
+113458,22,56,1.0,63,Pressure On Heavy Touch,40.0,60.0,Slow Build Up,Possession,50.0
+113892,22,56,1.0,63,Balanced,50.0,50.0,Slow Build Up,Possession,50.0
+113926,22,61,4.0,63,Pressure On Heavy Touch,60.0,60.0,Slow Build Up,Possession,70.0
+114004,22,66,1.0,63,Balanced,50.0,40.0,Balanced,Balanced,70.0
+114611,22,2019,1.0,63,Drop Back,60.0,50.0,Long Ball,Direct Passing,40.0
+143,22,61,4.0,62,Balanced,50.0,40.0,Long Ball,Direct Passing,70.0
+361,22,61,4.0,62,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,60.0
+561,22,61,4.0,62,Balanced,50.0,60.0,Slow Build Up,Possession,60.0
+1480,22,61,4.0,62,Press After Possession Loss,50.0,60.0,Fast Build Up,Forward Runs,60.0
+1803,22,61,4.0,62,Press After Possession Loss,50.0,70.0,Slow Build Up,Possession,60.0
+1920,22,61,4.0,62,Balanced,50.0,50.0,Slow Build Up,Possession,50.0
+1928,22,61,4.0,62,Balanced,40.0,40.0,Long Ball,Direct Passing,60.0
+1934,22,61,4.0,62,Balanced,60.0,50.0,Slow Build Up,Possession,70.0
+1940,22,61,4.0,62,Press After Possession Loss,50.0,70.0,Balanced,Balanced,40.0
+1947,22,62,5.0,62,Balanced,50.0,60.0,Long Ball,Direct Passing,70.0
+1955,22,61,4.0,62,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,60.0
+1958,22,61,4.0,62,Balanced,40.0,50.0,Slow Build Up,Possession,40.0
+110565,22,66,1.0,62,Balanced,40.0,50.0,Fast Build Up,Forward Runs,50.0
+110676,22,2076,3.0,62,Pressure On Heavy Touch,30.0,60.0,Long Ball,Direct Passing,50.0
+110678,22,2076,3.0,62,Balanced,40.0,40.0,Long Ball,Direct Passing,50.0
+110890,22,61,4.0,62,Drop Back,60.0,40.0,Long Ball,Direct Passing,40.0
+111398,22,351,1.0,62,Drop Back,50.0,30.0,Long Ball,Direct Passing,40.0
+112072,22,56,1.0,62,Balanced,40.0,50.0,Balanced,Balanced,60.0
+112222,22,61,4.0,62,Drop Back,50.0,40.0,Long Ball,Direct Passing,50.0
+112254,22,61,4.0,62,Drop Back,40.0,40.0,Slow Build Up,Possession,50.0
+113146,22,2149,1.0,62,Pressure On Heavy Touch,50.0,60.0,Slow Build Up,Possession,70.0
+113743,22,56,1.0,62,Drop Back,50.0,50.0,Long Ball,Direct Passing,50.0
+115536,22,338,1.0,62,Balanced,50.0,50.0,Long Ball,Direct Passing,60.0
+115820,22,2076,3.0,62,Balanced,50.0,50.0,Balanced,Balanced,60.0
+305,22,65,1.0,61,Balanced,40.0,50.0,Balanced,Balanced,60.0
+321,22,56,1.0,61,Drop Back,40.0,50.0,Long Ball,Direct Passing,60.0
+381,22,61,4.0,61,Pressure On Heavy Touch,50.0,60.0,Balanced,Balanced,60.0
+423,22,65,1.0,61,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+1941,22,61,4.0,61,Balanced,50.0,50.0,Slow Build Up,Possession,60.0
+1949,22,61,4.0,61,Balanced,60.0,50.0,Fast Build Up,Forward Runs,60.0
+111395,22,351,1.0,61,Balanced,50.0,50.0,Fast Build Up,Forward Runs,70.0
+112420,22,41,1.0,61,Drop Back,60.0,50.0,Fast Build Up,Forward Runs,60.0
+112961,22,2012,1.0,61,Balanced,50.0,40.0,Balanced,Balanced,50.0
+113302,22,2149,1.0,61,Pressure On Heavy Touch,50.0,60.0,Fast Build Up,Forward Runs,50.0
+113380,22,330,1.0,61,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,60.0
+563,22,65,1.0,60,Press After Possession Loss,40.0,50.0,Slow Build Up,Possession,40.0
+110691,22,2076,3.0,60,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,50.0
+110799,22,61,4.0,60,Drop Back,50.0,40.0,Fast Build Up,Forward Runs,50.0
+110992,22,2019,1.0,60,Drop Back,40.0,40.0,Long Ball,Direct Passing,60.0
+111396,22,351,1.0,60,Drop Back,60.0,50.0,Long Ball,Direct Passing,60.0
+111774,22,2012,1.0,60,Pressure On Heavy Touch,50.0,50.0,Balanced,Balanced,70.0
+113297,22,2149,1.0,60,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+113298,22,2149,1.0,60,Pressure On Heavy Touch,60.0,50.0,Slow Build Up,Possession,70.0
+113300,22,2149,1.0,60,Pressure On Heavy Touch,50.0,50.0,Slow Build Up,Possession,60.0
+112165,22,2012,1.0,59,Balanced,30.0,60.0,Balanced,Balanced,70.0
+113299,22,2149,1.0,59,Balanced,50.0,60.0,Balanced,Balanced,50.0
+113301,22,2149,1.0,59,Balanced,50.0,50.0,Balanced,Balanced,50.0
+445,22,65,1.0,58,Balanced,50.0,50.0,Balanced,Balanced,60.0
+111131,22,65,1.0,58,Balanced,40.0,40.0,Balanced,Balanced,60.0
+114168,22,2149,1.0,58,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
+753,22,65,1.0,57,Balanced,50.0,50.0,Fast Build Up,Forward Runs,60.0
+1572,22,65,1.0,57,Balanced,60.0,50.0,Balanced,Balanced,60.0
+111629,22,2149,1.0,57,Balanced,50.0,50.0,Long Ball,Direct Passing,60.0
+113257,22,2149,1.0,57,Drop Back,50.0,50.0,Fast Build Up,Forward Runs,50.0
+1586,22,65,1.0,55,Balanced,60.0,50.0,Long Ball,Direct Passing,50.0
+113040,22,2149,1.0,55,Balanced,50.0,50.0,Fast Build Up,Forward Runs,50.0
