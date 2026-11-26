@@ -11,6 +11,9 @@ de minería de datos te ayuda a decidir.
 | ![Menú](docs/capturas/01_menu.png) **Menú principal** | ![Alineación](docs/capturas/04b_alineacion_sel.png) **Alineación** (asignación óptima con algoritmo húngaro) |
 | ![Mercado](docs/capturas/05_mercado.png) **Mercado** (gangas según la regresión) | ![Táctica](docs/capturas/05_tactica.png) **Táctica** (reglas Apriori) |
 | ![Previa](docs/capturas/06_previa.png) **Previa** con pronóstico y árbol de decisión | ![Datos](docs/capturas/05_datos.png) **Datos y modelos** (K-means, métricas) |
+| ![Partido](docs/capturas/07_partido_vivo.png) **Partido en vivo**: crónica, estadísticas y velocidad | ![Descanso](docs/capturas/15_descanso.png) **Descanso**: elige la mentalidad del 2.º tiempo |
+| ![Penal](docs/capturas/11b_penal_barra.png) **Penal a favor**: elige zona y detén la barra | ![Penal en contra](docs/capturas/12b_penal_contra_resultado.png) **Penal en contra**: elige hacia dónde lanzarte |
+| ![Tiro libre](docs/capturas/13_tiro_libre.png) **Tiro libre** con barrera | ![Ocasión](docs/capturas/14_ocasion.png) **Ocasión clara**: apunta lejos del portero |
 
 ![Liga](docs/capturas/09_liga_j5.png)
 
@@ -38,7 +41,12 @@ python ml/preparar_datos.py "C:/ruta/a/archive"
 python ml/entrenar.py
 ```
 
-`python tests/smoke_test.py` recorre todo el juego sin ventana, simula una temporada completa y guarda capturas en `shots/`.
+Pruebas (sin ventana, con clics simulados; guardan capturas en `shots/`):
+
+```powershell
+python tests/test_flujo.py    # pulsa los botones de menús, hub, partido, minijuegos y descanso
+python tests/smoke_test.py    # simula una temporada completa
+```
 
 ## Jugabilidad
 
@@ -46,7 +54,16 @@ python ml/entrenar.py
 2. **Alineación:** elige formación, coloca titulares (clic en un puesto y luego en un jugador) o usa *Autoalinear*.
 3. **Mercado:** ficha jugadores con tu presupuesto, vende, o pide *Buscar reemplazo* para un jugador.
 4. **Táctica:** 6 ajustes tácticos; el asistente te muestra qué reglas cumplen y su bono.
-5. **Jugar jornada:** previa con pronóstico, partido en vivo, ingresos, lesiones y tabla.
+5. **Jugar jornada:** previa con pronóstico y partido en vivo minuto a minuto, con faltas, tarjetas amarillas y rojas
+   (la expulsión te deja con 10 y el jugador se pierde el siguiente partido), lesiones con sustitución automática,
+   estadísticas, velocidad x1/x2/x4 y botón **Omitir partido**.
+6. **Jugadas clave (minijuegos):** los penales, tiros libres y ocasiones claras se juegan tú mismo. La dificultad depende
+   de las estadísticas: cuanto mejor sea el tiro del ejecutor frente al nivel del portero rival, más lenta es la barra o el
+   puntero y más pequeño el alcance del portero. En un penal en contra eliges hacia dónde lanzarte (el tirador tiene una
+   tendencia hacia un lado, es la pista). Cada minijuego tiene el botón *Simular jugada*, que decide con la probabilidad del
+   modelo (`juego/eventos.py`).
+7. **Descanso:** eliges la mentalidad del 2.º tiempo (Atacar, Equilibrado, Cerrarse), que cambia los goles esperados de
+   ambos equipos; el consejo que se muestra es una regla simple, no un modelo.
 
 ## Dónde entra cada técnica de minería de datos
 
@@ -69,6 +86,9 @@ python ml/entrenar.py
 - **La silueta de K-means es baja (~0.15)**: los roles se solapan de forma natural (un lateral y un extremo comparten atributos).
 - Las reglas de asociación muestran **asociación, no causalidad**: los equipos fuertes usan ciertos ajustes porque son fuertes.
 - La ofensividad táctica y los pesos de ataque/defensa del motor de partidos son **heurísticos** (no salen de los datos).
+- Las tasas de faltas, tarjetas, lesiones, penales y tiros libres (`juego/eventos.py`) son **supuestos razonables**, no se
+  estimaron con datos reales; el 25 % de los goles esperados se reparte entre balón parado y ocasiones para mantener el
+  promedio de goles por partido (~2.7).
 
 ## Estructura
 
@@ -76,7 +96,8 @@ python ml/entrenar.py
 main.py                 punto de entrada
 ml/preparar_datos.py    limpieza y filtrado de los CSV de Kaggle
 ml/entrenar.py          clustering, regresión, árboles y reglas; guarda modelos y métricas
-juego/                  modelo.py · simulacion.py · asistente.py · datos.py · tactica.py · ui.py · app.py
+juego/                  modelo.py · simulacion.py · eventos.py · minijuegos.py · asistente.py · datos.py · tactica.py · ui.py · app.py
+tests/                  test_flujo.py · smoke_test.py
 assets/fonts/           Lato y Bebas Neue (SIL Open Font License)
 data/ models/ reports/  datos procesados, modelos y métricas
 ```

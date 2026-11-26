@@ -8,12 +8,14 @@ import numpy as np
 import pandas as pd
 import pygame
 
+from . import eventos as ev
+from . import minijuegos as mj
 from . import tactica as tac
 from . import ui as U
 from .asistente import Asistente
 from .datos import DATA, Mundo
 from .modelo import (FORMACIONES, GRUPOS, NOMBRE_GRUPO, Liga, autoalinear, reparar_once)
-from .simulacion import fuerzas, goleador, goles_esperados, minutos_goles, simular
+from .simulacion import fuerzas, goles_esperados
 
 ANCHO, ALTO = 1280, 720
 X0 = 224                       # inicio del área de contenido (a la derecha de la barra lateral)
@@ -308,7 +310,7 @@ class App:
                     ui.texto("+", (px - 22, py - 20), 22, U.ROJO, True, "mc")
                 if ui.hover(rr):
                     ui.tip = (f"{j.nombre} ({j.pos}) · {j.rol}\nAptitud en {g}: {apt:.0%} (árbol de decisión)"
-                              + (f"\nLesionado {j.lesion} jornada(s)" if j.lesion else ""))
+                              + (f"\n{'Suspendido' if j.motivo == 'sanción' else 'Lesionado'} {j.lesion} jornada(s)" if j.lesion else ""))
             else:
                 pygame.draw.circle(ui.surf, (20, 70, 35), (px, py), 24, 3)
                 ui.texto(g, (px, py), 13, (200, 230, 210), True, "mc")
@@ -421,7 +423,7 @@ class App:
     def asignar(self, slot, j):
         c = self.club
         if j.lesion:
-            self.aviso(f"{j.nombre} está lesionado.", U.ROJO)
+            self.aviso(f"{j.nombre} está {'suspendido' if j.motivo == 'sanción' else 'lesionado'}.", U.ROJO)
             return
         if j in c.once:
             k = c.once.index(j)
@@ -852,7 +854,7 @@ class App:
                  f"  (bono {brv:+.1%})", (r3.x + 16, yy + 6), 13, U.APAGADO, maxw=r3.w - 32)
         lesionados = [j.nombre for j in c.plantel if j.lesion]
         if lesionados:
-            ui.texto("Lesionados: " + ", ".join(lesionados[:6]), (r3.x + 16, r3.bottom - 56), 13, U.ROJO, maxw=r3.w - 32)
+            ui.texto("No disponibles: " + ", ".join(lesionados[:6]), (r3.x + 16, r3.bottom - 56), 13, U.ROJO, maxw=r3.w - 32)
         fuera = [j.nombre for (g, j) in c.xi_con_grupo() if j.aptitud(g) < 0.55]
         if fuera:
             ui.texto("Fuera de posición: " + ", ".join(fuera), (r3.x + 16, r3.bottom - 32), 13, U.AMARILLO, maxw=r3.w - 32)
@@ -861,29 +863,146 @@ class App:
         if ui.boton((ANCHO - 340, 620, 280, 54), "Jugar el partido", True, tam=22):
             self.iniciar_partido()
 
+    # ---------------------------------------------------------- partido en vivo
+    VEL_MS = 70                      # milisegundos reales por minuto de partido (a velocidad x1)
+    MENTALIDADES = {"atk": ("Atacar", 1.20, 1.15, "Más goles propios (+20 %), pero también del rival (+15 %)."),
+                    "eq": ("Equilibrado", 1.0, 1.0, "Sin cambios respecto al plan inicial."),
+                    "def": ("Cerrarse", 0.85, 0.78, "Menos goles propios (-15 %) y bastante menos del rival (-22 %).")}
+
     def iniciar_partido(self):
         p = self.p
         pr = p["pron"]
-        ga, gb = simular(pr["la"], pr["lb"], self.rng)
-        L, V = p["local"], p["visit"]
-        ev = []
-        for minuto, lado in minutos_goles(ga, gb, self.rng):
-            club = L if lado == "a" else V
-            ev.append((minuto, lado, goleador(club.xi_con_grupo(), self.rng).nombre))
-        p.update(fase="vivo", res=(ga, gb), eventos=ev, t0=pygame.time.get_ticks(), min=0, fin=False)
+        lado = "a" if p["user_local"] else "b"
+        est = ev.nuevo_estado(p["local"], p["visit"], pr["la"], pr["lb"], lado)
+        ev.generar_tramo(est, 1, 45, self.rng)
+        p.update(fase="vivo", est=est, lado=lado, min=0, fin=False, pausa=None, mini=None, ev_mini=None,
+                 t_ult=pygame.time.get_ticks(), acum=0.0, vel=1, mentalidad="eq", tramo=1, jugadas=[],
+                 banner=None)
+
+    def _pendiente_en(self, minuto):
+        for e in self.p["est"]["eventos"]:
+            if e["pend"] and e["res"] is None and e["min"] <= minuto:
+                return e
+        return None
+
+    def _segundo_tiempo(self):
+        p = self.p
+        est = p["est"]
+        _, f_propio, f_rival, _ = self.MENTALIDADES[p["mentalidad"]]
+        otro = "b" if p["lado"] == "a" else "a"
+        est["f"][p["lado"]], est["f"][otro] = f_propio, f_rival
+        ev.generar_tramo(est, 46, 90, self.rng)
+        p["tramo"] = 2
+        p["pausa"] = None
+
+    def _anunciar(self, minuto):
+        """Cartel breve con el evento más importante del minuto."""
+        p = self.p
+        prio = {"gol": 0, "roja": 1, "lesion": 2, "amarilla": 3}
+        cands = [e for e in p["est"]["eventos"] if e["min"] == minuto and not e["oculto"]
+                 and (e["tipo"] in prio or e["res"] is not None)]
+        if not cands:
+            return
+        e = min(cands, key=lambda x: prio.get("gol" if ev.es_gol(x) else x["tipo"], 5))
+        titulo, _, clave = ev.describir(e, p["est"]["clubes"])
+        col = {"gol": U.VERDE, "amarilla": U.AMARILLO, "roja": U.ROJO, "lesion": U.ROJO}.get(clave, U.APAGADO)
+        p["banner"] = (titulo, col, pygame.time.get_ticks() + 2200)
+
+    def _avanzar_partido(self):
+        p = self.p
+        ahora = pygame.time.get_ticks()
+        dt = min(ahora - p["t_ult"], 100)
+        p["t_ult"] = ahora
+        if p["pausa"] or p["fin"]:
+            return
+        p["acum"] += dt * p["vel"]
+        while p["acum"] >= self.VEL_MS and not p["pausa"] and not p["fin"]:
+            e = self._pendiente_en(p["min"])
+            if e:
+                p["pausa"], p["ev_mini"] = "mini", e
+                p["mini"] = mj.crear(e, p["lado"], self.rng)
+                return
+            if p["min"] >= 90:
+                p["fin"] = True
+                break
+            if p["min"] == 45 and p["tramo"] == 1:
+                p["pausa"] = "descanso"
+                return
+            p["acum"] -= self.VEL_MS
+            p["min"] += 1
+            self._anunciar(p["min"])
+
+    def omitir_partido(self):
+        """Salta hasta el final: las jugadas pendientes se resuelven con la probabilidad del modelo."""
+        p = self.p
+        p["mini"] = None
+        p["pausa"] = None
+        while not p["fin"]:
+            e = self._pendiente_en(p["min"])
+            if e:
+                ev.autoresolver(e, self.rng)
+                continue
+            if p["min"] >= 90:
+                p["fin"] = True
+            elif p["min"] == 45 and p["tramo"] == 1:
+                self._segundo_tiempo()
+            else:
+                p["min"] += 1
+        p["banner"] = None
+
+    def _cerrar_minijuego(self, r):
+        p = self.p
+        e, mini = p["ev_mini"], p["mini"]
+        if r == "auto":
+            ev.autoresolver(e, self.rng)
+        else:
+            e["res"], e["motivo"], e["pend"] = mini.resultado, mini.motivo, False
+            suyo = e["lado"] == p["lado"]
+            p["jugadas"].append((e["tipo"], (e["res"] == "gol") if suyo else (e["res"] != "gol")))
+        p["pausa"], p["mini"], p["ev_mini"] = None, None, None
+        p["acum"] = 0.0
+        self._anunciar(e["min"])
+
+    @staticmethod
+    def _icono_evento(surf, clave, cx, cy):
+        if clave == "gol":
+            pygame.draw.circle(surf, (255, 255, 255), (cx, cy), 9)
+            pygame.draw.circle(surf, (20, 20, 20), (cx, cy), 9, 2)
+            pygame.draw.circle(surf, (20, 20, 20), (cx, cy), 3)
+        elif clave in ("amarilla", "roja"):
+            pygame.draw.rect(surf, U.AMARILLO if clave == "amarilla" else U.ROJO, (cx - 6, cy - 9, 12, 18), border_radius=2)
+        elif clave == "lesion":
+            pygame.draw.circle(surf, (255, 255, 255), (cx, cy), 10)
+            pygame.draw.rect(surf, U.ROJO, (cx - 6, cy - 2, 12, 4))
+            pygame.draw.rect(surf, U.ROJO, (cx - 2, cy - 6, 4, 12))
+        elif clave == "fallo":
+            pygame.draw.circle(surf, (90, 100, 120), (cx, cy), 10, 2)
+            pygame.draw.line(surf, (160, 170, 190), (cx - 5, cy - 5), (cx + 5, cy + 5), 2)
+            pygame.draw.line(surf, (160, 170, 190), (cx - 5, cy + 5), (cx + 5, cy - 5), 2)
+        else:
+            pygame.draw.circle(surf, U.NARANJA, (cx, cy), 10, 2)
+            pygame.draw.circle(surf, U.NARANJA, (cx, cy), 3)
+
+    @staticmethod
+    def _icono_omitir(surf, cx, cy, col):
+        for dx in (0, 11):
+            pygame.draw.polygon(surf, col, [(cx + dx - 6, cy - 8), (cx + dx - 6, cy + 8), (cx + dx + 5, cy)])
 
     def partido_vivo(self):
         ui, p = self.ui, self.p
+        est = p["est"]
         L, V = p["local"], p["visit"]
-        if not p["fin"]:
-            p["min"] = min(90, (pygame.time.get_ticks() - p["t0"]) // 70)
-            if p["min"] >= 90:
-                p["fin"] = True
-        ga = sum(1 for m, l, _ in p["eventos"] if l == "a" and m <= p["min"])
-        gb = sum(1 for m, l, _ in p["eventos"] if l == "b" and m <= p["min"])
+        self._avanzar_partido()
+        ga, gb = ev.marcador(est["eventos"], p["min"])
         self.marcador(34)
         ui.texto(f"{ga} - {gb}", (ANCHO // 2, 80), 110, U.TEXTO, anchor="tc", titulo=True)
-        ui.texto("FINAL" if p["fin"] else f"{p['min']}'", (ANCHO // 2, 190), 28, U.AMARILLO, True, "tc")
+        if p["fin"]:
+            etiqueta = "FINAL"
+        elif p["pausa"] == "descanso":
+            etiqueta = "DESCANSO"
+        else:
+            etiqueta = f"{p['min']}'"
+        ui.texto(etiqueta, (ANCHO // 2, 190), 28, U.AMARILLO, True, "tc")
         ui.barra((ANCHO // 2 - 200, 232, 400, 8), p["min"] / 90, U.VERDE)
         # campo + pelota decorativa
         campo = pygame.Rect(ANCHO // 2 - 300, 262, 600, 330)
@@ -896,37 +1015,131 @@ class App:
         t = pygame.time.get_ticks() / 450
         bx = campo.centerx + int(math.sin(t * 1.3) * 230)
         by = campo.centery + int(math.cos(t * 0.9) * 110)
-        pygame.draw.circle(ui.surf, (255, 255, 255), (bx, by), 8)
-        pygame.draw.circle(ui.surf, (30, 30, 30), (bx, by), 8, 2)
-        # eventos
-        yy = 262
-        ui.texto("Goles", (60, yy), 18, U.VERDE, True)
-        yy += 30
-        for m, l, nom in p["eventos"]:
-            if m <= p["min"]:
-                club = L if l == "a" else V
-                pygame.draw.circle(ui.surf, (255, 255, 255), (68, yy + 9), 6)
-                pygame.draw.circle(ui.surf, (20, 20, 20), (68, yy + 9), 6, 2)
-                ui.texto(f"{m}'  {nom}", (82, yy), 15, club.color if sum(club.color) > 250 else U.TEXTO, True)
-                ui.texto(club.nombre, (82, yy + 18), 12, U.APAGADO)
-                yy += 42
         if not p["fin"]:
-            if ui.boton((ANCHO - 240, 620, 180, 50), "Saltar ▶▶", tam=18):
-                p["fin"] = True
-                p["min"] = 90
-        else:
+            pygame.draw.circle(ui.surf, (255, 255, 255), (bx, by), 8)
+            pygame.draw.circle(ui.surf, (30, 30, 30), (bx, by), 8, 2)
+        if p["banner"] and p["banner"][2] > pygame.time.get_ticks():
+            tx, col, _ = p["banner"]
+            w = ui.fuente(26, True).size(tx)[0] + 40
+            r = pygame.Rect(0, 0, w, 46)
+            r.midtop = (campo.centerx, campo.y + 14)
+            ui.panel(r, (10, 14, 24), 10, col)
+            ui.texto(tx, r.center, 26, col, True, "mc", maxw=campo.w - 40)
+        # crónica
+        ui.texto("Crónica", (60, 262), 18, U.VERDE, True)
+        visibles = [e for e in est["eventos"] if not e["oculto"] and e["min"] <= p["min"]
+                    and (e["res"] is not None or e["tipo"] not in ev.INTERACTIVOS)]
+        yy = 294
+        for e in reversed(visibles[-7:]):
+            titulo, sub, clave = ev.describir(e, est["clubes"])
+            self._icono_evento(ui.surf, clave, 74, yy + 14)
+            ui.texto(f"{e['min']}'  {titulo}", (96, yy), 14, U.TEXTO, True, maxw=240)
+            ui.texto(sub, (96, yy + 18), 12, U.APAGADO, maxw=240)
+            yy += 42
+        if not visibles:
+            ui.texto("Todavía no pasa nada…", (60, 296), 14, U.APAGADO)
+        self._panel_stats(pygame.Rect(960, 358, 260, 234), p["min"])
+        # controles (no se muestran mientras hay un minijuego o el descanso abiertos)
+        if not p["fin"] and not p["pausa"]:
+            if ui.boton((ANCHO - 260, 620, 220, 50), "Omitir partido", tam=17,
+                        tip="Salta al final del partido.\nLas jugadas clave se simulan solas."):
+                self.omitir_partido()
+            r = pygame.Rect(ANCHO - 260, 620, 220, 50)
+            self._icono_omitir(ui.surf, r.x + 26, r.centery, U.TEXTO)
+            ui.texto("Velocidad", (ANCHO - 590, 616), 12, U.APAGADO)
+            for i, v in enumerate((1, 2, 4)):
+                if ui.boton((ANCHO - 590 + i * 66, 636, 60, 34), f"x{v}", p["vel"] == v, tam=15, color=U.AZUL):
+                    p["vel"] = v
+        if p["pausa"] == "mini":
+            r = p["mini"].dibujar(ui)
+            if r:
+                self._cerrar_minijuego(r)
+        elif p["pausa"] == "descanso":
+            self._descanso(ga, gb)
+        elif p["fin"]:
             self.resumen_final(ga, gb)
+
+    def _panel_stats(self, r, minuto):
+        ui, p = self.ui, self.p
+        est = p["est"]
+        ui.panel(r, U.PANEL, 10, U.BORDE)
+        L, V = p["local"], p["visit"]
+        ui.insignia((r.x + 26, r.y + 22), 13, L)
+        ui.insignia((r.right - 26, r.y + 22), 13, V)
+        ui.texto("Estadísticas", (r.centerx, r.y + 22), 15, U.VERDE, True, "mc")
+        st = ev.estadisticas(est["eventos"], minuto)
+        pr = p["pron"]["fa"]["medio"], p["pron"]["fb"]["medio"]
+        posesion = pr[0] / (pr[0] + pr[1])
+        filas = [("Faltas", st["faltas"]["a"], st["faltas"]["b"]), ("Amarillas", st["amarillas"]["a"], st["amarillas"]["b"]),
+                 ("Rojas", st["rojas"]["a"], st["rojas"]["b"]), ("Jugadas clave", st["jugadas"]["a"], st["jugadas"]["b"])]
+        y = r.y + 50
+        for lab, a, b in filas:
+            ui.texto(lab, (r.centerx, y), 12, U.APAGADO, anchor="tc")
+            ui.texto(a, (r.x + 22, y + 18), 16, U.TEXTO, True, "ml")
+            ui.texto(b, (r.right - 22, y + 18), 16, U.TEXTO, True, "mr")
+            y += 40
+        ui.texto("Posesión (estimada)", (r.centerx, y), 12, U.APAGADO, anchor="tc")
+        wl = int((r.w - 100) * posesion)
+        pygame.draw.rect(ui.surf, L.color, (r.x + 50, y + 18, wl, 10), border_radius=5)
+        pygame.draw.rect(ui.surf, V.color, (r.x + 50 + wl, y + 18, r.w - 100 - wl, 10), border_radius=5)
+        ui.texto(f"{posesion:.0%}", (r.x + 22, y + 22), 13, U.TEXTO, True, "ml")
+        ui.texto(f"{1 - posesion:.0%}", (r.right - 22, y + 22), 13, U.TEXTO, True, "mr")
+
+    def _descanso(self, ga, gb):
+        ui, p = self.ui, self.p
+        sombra = pygame.Surface((ANCHO, ALTO), pygame.SRCALPHA)
+        sombra.fill((0, 0, 0, 175))
+        ui.surf.blit(sombra, (0, 0))
+        r = pygame.Rect(340, 110, 600, 520)
+        ui.panel(r, (12, 18, 30), 14, U.BORDE)
+        ui.texto("DESCANSO", (r.centerx, r.y + 12), 56, U.AMARILLO, anchor="tc", titulo=True)
+        L, V = p["local"], p["visit"]
+        ui.texto(f"{L.nombre}  {ga} - {gb}  {V.nombre}", (r.centerx, r.y + 78), 20, U.TEXTO, True, "tc", maxw=r.w - 40)
+        st = ev.estadisticas(p["est"]["eventos"], 45)
+        y = r.y + 118
+        for lab, k in (("Faltas", "faltas"), ("Amarillas", "amarillas"), ("Rojas", "rojas"), ("Jugadas clave", "jugadas")):
+            ui.texto(st[k]["a"], (r.x + 150, y), 16, U.TEXTO, True, "tr")
+            ui.texto(lab, (r.centerx, y), 14, U.APAGADO, anchor="tc")
+            ui.texto(st[k]["b"], (r.right - 150, y), 16, U.TEXTO, True, "tl")
+            y += 26
+        ui.texto("Mentalidad para el 2.º tiempo", (r.centerx, y + 14), 18, U.VERDE, True, "tc")
+        y += 48
+        for i, (k, (nombre, _, _, _)) in enumerate(self.MENTALIDADES.items()):
+            if ui.boton((r.x + 30 + i * 186, y, 174, 46), nombre, p["mentalidad"] == k, tam=17):
+                p["mentalidad"] = k
+        ui.texto(self.MENTALIDADES[p["mentalidad"]][3], (r.centerx, y + 58), 14, U.TEXTO, anchor="tc", maxw=r.w - 40)
+        dif = (ga - gb) if p["user_local"] else (gb - ga)
+        rojas = ev.estadisticas(p["est"]["eventos"], 45)["rojas"]
+        mias, suyas = (rojas["a"], rojas["b"]) if p["user_local"] else (rojas["b"], rojas["a"])
+        if mias > suyas:
+            consejo = "Juegas con un hombre menos: cerrarte limita el daño."
+        elif suyas > mias:
+            consejo = "El rival tiene un expulsado: atacar puede aprovechar la ventaja."
+        elif dif < 0:
+            consejo = "Vas perdiendo: atacar sube tus goles esperados, a costa de riesgo."
+        elif dif >= 2:
+            consejo = "Ventaja cómoda: cerrarte reduce el riesgo."
+        else:
+            consejo = "Partido parejo: el plan equilibrado es razonable."
+        ui.texto("Consejo (regla simple, no es un modelo): " + consejo, (r.centerx, y + 88), 13, U.AMARILLO,
+                 anchor="tc", maxw=r.w - 40)
+        if ui.boton((r.centerx - 150, r.bottom - 74, 300, 54), "Empezar el 2.º tiempo", True, tam=19) or \
+                pygame.K_RETURN in ui.teclas:
+            self._segundo_tiempo()
 
     def resumen_final(self, ga, gb):
         ui, p, c = self.ui, self.p, self.club
         user_goles, riv_goles = (ga, gb) if p["user_local"] else (gb, ga)
         res = "¡VICTORIA!" if user_goles > riv_goles else "EMPATE" if user_goles == riv_goles else "DERROTA"
         col = U.VERDE if user_goles > riv_goles else U.AMARILLO if user_goles == riv_goles else U.ROJO
-        ui.texto(res, (1110, 262), 60, col, anchor="tc", titulo=True)
+        ui.texto(res, (1090, 262), 54, col, anchor="tc", titulo=True)
         pr = p["pron"]["mc"]
         pu = (pr["gana_a"] if p["user_local"] else pr["gana_b"])
-        ui.texto(f"El asistente te daba {pu:.0%} de ganar.", (1110, 330), 15, U.APAGADO, anchor="tc")
-        if ui.boton((ANCHO - 240, 620, 180, 50), "Continuar", True, tam=18):
+        ui.texto(f"El asistente te daba {pu:.0%} de ganar.", (1090, 322), 14, U.APAGADO, anchor="tc")
+        if p["jugadas"]:
+            ok = sum(1 for _, a in p["jugadas"] if a)
+            ui.texto(f"Jugadas clave jugadas: {ok}/{len(p['jugadas'])} a tu favor", (1090, 342), 13, U.AMARILLO, anchor="tc")
+        if ui.boton((ANCHO - 260, 620, 220, 50), "Continuar", True, tam=18):
             self.cerrar_jornada(ga, gb)
 
     def cerrar_jornada(self, ga, gb):
@@ -934,6 +1147,7 @@ class App:
         L, V = p["local"], p["visit"]
         self._registrar(L, V, ga, gb)
         resultados = [(L.id, V.id, ga, gb)]
+        bajas = list(p["est"]["bajas"])
         for h, v in liga.calendario[liga.jornada]:
             if {h, v} == {L.id, V.id}:
                 continue
@@ -941,7 +1155,8 @@ class App:
             fa, fb = fuerzas(H.xi_con_grupo()), fuerzas(W.xi_con_grupo())
             la, lb = goles_esperados(fa, fb, H.tactica, W.tactica, True, self.asist.bono_tactico(H.tactica),
                                      self.asist.bono_tactico(W.tactica))
-            g1, g2 = simular(la, lb, self.rng)
+            g1, g2, bajas_ia, _ = ev.simular_ia(H, W, la, lb, self.rng)
+            bajas.extend(bajas_ia)
             self._registrar(H, W, g1, g2)
             resultados.append((h, v, g1, g2))
         # ingresos
@@ -950,16 +1165,21 @@ class App:
         extra = 0.002 if mine > rival else 0.001 if mine == rival else 0
         ingreso = round(c.valor_plantel() * (0.004 + extra), -4)
         c.presupuesto += ingreso
-        # lesiones y recuperación
+        # recuperación y nuevas bajas (lesiones y sanciones por roja salidas de los partidos)
         for club in liga.clubes:
             for j in club.plantel:
                 if j.lesion:
                     j.lesion -= 1
-            for g, j in club.xi_con_grupo():
-                if self.rng.random() < 0.02:
-                    j.lesion = int(self.rng.integers(1, 5))
-                    if club is c:
-                        self.aviso(f"Lesión: {j.nombre} estará {j.lesion} jornada(s) fuera.", U.ROJO, 5000)
+        for club, j, n, motivo in bajas:
+            if j.lesion >= n and j.motivo == motivo:
+                continue
+            j.lesion, j.motivo = n, motivo
+            if club is c:
+                if motivo == "sanción":
+                    self.aviso(f"Roja: {j.nombre} se pierde el próximo partido.", U.ROJO, 5000)
+                else:
+                    self.aviso(f"Lesión: {j.nombre} estará {n} jornada(s) fuera.", U.ROJO, 5000)
+        for club in liga.clubes:
             if club is not c:
                 reparar_once(club)
         liga.jornada += 1

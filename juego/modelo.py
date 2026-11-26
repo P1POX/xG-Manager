@@ -41,7 +41,7 @@ FORMACIONES = {
 class Jugador:
     __slots__ = ("id", "idx", "nombre", "nombre_largo", "pos", "pos_lista", "grupo", "grupos_nat",
                  "ovr", "pot", "edad", "valor", "valor_pred", "cluster", "rol", "p", "club_id",
-                 "nacionalidad", "lesion", "rasgos", "_prima")
+                 "nacionalidad", "lesion", "motivo", "rasgos", "_prima")
 
     def __init__(self, fila, idx):
         self.id = int(fila["player_id"])
@@ -63,6 +63,7 @@ class Jugador:
         self.club_id = int(fila["club_team_id"])
         self.nacionalidad = fila["nationality_name"]
         self.lesion = 0
+        self.motivo = "lesión"        # "lesión" o "sanción" (roja)
         if self.grupo == "POR":     # porteros: estirada, saque, manejo, colocación, reflejos, físico
             claves = ("goalkeeping_diving", "goalkeeping_kicking", "goalkeeping_handling",
                       "goalkeeping_positioning", "goalkeeping_reflexes", "physic")

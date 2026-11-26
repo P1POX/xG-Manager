@@ -38,6 +38,7 @@ class UI:
         self.teclas = []
         self.foco = None
         self.tip = None
+        self.log = None           # si es una lista, boton() registra (rect, label, habilitado)
 
     # ------------------------------------------------------------- eventos
     def inicio_frame(self, eventos):
@@ -141,6 +142,8 @@ class UI:
         """activo=True/False -> botón de selección (color = color al estar activo);
         activo=None -> botón de acción (color = color de fondo)."""
         rect = pygame.Rect(rect)
+        if self.log is not None:
+            self.log.append((rect.copy(), label, habilitado))
         h = habilitado and rect.collidepoint(self.mouse)
         if not habilitado:
             fondo, tc = (30, 38, 55), (96, 108, 130)
