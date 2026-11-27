@@ -128,8 +128,46 @@ class VistaPartido:
         return x if p.lado == "a" else 1 - x
 
     # ------------------------------------------------------------------ eventos de la crónica
+    def _numero_libre(self, lado, j):
+        usados = {p.numero for p in self.eq[lado] if not p.fuera}
+        return j.dorsal if j.dorsal and j.dorsal not in usados else next(k for k in range(1, 100) if k not in usados)
+
+    def reemplazar(self, lado, sale_nombre, entra_j, slot):
+        """Un suplente entra por el jugador `sale_nombre` y toma su sitio en el campo."""
+        for i, p in enumerate(self.eq[lado]):
+            if p.nombre == sale_nombre and not p.fuera:
+                nuevo = Jug(entra_j, lado, slot, self._numero_libre(lado, entra_j))
+                nuevo.x, nuevo.y = p.x, p.y
+                if self.poseedor is p:
+                    self.poseedor = nuevo
+                self.eq[lado][i] = nuevo
+                self.marcas.append((nuevo, "cambio", self.t + 2.2))
+                return
+
+    def reformar(self, lado, pares):
+        """Nueva formación: `pares` = [((grupo, x, y), jugador)] con el once que queda en el campo."""
+        viejos = {p.nombre: p for p in self.eq[lado] if not p.fuera}
+        nuevos = []
+        for slot, j in pares:
+            v = viejos.get(j.nombre)
+            n = Jug(j, lado, slot, v.numero if v else self._numero_libre(lado, j))
+            if v:
+                n.x, n.y = v.x, v.y
+                if self.poseedor is v:
+                    self.poseedor = n
+            nuevos.append(n)
+        self.eq[lado] = nuevos
+
     def evento(self, e):
         """Encola una jugada de la crónica para actuarla. Se llama cuando el minuto del evento ya pasó."""
+        if e["tipo"] == "cambio":                                     # cambio hecho por el usuario: es inmediato
+            slot = next((s for s, j in e.get("pares", []) if j.id == e["entra_j"].id), None)
+            if slot:
+                self.reemplazar(e["lado"], e["sale"], e["entra_j"], slot)
+            return
+        if e["tipo"] == "formacion":
+            self.reformar(e["lado"], e["pares"])
+            return
         if len(self.cola) > 4:                                    # a x4 podrían acumularse: se conservan las importantes
             self.cola = [g for g in self.cola if g["tipo"] in ("gol", "fallo", "roja")][-3:]
         lado = e["lado"]
@@ -142,7 +180,8 @@ class VistaPartido:
         elif e["tipo"] == "falta":
             self.cola.append({"tipo": "falta", "lado": lado, "quien": e["jug"]})
         elif e["tipo"] in ("amarilla", "roja", "lesion"):
-            self.cola.append({"tipo": e["tipo"], "lado": lado, "quien": e["jug"]})
+            self.cola.append({"tipo": e["tipo"], "lado": lado, "quien": e["jug"],
+                              "entra_j": e.get("entra_j"), "slot": e.get("slot")})
 
     def _iniciar_guion(self, g):
         lado, rival = g["lado"], "b" if g["lado"] == "a" else "a"
@@ -165,6 +204,8 @@ class VistaPartido:
         else:                                                     # tarjeta o lesión: marca sobre el jugador
             quien = self._buscar(lado, g["quien"]) or self.rng.choice(self._vivos(lado))
             self.marcas.append((quien, g["tipo"], self.t + 2.4))
+            if g["tipo"] == "lesion" and g.get("entra_j") and g.get("slot"):      # el suplente entra por el lesionado
+                self.reemplazar(lado, g["quien"], g["entra_j"], g["slot"])
             self.fase = "espera"
             self.espera = 0.9
             self.tras_espera = ("falta", rival)
@@ -429,7 +470,11 @@ class VistaPartido:
         pygame.draw.circle(s, (25, 25, 25), (bx, by), 5, 1)
         for p, tipo, _ in self.marcas:
             cx, cy = int(px(p.x)), int(py(p.y)) - rad - 12
-            if tipo in ("amarilla", "roja"):
+            if tipo == "cambio":
+                pygame.draw.circle(s, (46, 204, 113), (cx, cy), 10)
+                pygame.draw.polygon(s, (255, 255, 255), [(cx - 6, cy - 6), (cx + 6, cy - 3), (cx - 6, cy)])     # ⇄
+                pygame.draw.polygon(s, (255, 255, 255), [(cx + 6, cy), (cx - 6, cy + 3), (cx + 6, cy + 6)])
+            elif tipo in ("amarilla", "roja"):
                 pygame.draw.rect(s, (255, 193, 7) if tipo == "amarilla" else (235, 60, 60), (cx - 6, cy - 9, 12, 17), border_radius=2)
             else:
                 pygame.draw.circle(s, (255, 255, 255), (cx, cy), 9)

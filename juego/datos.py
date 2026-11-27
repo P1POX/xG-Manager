@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from . import camisetas
+from . import camisetas, evolucion
 from . import tactica as tac
 from .modelo import Club, Jugador, autoalinear, reparar_once
 
@@ -27,6 +27,8 @@ def colores_club(nombre):
 class Mundo:
     def __init__(self, seed=None):
         self.rng = np.random.default_rng(seed)
+        self.retirados = set()                 # ids de jugadores retirados en temporadas anteriores (modo carrera)
+        self._pred = None                      # caché de la predicción de evolución
         jug = pd.read_csv(DATA / "jugadores_ml.csv")
         self.vectores = np.load(DATA / "vectores.npy")
         self.jugadores = {}
@@ -60,6 +62,19 @@ class Mundo:
             autoalinear(club)
             club.presupuesto = round(club.valor_plantel() * 0.10, -5)
 
+    # ---------------------------------------------------- evolución (modo carrera)
+    def prediccion(self, j):
+        """(cambio esperado de OVR, desviación típica, prob. de mejorar, prob. de decaer) para el año siguiente."""
+        if not evolucion.disponible():
+            return (0.0, 0.0, 0.0, 0.0)
+        if self._pred is None:
+            activos = [x for x in self.jugadores.values() if x.id not in self.retirados]
+            self._pred = {x.id: p for x, p in zip(activos, evolucion.predecir(activos))}
+        return self._pred.get(j.id) or evolucion.predecir([j])[0]
+
+    def invalidar_prediccion(self):
+        self._pred = None
+
     # -------------------------------------------------------------- mercado
     def precio(self, jugador):
         """Precio que pide el club vendedor: valor real x un margen aleatorio (hay gangas y abusos)."""
@@ -69,10 +84,48 @@ class Mundo:
             extra = 1.25
         return max(100_000.0, round(jugador.valor * self.markup[jugador.idx] * extra, -5))
 
-    def puede_comprar(self, comprador, jugador):
+    def reserva(self, jugador):
+        """Fracción del precio pedido por debajo de la cual el club casi no negocia (su 'precio mínimo').
+
+        Se apoya en la regresión del valor justo: si piden mucho más de lo que vale el jugador (valor justo / precio bajo)
+        aceptan descuentos grandes; si ya piden poco, apenas rebajan. Los titulares se venden más caros y los clubes
+        se desprenden con más facilidad de los veteranos y de los jugadores sin equipo."""
+        pedido = self.precio(jugador)
+        r = float(np.clip(1.05 * jugador.valor_pred / pedido, 0.80, 0.97))
+        club = self.clubes.get(jugador.club_id)
+        if club is None:
+            r -= 0.04
+        elif jugador in club.once:
+            r += 0.03
+        if jugador.edad >= 32:
+            r -= 0.02
+        return float(np.clip(r, 0.75, 0.98))
+
+    def prob_oferta(self, jugador, oferta):
+        """Probabilidad de que acepten una oferta (1 si se paga lo que piden; 50 % justo en la reserva del club)."""
+        pedido = self.precio(jugador)
+        if oferta >= pedido:
+            return 1.0
+        z = (oferta / pedido - self.reserva(jugador)) / 0.035
+        return float(1 / (1 + np.exp(-z)))
+
+    def ofrecer(self, comprador, jugador, oferta, rng):
+        """Ofrece `oferta` (< precio pedido). Devuelve (ok, mensaje, aceptada)."""
+        pedido = self.precio(jugador)
+        ok, msg = self.puede_comprar(comprador, jugador, min(oferta, pedido))
+        if not ok:
+            return False, msg, False
+        if oferta >= pedido or rng.random() < self.prob_oferta(jugador, oferta):
+            ok, msg = self.comprar(comprador, jugador, min(oferta, pedido))
+            return ok, msg, ok
+        cerca = oferta / pedido >= self.reserva(jugador) - 0.04
+        return True, ("Rechazaron tu oferta, pero estuvo cerca." if cerca
+                      else "Rechazaron tu oferta: quedó lejos de lo que piden."), False
+
+    def puede_comprar(self, comprador, jugador, precio=None):
         if jugador in comprador.plantel:
             return False, "Ya está en tu plantel."
-        precio = self.precio(jugador)
+        precio = self.precio(jugador) if precio is None else precio
         if precio > comprador.presupuesto:
             return False, "Presupuesto insuficiente."
         vend = self.clubes.get(jugador.club_id)
@@ -84,11 +137,11 @@ class Mundo:
             return False, "Plantel lleno (máx. 34)."
         return True, ""
 
-    def comprar(self, comprador, jugador):
-        ok, msg = self.puede_comprar(comprador, jugador)
+    def comprar(self, comprador, jugador, precio=None):
+        precio = self.precio(jugador) if precio is None else precio
+        ok, msg = self.puede_comprar(comprador, jugador, precio)
         if not ok:
             return False, msg
-        precio = self.precio(jugador)
         vend = self.clubes.get(jugador.club_id)
         if vend:
             vend.plantel.remove(jugador)

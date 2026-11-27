@@ -122,7 +122,7 @@ frame(app5, n=8)
 assert app5.escena == "menu", app5.escena
 paso("guardado incoherente: avisa y vuelve al menú sin cerrarse")
 
-# ------------------------------------------------------------------ fin de temporada borra el guardado
+# ------------------------------------------------------------------ al terminar la temporada la partida sigue guardada
 G.borrar()
 app6 = nueva_app(3)
 app6.ir("cargando")
@@ -134,8 +134,14 @@ jugar(app6, 1)
 assert G.existe()
 while not app6.liga.terminada:
     jugar(app6, 1)
-assert not G.existe(), "al terminar la liga debía borrarse el guardado"
-paso("al terminar la temporada se borra el guardado")
+assert G.existe(), "al terminar la liga la partida debe seguir guardada (modo carrera)"
+assert app6.escena == "fin"
+app7 = nueva_app(4)
+clic(app7, "Continuar temporada")
+frame(app7, n=8)
+assert app7.escena == "hub" and app7.liga.terminada, (app7.escena, app7.liga.terminada)
+assert "Ver resultado final" in etiquetas(app7)
+paso("al terminar la temporada la partida sigue guardada y al continuar se ofrece 'Ver resultado final'")
 
 shutil.rmtree(RAIZ / "shots" / "_saves", ignore_errors=True)
 print(f"\n{len(OK)} comprobaciones OK")

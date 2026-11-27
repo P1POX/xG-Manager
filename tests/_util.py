@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
+os.environ.setdefault("SDL_AUDIODRIVER", "dummy")        # las pruebas no necesitan altavoces
 RAIZ = Path(__file__).resolve().parent.parent
 os.environ["XG_SAVE_DIR"] = str(RAIZ / "shots" / "_saves")      # las pruebas nunca tocan tu partida real
 shutil.rmtree(os.environ["XG_SAVE_DIR"], ignore_errors=True)    # cada ejecución parte sin partida guardada

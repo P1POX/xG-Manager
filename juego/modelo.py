@@ -145,6 +145,15 @@ def mejor_once(plantel, formacion):
     return once, float(-costo[filas, cols].sum())
 
 
+def asignar_formacion(jugadores, formacion):
+    """Reparte a los jugadores que están en el campo en los puestos de `formacion` (algoritmo húngaro).
+    Devuelve [(puesto, jugador)] con puesto = (grupo, x, y). Con menos de 11 jugadores quedan puestos vacíos."""
+    slots = FORMACIONES[formacion]
+    costo = -np.array([[j.rendimiento(s[0]) for j in jugadores] for s in slots])
+    filas, cols = linear_sum_assignment(costo)
+    return [(slots[f], jugadores[c]) for f, c in sorted(zip(filas, cols))]
+
+
 def autoalinear(club, formacion=None):
     """Elige formación (si no se indica) y once titular."""
     if formacion is None:

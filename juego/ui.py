@@ -237,18 +237,24 @@ class UI:
         self.texto(pos, (cx, y + 16), 11, (214, 232, 220), anchor="tc")
 
     def icono_baja(self, cx, cy, motivo, r=10):
-        """Por qué un jugador no está disponible: cruz roja = lesión; tarjeta roja = sanción por expulsión."""
+        """Por qué un jugador no está disponible: cruz roja = lesión; tarjeta roja = sanción por expulsión.
+        Sin fondo blanco: solo la figura roja, con un contorno oscuro fino para que se vea sobre cualquier fondo."""
+        rojo, borde = (226, 48, 48), (46, 8, 8)
         if motivo == "sanción":
-            rect = pygame.Rect(0, 0, int(r * 1.35), int(r * 1.9))
+            rect = pygame.Rect(0, 0, int(r * 1.3), int(r * 1.8))
             rect.center = (cx, cy)
-            pygame.draw.rect(self.surf, (226, 48, 48), rect, border_radius=3)
-            pygame.draw.rect(self.surf, (255, 255, 255), rect, 2, border_radius=3)
+            pygame.draw.rect(self.surf, rojo, rect, border_radius=2)
+            pygame.draw.rect(self.surf, borde, rect, 1, border_radius=2)
         else:
-            pygame.draw.circle(self.surf, (255, 255, 255), (cx, cy), r)
-            pygame.draw.circle(self.surf, (150, 30, 30), (cx, cy), r, 1)
-            g = max(2, r // 4)
-            pygame.draw.rect(self.surf, (226, 48, 48), (cx - r * 0.6, cy - g, r * 1.2, 2 * g))
-            pygame.draw.rect(self.surf, (226, 48, 48), (cx - g, cy - r * 0.6, 2 * g, r * 1.2))
+            largo = r * 1.9                                           # cruz de brazos gruesos
+            g = max(2.0, r * 0.62)
+            horiz = pygame.Rect(0, 0, int(largo), int(g))
+            vert = pygame.Rect(0, 0, int(g), int(largo))
+            horiz.center = vert.center = (cx, cy)
+            for rect in (horiz, vert):                                # contorno oscuro por debajo
+                pygame.draw.rect(self.surf, borde, rect.inflate(2, 2), border_radius=1)
+            for rect in (horiz, vert):
+                pygame.draw.rect(self.surf, rojo, rect)
 
     def placa_jugador_corta(self, cx, y, nombre):
         """Nombre pequeño sobre placa oscura (vista animada del partido)."""

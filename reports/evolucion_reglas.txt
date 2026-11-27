@@ -1,0 +1,46 @@
+|--- gap <= 5.50
+|   |--- overall <= 68.50
+|   |   |--- overall <= 62.50
+|   |   |   |--- age <= 29.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- age >  29.50
+|   |   |   |   |--- class: estable
+|   |   |--- overall >  62.50
+|   |   |   |--- gap <= 0.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- gap >  0.50
+|   |   |   |   |--- class: estable
+|   |--- overall >  68.50
+|   |   |--- age <= 27.50
+|   |   |   |--- gap <= 0.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- gap >  0.50
+|   |   |   |   |--- class: estable
+|   |   |--- age >  27.50
+|   |   |   |--- overall <= 74.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- overall >  74.50
+|   |   |   |   |--- class: estable
+|--- gap >  5.50
+|   |--- overall <= 61.50
+|   |   |--- g_POR <= 0.50
+|   |   |   |--- overall <= 58.50
+|   |   |   |   |--- class: mejora
+|   |   |   |--- overall >  58.50
+|   |   |   |   |--- class: mejora
+|   |   |--- g_POR >  0.50
+|   |   |   |--- gap <= 13.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- gap >  13.50
+|   |   |   |   |--- class: mejora
+|   |--- overall >  61.50
+|   |   |--- gap <= 10.50
+|   |   |   |--- overall <= 65.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- overall >  65.50
+|   |   |   |   |--- class: estable
+|   |   |--- gap >  10.50
+|   |   |   |--- gap <= 12.50
+|   |   |   |   |--- class: estable
+|   |   |   |--- gap >  12.50
+|   |   |   |   |--- class: mejora

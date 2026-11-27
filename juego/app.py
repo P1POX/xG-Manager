@@ -1,4 +1,6 @@
 ﻿"""Aplicación principal (Pygame): menús, gestión del club y partidos."""
+import calendar
+import datetime as dt
 import json
 import math
 import os
@@ -9,7 +11,11 @@ import numpy as np
 import pandas as pd
 import pygame
 
+from . import audio as AU
+from . import cambios as CB
 from . import eventos as ev
+from . import evolucion as EV
+from . import fechas as F
 from . import guardado as G
 from . import minijuegos as mj
 from . import tactica as tac
@@ -41,15 +47,25 @@ def color_apt(a):
 
 class App:
     def __init__(self, seed=None):
+        if sys.platform == "win32":
+            # Windows agrupa las ventanas en la barra de tareas por "identidad de aplicación". Sin una propia, el juego
+            # hereda la de python.exe (icono de Python); con una propia, la barra muestra el icono del juego.
+            try:
+                import ctypes
+                ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("xGManager.Educativo.Juego")
+            except Exception:
+                pass
         os.environ.setdefault("SDL_RENDER_SCALE_QUALITY", "linear")   # al escalar a 1080p, suaviza en vez de "pixelar"
+        pygame.mixer.pre_init(44100, -16, 2, 512)                    # latencia baja para los pitidos
         pygame.init()
         pygame.display.set_caption("xG Manager · Minería de Datos con FC 24")
         try:
-            pygame.display.set_icon(pygame.transform.smoothscale(pygame.image.load(str(IMG / "logo.png")), (64, 64)))
+            pygame.display.set_icon(pygame.transform.smoothscale(pygame.image.load(str(IMG / "logo.png")), (128, 128)))
         except (pygame.error, FileNotFoundError):
             pass                                          # sin logo el juego funciona igual
         self.pantalla = pygame.display.set_mode((ANCHO, ALTO), pygame.SCALED | pygame.RESIZABLE)
         self.ui = U.UI(self.pantalla)
+        self.audio = AU.Audio(G.carpeta() / "ajustes.json")
         self.reloj = pygame.time.Clock()
         self.seed = seed
         self.mundo = None
@@ -73,7 +89,14 @@ class App:
         self.sel_slot = None
         self.sel_jug = None
         self.scroll_plantel = 0
-        self.mercado = {"grupo": None, "orden": "gangas", "ovr_min": 68, "asequibles": True, "texto": "",
+        self.rechazos = {}               # {id de jugador: ronda} de ofertas rechazadas (no se reabre hasta la próxima jornada)
+        self.cal_sel = None              # jornada elegida en el calendario (None = la próxima)
+        self.cal_mes = None              # (año, mes) que muestra el calendario (None = el de la próxima jornada)
+        self.temporada = F.TEMPORADA_BASE
+        self.historial_temporadas = []   # [{"temporada", "pos", "pts", "objetivo", "cumplido"}] de temporadas ya jugadas
+        self.resumen_evol = None         # resultado de la última evolución (pantalla "evolucion")
+        self._pasando_frame = False
+        self.mercado = {"grupo": None, "orden": "gangas", "asc": False, "ovr_min": 68, "asequibles": True, "texto": "",
                         "pagina": 0, "sel": None, "cache": None, "clave": None, "reemplazo": None}
         self.p = None                    # estado del partido
         self.sugerencia = None
@@ -146,6 +169,9 @@ class App:
     def reiniciar_mundo(self):
         self.mundo = Mundo(seed=self.seed)
         self.rng = np.random.default_rng(self.seed)
+        self.temporada = F.TEMPORADA_BASE
+        self.historial_temporadas = []
+        self.mundo.prediccion(next(iter(self.mundo.jugadores.values())))      # calienta el modelo de evolución
 
     # ------------------------------------------------------------ bucle
     def ejecutar(self):
@@ -159,6 +185,8 @@ class App:
                     sys.exit()
                 if e.type == pygame.KEYDOWN and e.key == pygame.K_F11:
                     pygame.display.toggle_fullscreen()
+                if e.type == pygame.KEYDOWN and e.key == pygame.K_m and self.ui.foco is None:
+                    self.audio.alternar_silencio()
             self.ui.inicio_frame(eventos)
             self.cuadro()
             self.ui.dibujar_tooltip()
@@ -172,6 +200,40 @@ class App:
             self.ui.foco = None
         self.pantalla.blit(self.fondo_menu if self.escena in ("menu", "cargando", "liga") else self.fondo, (0, 0))
         getattr(self, "escena_" + self.escena)()
+        self._audio_cuadro()
+        self._boton_sonido()
+
+    def _audio_cuadro(self):
+        """Música en los menús; en el partido entra la grada (más baja en el descanso, los minijuegos y los cambios)."""
+        p = self.p
+        en_partido = self.escena == "partido" and bool(p) and p.get("fase") == "vivo"
+        tension = 1.0
+        if en_partido and (p.get("pausa") in ("descanso", "mini", "cambios") or p.get("fin")):
+            tension = 0.45
+        self.audio.actualizar(en_partido, tension)
+
+    def _boton_sonido(self):
+        """Altavoz en la esquina superior derecha: clic o tecla M para silenciar / activar."""
+        ui, au = self.ui, self.audio
+        r = pygame.Rect(ANCHO - 40, 4, 34, 26)
+        activo = au.activo and not au.silencio
+        col = U.TEXTO if activo else U.ROJO
+        pygame.draw.rect(ui.surf, (16, 22, 36, 200), r, border_radius=6)
+        pygame.draw.rect(ui.surf, U.BORDE, r, 1, border_radius=6)
+        cx, cy = r.centerx - 4, r.centery
+        pygame.draw.polygon(ui.surf, col, [(cx - 7, cy - 3), (cx - 3, cy - 3), (cx + 2, cy - 8), (cx + 2, cy + 8),
+                                           (cx - 3, cy + 3), (cx - 7, cy + 3)])
+        if activo:
+            for k in (1, 2):
+                pygame.draw.arc(ui.surf, col, (cx + 2 - k * 2, cy - 4 - k * 2, 6 + k * 4, 8 + k * 4), -0.9, 0.9, 2)
+        else:
+            pygame.draw.line(ui.surf, col, (cx + 5, cy - 6), (cx + 12, cy + 6), 2)
+            pygame.draw.line(ui.surf, col, (cx + 12, cy - 6), (cx + 5, cy + 6), 2)
+        if ui.hover(r):
+            ui.tip = ("Sonido silenciado" if not activo else "Sonido activado") + " · clic o tecla M para cambiar" \
+                if au.activo else "No se encontró un dispositivo de audio."
+        if ui.clic_en(r):
+            au.alternar_silencio()
 
     def dibujar_avisos(self):
         ahora = pygame.time.get_ticks()
@@ -224,8 +286,28 @@ class App:
                        "(regresión), su APTITUD por posición (árbol de decisión), el PRONÓSTICO del partido y las REGLAS "
                        "TÁCTICAS (Apriori) asociadas a los equipos de élite. ¡Termina la liga cumpliendo el objetivo!",
                        r.inflate(-28, -20), 15)
+        self._ajustes_sonido(24, ALTO - 126)
         ui.texto("Fuentes: Lato y Bebas Neue (SIL OFL) · Datos: EA SPORTS FC 24 Complete Player Dataset (Kaggle)",
                  (ANCHO // 2, ALTO - 24), 13, U.APAGADO, anchor="tc")
+
+    def _ajustes_sonido(self, x, y):
+        ui, au = self.ui, self.audio
+        ui.panel((x, y - 12, 236, 136), (10, 14, 24), 10, U.BORDE)
+        ui.texto("Sonido", (x + 12, y - 4), 14, U.VERDE, True)
+        for k, (que, lab, val) in enumerate((("musica", "Música", au.musica), ("efectos", "Efectos", au.efectos))):
+            yy = y + 20 + k * 30
+            ui.texto(lab, (x + 12, yy + 10), 13, U.APAGADO, anchor="ml")
+            if ui.boton((x + 78, yy, 26, 22), "−", tam=14):
+                au.cambiar(que, -0.1)
+            ui.texto(f"{val:.0%}", (x + 134, yy + 11), 14, U.TEXTO, True, "mc")
+            if ui.boton((x + 164, yy, 26, 22), "+", tam=14):
+                au.cambiar(que, 0.1)
+        ui.texto("Silbato", (x + 12, y + 90), 13, U.APAGADO, anchor="ml")
+        if ui.boton((x + 78, y + 79, 112, 22), AU.ESTILOS_SILBATO[au.estilo_silbato], tam=13,
+                    tip="Cambia el sonido del pito (Fox 40 o de bolita) y lo hace sonar."):
+            au.cambiar_silbato()
+        if au.pista:
+            ui.texto("♪ " + au.pista, (x + 12, y + 112), 11, U.APAGADO, maxw=210)
 
     def escena_cargando(self):
         self.dibujar_logo(ANCHO // 2, 90, 280)
@@ -285,7 +367,7 @@ class App:
         if self.club_sel is None:
             self.club_sel = clubes[len(clubes) // 2]
         ui.texto(self.liga_nombre, (40, 24), 52, titulo=True)
-        ui.logo_liga((1170, 56), 56, self.liga_nombre)
+        ui.logo_liga((1150, 74), 48, self.liga_nombre)
         ui.texto("Elige el club que vas a dirigir", (40, 78), 17, U.APAGADO)
         ui.texto("Club", (100, 116), 14, U.APAGADO)
         ui.texto("OVR", (370, 116), 14, U.APAGADO)
@@ -346,6 +428,7 @@ class App:
         self.objetivo_pos = self.objetivo(club, sorted(clubes, key=lambda c: -c.ovr))
         self.ultimos = []
         self.sel_slot = self.sel_jug = None
+        self.cal_sel = self.cal_mes = None
         self.mercado.update(sel=None, cache=None, clave=None, reemplazo=None, pagina=0)
         self.tab = "alineacion"
         self.ir("hub")
@@ -359,17 +442,18 @@ class App:
         ui.insignia((60, 62), 34, c)
         ui.texto_fit(c.nombre, (112, 38), 26, 14, 96, titulo=True)
         ui.texto(c.liga, (112, 66), 13, U.APAGADO, maxw=100)
+        ui.texto(f"Temp. {F.nombre_temporada(self.temporada)}", (112, 84), 12, U.AMARILLO, maxw=100)
         ui.texto("PRESUPUESTO", (20, 118), 12, U.APAGADO)
         ui.texto(eur(c.presupuesto), (20, 134), 26, U.VERDE, True)
         ui.texto(f"Posición: {self.liga.posicion(c)}º  ·  {c.pts} pts", (20, 172), 15)
         ui.texto(f"Objetivo: top {self.objetivo_pos}", (20, 194), 14, U.AMARILLO)
         tabs = [("alineacion", "Alineación"), ("mercado", "Mercado"), ("tactica", "Táctica"),
-                ("liga", "Liga"), ("datos", "Datos y modelos")]
-        y = 236
+                ("liga", "Liga"), ("calendario", "Calendario"), ("datos", "Datos y modelos")]
+        y = 226
         for k, nombre in tabs:
             if ui.boton((14, y, X0 - 40, 42), nombre, self.tab == k, tam=17):
                 self.tab = k
-            y += 50
+            y += 48
         if self.liga.terminada:
             if ui.boton((14, ALTO - 84, X0 - 40, 60), "Ver resultado final", True, U.AMARILLO, tam=18):
                 self.ir("fin")
@@ -397,6 +481,7 @@ class App:
                 ui.insignia((r.right + 22, 29), 11, club)
                 r = ui.texto(club.nombre, (r.right + 42, 20), 15, U.VERDE if club is c else U.TEXTO, True)
                 r = ui.texto(f"({club.ovr})", (r.right + 6, 20), 15, U.AMARILLO)
+            r = ui.texto("· " + F.texto_fecha(self.fecha(self.liga.jornada), True), (r.right + 10, 20), 15, U.APAGADO)
             if ui.hover(pygame.Rect(x0, 16, r.right - x0, 26)):
                 ui.tip = ("Quien aparece primero juega en casa.\n"
                           "El número entre paréntesis es el OVR del equipo en FC 24\n"
@@ -454,8 +539,15 @@ class App:
             autoalinear(c, c.formacion)
             self.sel_slot = self.sel_jug = None
             self.aviso("Alineación óptima aplicada.")
-        # lista del plantel
-        orden = sorted(c.plantel, key=lambda j: (GRUPOS.index(j.grupo), -j.ovr))
+        # lista del plantel en tres secciones: titulares, suplentes y no disponibles (no se pueden alinear)
+        titulares = sorted([j for j in c.plantel if j in c.once and not j.lesion], key=lambda j: c.once.index(j))
+        suplentes = sorted([j for j in c.plantel if j not in c.once and not j.lesion],
+                           key=lambda j: (GRUPOS.index(j.grupo), -j.ovr))
+        no_disp = sorted([j for j in c.plantel if j.lesion], key=lambda j: (-j.lesion, GRUPOS.index(j.grupo), -j.ovr))
+        orden = [("h", f"TITULARES · {len(titulares)}", U.VERDE)] + [("j", j) for j in titulares]
+        orden += [("h", f"SUPLENTES · {len(suplentes)}", U.AMARILLO)] + [("j", j) for j in suplentes]
+        if no_disp:
+            orden += [("h", f"NO DISPONIBLES · {len(no_disp)}", U.ROJO)] + [("j", j) for j in no_disp]
         y0 = 92
         ui.texto("Pos", (px0 + 34, y0), 13, U.APAGADO)
         ui.texto("Jugador", (px0 + 80, y0), 13, U.APAGADO)
@@ -467,28 +559,44 @@ class App:
         if lista.collidepoint(ui.mouse):
             self.scroll_plantel -= ui.rueda
         self.scroll_plantel = max(0, min(self.scroll_plantel, max(0, len(orden) - filas)))
-        for n, j in enumerate(orden[self.scroll_plantel:self.scroll_plantel + filas]):
+        for n, fila in enumerate(orden[self.scroll_plantel:self.scroll_plantel + filas]):
             r = pygame.Rect(px0, y0 + 20 + n * fh, pw, fh - 1)
+            if fila[0] == "h":
+                pygame.draw.line(ui.surf, U.BORDE, (px0, r.bottom - 2), (px0 + pw - 10, r.bottom - 2), 1)
+                ui.texto(fila[1], (px0 + 8, r.centery - 1), 12, fila[2], True, "ml")
+                continue
+            j = fila[1]
             if j is self.sel_jug:
                 ui.panel(r, U.PANEL2, 5, U.AMARILLO)
             elif ui.hover(r):
                 ui.panel(r, U.PANEL, 5)
-            tit = j in c.once
-            if tit:
-                ui.texto("XI", (px0 + 8, r.centery), 12, U.VERDE, True, "ml")
-            if j.lesion and not tit:
-                ui.icono_baja(px0 + 8, r.centery, j.motivo, 7)
-                ui.texto(j.lesion, (px0 + 18, r.centery), 12, U.ROJO, True, "ml")
+            if j.lesion:
+                ui.icono_baja(px0 + 10, r.centery, j.motivo, 7)
+                ui.texto(j.lesion, (px0 + 21, r.centery), 12, U.ROJO, True, "ml")
             ui.texto(j.pos, (px0 + 34, r.centery), 14, U.AMARILLO, anchor="ml")
             ui.texto(j.nombre, (px0 + 80, r.centery), 14, U.APAGADO if j.lesion else U.TEXTO, anchor="ml", maxw=165)
             ui.texto(j.edad, (px0 + 250, r.centery), 14, anchor="ml")
-            ui.texto(j.ovr, (px0 + 292, r.centery), 14, U.VERDE, True, "ml")
-            ui.texto(j.rol, (px0 + 336, r.centery), 13, U.APAGADO, anchor="ml", maxw=pw - 340)
+            ui.texto(j.ovr, (px0 + 292, r.centery), 14, U.APAGADO if j.lesion else U.VERDE, True, "ml")
+            if j.lesion:
+                motivo = "Suspendido" if j.motivo == "sanción" else "Lesionado"
+                ui.texto(f"{motivo} · {j.lesion} jornada{'s' if j.lesion > 1 else ''}", (px0 + 336, r.centery), 13,
+                         U.ROJO, anchor="ml", maxw=pw - 340)
+            else:
+                ui.texto(j.rol, (px0 + 336, r.centery), 13, U.APAGADO, anchor="ml", maxw=pw - 340)
             if ui.clic_en(r):
-                if self.sel_slot is not None and j.lesion == 0:
-                    self.asignar(self.sel_slot, j)
+                if self.sel_slot is not None:
+                    if j.lesion:                          # un baja no puede ser titular
+                        self.aviso(f"{j.nombre} está {'suspendido' if j.motivo == 'sanción' else 'lesionado'}: "
+                                   "no puede ser titular.", U.ROJO)
+                    else:
+                        self.asignar(self.sel_slot, j)
                 else:
                     self.sel_jug = None if self.sel_jug is j else j
+        if len(orden) > filas:                           # barra de desplazamiento
+            alto = lista.h * filas / len(orden)
+            top = lista.y + (lista.h - alto) * self.scroll_plantel / max(1, len(orden) - filas)
+            pygame.draw.rect(ui.surf, U.BORDE, (lista.right - 5, lista.y, 3, lista.h), border_radius=2)
+            pygame.draw.rect(ui.surf, U.APAGADO, (lista.right - 5, top, 3, alto), border_radius=2)
         # ficha del jugador seleccionado
         j = self.sel_jug or (c.once[self.sel_slot] if self.sel_slot is not None else None)
         ficha = pygame.Rect(px0, y0 + 20 + filas * fh + 10, pw, 700 - (y0 + 20 + filas * fh + 10))
@@ -540,6 +648,12 @@ class App:
         ui.texto(j.rol, (x, r.y + 78), 14, U.AZUL, True, maxw=r.right - x - 12)
         dif = j.valor_pred / j.valor - 1
         ui.texto(f"Valor real {eur(j.valor)} · valor justo (regresión) {eur(j.valor_pred)}", (r.x + 16, r.y + 116), 13)
+        mu, sd, pm, pb = self.mundo.prediccion(j)
+        col = U.VERDE if mu >= 1 else U.ROJO if mu <= -1 else U.APAGADO
+        ui.texto("Próxima temporada (modelo de evolución):", (r.x + 16, r.y + 166), 12, U.APAGADO)
+        ui.texto(f"{mu:+.1f} OVR esperado · {EV.etiqueta_tendencia(pm, pb)}", (r.x + 262, r.y + 165), 13, col, True)
+        ui.texto(f"Rango probable {mu - sd:+.0f} a {mu + sd:+.0f} · {pm:.0%} de mejorar · {pb:.0%} de bajar",
+                 (r.x + 16, r.y + 186), 12, U.APAGADO)
         ui.texto("Aptitud por posición (árbol):", (r.x + 16, r.y + 138), 12, U.APAGADO)
         for n, g in enumerate(GRUPOS):
             x = r.x + 180 + n * 95
@@ -564,6 +678,10 @@ class App:
         self.sel_slot = self.sel_jug = None
 
     # ---------------------------------------------------------- mercado
+    ORDENES_MERCADO = [("gangas", "Gangas"), ("ovr", "OVR"), ("pot", "Potencial"), ("precio", "Precio"), ("edad", "Edad"),
+                       ("evol", "Evol.")]
+    ASC_POR_DEFECTO = {"gangas": False, "ovr": False, "pot": False, "precio": True, "edad": True, "evol": False}
+
     def tab_mercado(self):
         ui, c, m = self.ui, self.club, self.mercado
         rep = m["reemplazo"]
@@ -578,24 +696,30 @@ class App:
                 if ui.boton((X0 + 48 + k * 58, 46, 54, 30), g or "Todos", m["grupo"] == g, tam=13):
                     m.update(grupo=g, pagina=0, clave=None)
             ui.texto("Orden", (X0 + 360, 55), 13, U.APAGADO)
-            for k, (o, lab) in enumerate([("gangas", "Gangas"), ("ovr", "OVR"), ("pot", "Potencial"),
-                                           ("precio", "Precio")]):
-                if ui.boton((X0 + 402 + k * 78, 46, 74, 30), lab, m["orden"] == o, color=U.AMARILLO, tam=13,
-                            tip="Gangas = valor justo (regresión) / precio pedido." if o == "gangas" else None):
-                    m.update(orden=o, pagina=0, clave=None)
-            ui.texto("OVR mín.", (X0 + 730, 55), 13, U.APAGADO)
-            if ui.boton((X0 + 790, 46, 26, 30), "−", tam=16):
-                m.update(ovr_min=max(0, m["ovr_min"] - 2), pagina=0, clave=None)
-            ui.texto(m["ovr_min"], (X0 + 830, 61), 15, U.TEXTO, True, "mc")
-            if ui.boton((X0 + 846, 46, 26, 30), "+", tam=16):
-                m.update(ovr_min=min(90, m["ovr_min"] + 2), pagina=0, clave=None)
-            if ui.boton((X0 + 884, 46, 150, 30), "Solo asequibles", m["asequibles"], U.AZUL, tam=13):
-                m.update(asequibles=not m["asequibles"], pagina=0, clave=None)
+            for k, (o, lab) in enumerate(self.ORDENES_MERCADO):
+                tip = {"gangas": "Gangas = valor justo (regresión) / precio pedido.",
+                       "edad": "Edad del jugador.",
+                       "evol": "Cambio de OVR esperado el próximo año (modelo de evolución)."}.get(o)
+                if ui.boton((X0 + 402 + k * 76, 46, 72, 30), lab, m["orden"] == o, color=U.AMARILLO, tam=13, tip=tip):
+                    if m["orden"] != o:                       # cada criterio arranca en su sentido natural
+                        m.update(orden=o, asc=self.ASC_POR_DEFECTO[o], pagina=0, clave=None)
+            sentido = "Menor a mayor ↑" if m["asc"] else "Mayor a menor ↓"
+            if ui.boton((X0 + 402 + len(self.ORDENES_MERCADO) * 76 + 8, 46, 146, 30), sentido, tam=13, color=U.AZUL,
+                        tip="Cambia el sentido del orden (ascendente / descendente)."):
+                m.update(asc=not m["asc"], pagina=0, clave=None)
             nuevo = ui.entrada_texto((X0, 84, 300, 28), m["texto"], "buscar", "Buscar jugador o club…")
             if nuevo != m["texto"]:
                 m.update(texto=nuevo, pagina=0, clave=None)
+            ui.texto("OVR mín.", (X0 + 330, 93), 13, U.APAGADO, anchor="ml")
+            if ui.boton((X0 + 392, 84, 26, 28), "−", tam=16):
+                m.update(ovr_min=max(0, m["ovr_min"] - 2), pagina=0, clave=None)
+            ui.texto(m["ovr_min"], (X0 + 432, 98), 15, U.TEXTO, True, "mc")
+            if ui.boton((X0 + 448, 84, 26, 28), "+", tam=16):
+                m.update(ovr_min=min(90, m["ovr_min"] + 2), pagina=0, clave=None)
+            if ui.boton((X0 + 490, 84, 150, 28), "Solo asequibles", m["asequibles"], U.AZUL, tam=13):
+                m.update(asequibles=not m["asequibles"], pagina=0, clave=None)
         # ---- lista candidata (en caché)
-        clave = (m["grupo"], m["orden"], m["ovr_min"], m["asequibles"], m["texto"], rep.id if rep else None,
+        clave = (m["grupo"], m["orden"], m["asc"], m["ovr_min"], m["asequibles"], m["texto"], rep.id if rep else None,
                  int(c.presupuesto // 100_000), len(c.plantel))
         if m["clave"] != clave:
             m["clave"] = clave
@@ -609,14 +733,16 @@ class App:
                               or t in self.nombre_club(p).lower())]
                 if m["asequibles"]:
                     lista = [p for p in lista if self.mundo.precio(p) <= c.presupuesto]
-                claves = {"gangas": lambda p: -(p.valor_pred / self.mundo.precio(p)), "ovr": lambda p: -p.ovr,
-                          "pot": lambda p: -p.pot, "precio": lambda p: self.mundo.precio(p)}
-                lista.sort(key=claves[m["orden"]])
+                claves = {"gangas": lambda p: p.valor_pred / self.mundo.precio(p), "ovr": lambda p: p.ovr,
+                          "pot": lambda p: p.pot, "precio": lambda p: self.mundo.precio(p), "edad": lambda p: p.edad,
+                          "evol": lambda p: self.mundo.prediccion(p)[0]}
+                # desempate estable: a igual valor, el de mayor OVR primero
+                lista.sort(key=lambda p: (claves[m["orden"]](p), -p.ovr), reverse=not m["asc"])
             m["cache"] = lista
         lista = m["cache"]
         # ---- tabla
         cols = [("Jugador", 0, 'l'), ("Club", 175, 'l'), ("Pos", 320, 'l'), ("Edad", 362, 'l'), ("OVR", 408, 'l'),
-                ("POT", 448, 'l'), ("Rol (K-means)", 492, 'l'), ("Precio", 745, 'r'), ("Valor justo", 840, 'r'),
+                ("POT", 448, 'l'), ("Evol.", 488, 'l'), ("Rol (K-means)", 540, 'l'), ("Precio", 745, 'r'), ("Valor justo", 840, 'r'),
                 ("Dif.", 920, 'r')]
         y0 = 122
         for n, x, al in cols:
@@ -640,7 +766,9 @@ class App:
             ui.texto(p.edad, (X0 + 376, cy), 14, anchor="ml")
             ui.texto(p.ovr, (X0 + 422, cy), 14, U.VERDE, True, "ml")
             ui.texto(p.pot, (X0 + 462, cy), 14, anchor="ml")
-            ui.texto(p.rol, (X0 + 506, cy), 13, U.APAGADO, anchor="ml", maxw=225)
+            mu = self.mundo.prediccion(p)[0]
+            ui.texto(f"{mu:+.1f}", (X0 + 502, cy), 14, U.VERDE if mu >= 1 else U.ROJO if mu <= -1 else U.APAGADO, True, "ml")
+            ui.texto(p.rol, (X0 + 554, cy), 13, U.APAGADO, anchor="ml", maxw=138)           # no debe llegar al precio
             ui.texto(eur(precio), (X0 + 14 + 745, cy), 14, U.TEXTO, True, "mr")
             ui.texto(eur(p.valor_pred), (X0 + 14 + 840, cy), 14, anchor="mr")
             ui.texto(f"{dif:+.0%}", (X0 + 14 + 920, cy), 14, U.VERDE if dif > 0.05 else U.ROJO if dif < -0.05 else U.APAGADO,
@@ -660,19 +788,53 @@ class App:
             m["pagina"] = max(0, min(npag - 1, m["pagina"] - ui.rueda))
         s = m["sel"]
         if s:
-            ok, msg = self.mundo.puede_comprar(c, s)
             precio = self.mundo.precio(s)
-            ui.texto(f"{s.nombre} · {s.rol}", (X0 + 290, yb + 4), 15, U.TEXTO, True, maxw=330)
-            ui.texto(msg or f"Fichaje por {eur(precio)}  ·  te quedarían {eur(c.presupuesto - precio)}",
-                     (X0 + 290, yb + 24), 13, U.ROJO if msg else U.APAGADO, maxw=330)
-            if ui.boton((X0 + 640, yb - 2, 190, 40), f"Fichar por {eur(precio)}", habilitado=ok, tam=15):
-                okc, msgc = self.mundo.comprar(c, s)
-                self.aviso(msgc, U.VERDE if okc else U.ROJO)
-                m.update(sel=None, clave=None)
+            if m.get("oferta_de") != s.id:                        # nueva selección: se parte del precio pedido
+                m["oferta"], m["oferta_de"] = precio, s.id
+            minimo = round(precio * 0.5, -4)
+            paso = max(10_000, round(precio * 0.05, -4))
+            m["oferta"] = float(min(precio, max(minimo, m["oferta"])))
+            oferta = m["oferta"]
+            ronda = self.temporada * 100 + self.liga.jornada
+            cerrado = self.rechazos.get(s.id) == ronda
+            ok, msg = self.mundo.puede_comprar(c, s, min(oferta, precio))
+            ui.texto(f"{s.nombre} · {s.rol}", (X0 + 290, yb + 4), 15, U.TEXTO, True, maxw=250)
+            ui.texto(msg or f"Te quedarían {eur(c.presupuesto - oferta)}", (X0 + 290, yb + 24), 13,
+                     U.ROJO if msg else U.APAGADO, maxw=250)
+            # ---- oferta: se puede pagar menos de lo que piden, con riesgo de que la rechacen
+            ui.texto("Oferta", (X0 + 550, yb + 14), 13, U.APAGADO, anchor="ml")
+            if ui.boton((X0 + 596, yb + 1, 52, 30), "−5 %", tam=12, habilitado=oferta > minimo):
+                m["oferta"] = max(minimo, oferta - paso)
+            ui.texto(eur(oferta), (X0 + 704, yb + 16), 16, U.TEXTO, True, "mc")
+            if ui.boton((X0 + 760, yb + 1, 52, 30), "+5 %", tam=12, habilitado=oferta < precio):
+                m["oferta"] = min(precio, oferta + paso)
+            prob = self.mundo.prob_oferta(s, oferta)
+            col_p = U.VERDE if prob >= 0.7 else U.AMARILLO if prob >= 0.3 else U.ROJO
+            if cerrado:
+                ui.texto("Rechazaron tu oferta: no vuelven a negociar hasta la próxima jornada.", (X0 + 550, yb + 44), 13,
+                         U.ROJO, maxw=480)
+            else:
+                ui.texto(f"Prob. de que la acepten: {prob:.0%}" + (f" · piden {eur(precio)}" if oferta < precio else ""),
+                         (X0 + 550, yb + 44), 13, col_p, True, maxw=480)
+                ui.texto("Piden menos margen si el precio ya es bajo para su valor justo (regresión) y si es titular.",
+                         (X0 + 550, yb + 62), 12, U.APAGADO, maxw=480)
+            etiqueta = f"Fichar por {eur(precio)}" if oferta >= precio else f"Ofrecer {eur(oferta)}"
+            if ui.boton((X0 + 830, yb - 2, 200, 40), etiqueta, habilitado=ok and not cerrado, tam=15):
+                if oferta >= precio:
+                    okc, msgc = self.mundo.comprar(c, s)
+                    self.aviso(msgc, U.VERDE if okc else U.ROJO)
+                    m.update(sel=None, clave=None)
+                else:
+                    okc, msgc, acepta = self.mundo.ofrecer(c, s, oferta, self.rng)
+                    self.aviso(msgc, U.VERDE if acepta else U.AMARILLO if okc else U.ROJO, 5000)
+                    if acepta:
+                        m.update(sel=None, clave=None)
+                    elif okc:
+                        self.rechazos[s.id] = ronda
             sim = self.mundo.similares(s, c.plantel, 1)
             if sim:
-                ui.texto(f"Tu más parecido: {sim[0][0].nombre} ({sim[0][0].ovr})", (X0 + 850, yb + 14), 13, U.APAGADO,
-                         anchor="ml", maxw=180)
+                ui.texto(f"Tu más parecido: {sim[0][0].nombre} ({sim[0][0].ovr})", (X0 + 290, yb + 44), 13, U.APAGADO,
+                         anchor="ml", maxw=250)
 
     def nombre_club(self, p):
         cl = self.mundo.clubes.get(p.club_id)
@@ -779,6 +941,131 @@ class App:
             ui.texto(f"{gh} - {gv}", (rx + 170, yy), 14, U.TEXTO, True, "tc")
             ui.texto(V.nombre, (rx + 196, yy), 13, U.AMARILLO if mio else U.TEXTO, mio, "tl", maxw=130)
         ui.texto("Verde: zona alta · Rojo: descenso", (rx + 16, 670), 12, U.APAGADO, anchor="bl")
+
+    # ------------------------------------------------------- calendario
+    def _partido_de(self, jornada, club):
+        """(local, visitante, resultado | None) del partido de `club` en esa jornada (0-based)."""
+        liga = self.liga
+        for h, v in liga.calendario[jornada]:
+            if club.id in (h, v):
+                res = None
+                if jornada < len(liga.historial):
+                    res = next(((gh, gv) for hh, vv, gh, gv in liga.historial[jornada] if (hh, vv) == (h, v)), None)
+                return self.mundo.clubes[h], self.mundo.clubes[v], res
+        return None
+
+    def fecha(self, jornada):
+        """Fecha (datetime.date) de la jornada 0-based en la liga y temporada actuales."""
+        return F.fecha_jornada(self.liga.nombre, jornada, self.liga.total_jornadas, self.temporada)
+
+    def _rect_celda(self, fila, col):
+        return pygame.Rect(X0 + col * 100, 124 + fila * 90, 98, 86)
+
+    def tab_calendario(self):
+        ui, c, liga = self.ui, self.club, self.liga
+        total = liga.total_jornadas
+        jug = min(liga.jornada, total - 1)                    # próxima jornada (o la última si ya terminó)
+        fechas = {self.fecha(i): i for i in range(total)}
+        sel = jug if self.cal_sel is None else max(0, min(self.cal_sel, total - 1))
+        if self.cal_mes is None:
+            d0 = self.fecha(jug)
+            self.cal_mes = (d0.year, d0.month)
+        anio, mes = self.cal_mes
+        primero, ultimo = self.fecha(0), self.fecha(total - 1)
+        # ---- cabecera del mes con navegación
+        ui.texto(f"{F.MESES[mes - 1].upper()} {anio}", (X0, 40), 40, titulo=True)
+        antes = (anio, mes) > (primero.year, primero.month)
+        despues = (anio, mes) < (ultimo.year, ultimo.month)
+        if ui.boton((X0 + 380, 50, 40, 34), "‹", habilitado=antes, tam=20):
+            self.cal_mes = (anio - 1, 12) if mes == 1 else (anio, mes - 1)
+        if ui.boton((X0 + 428, 50, 40, 34), "›", habilitado=despues, tam=20):
+            self.cal_mes = (anio + 1, 1) if mes == 12 else (anio, mes + 1)
+        if ui.boton((X0 + 476, 50, 150, 34), "Próximo partido", tam=13, tip="Vuelve al mes de tu próximo partido."):
+            self.cal_mes = None
+        for k, nombre in enumerate(F.DIAS):
+            ui.texto(nombre.upper(), (X0 + k * 100 + 8, 100), 12, U.APAGADO, True)
+        # ---- cuadrícula
+        offset = dt.date(anio, mes, 1).weekday()
+        ndias = calendar.monthrange(anio, mes)[1]
+        ganados = empatados = perdidos = 0
+        for i in range(total):
+            h, v, res = self._partido_de(i, c)
+            if res:
+                mi, su = (res[0], res[1]) if h is c else (res[1], res[0])
+                ganados += mi > su
+                empatados += mi == su
+                perdidos += mi < su
+        for n in range(math.ceil((offset + ndias) / 7) * 7):
+            dia = n - offset + 1
+            fila, col = divmod(n, 7)
+            r = self._rect_celda(fila, col)
+            if dia < 1 or dia > ndias:
+                pygame.draw.rect(ui.surf, (16, 22, 36), r, border_radius=6)
+                continue
+            fecha = dt.date(anio, mes, dia)
+            i = fechas.get(fecha)
+            if i is None:
+                pygame.draw.rect(ui.surf, (24, 32, 52), r, border_radius=6)
+                ui.texto(dia, (r.x + 8, r.y + 6), 16, (120, 134, 164), True)
+                continue
+            h, v, res = self._partido_de(i, c)
+            local = h is c
+            rival = v if local else h
+            base = (26, 74, 140) if local else (66, 52, 126)
+            pygame.draw.rect(ui.surf, base, r, border_radius=6)
+            if res:                                           # franja con el resultado para ti
+                mi, su = (res[0], res[1]) if local else (res[1], res[0])
+                col_res = U.VERDE if mi > su else U.AMARILLO if mi == su else U.ROJO
+                pygame.draw.rect(ui.surf, col_res, (r.x, r.y, 6, r.h), border_top_left_radius=6, border_bottom_left_radius=6)
+                ui.texto(f"{res[0]} - {res[1]}", (r.x + 10, r.bottom - 8), 15, (255, 255, 255), True, "bl")
+            else:
+                ui.texto("Local" if local else "Visita", (r.x + 10, r.bottom - 36), 13, (210, 224, 250), True)
+                ui.texto("LIGA", (r.x + 10, r.bottom - 8), 11, (170, 190, 230), anchor="bl")
+            ui.texto(dia, (r.x + 10, r.y + 6), 16, (255, 255, 255), True)
+            ui.texto(f"J{i + 1}", (r.right - 8, r.y + 8), 12, (200, 214, 244), True, "tr")
+            ui.insignia((r.right - 26, r.bottom - 26), 15, rival)
+            if i == jug and liga.jornada < total:
+                pygame.draw.rect(ui.surf, U.AMARILLO, r, 3, border_radius=6)
+            elif i == sel:
+                pygame.draw.rect(ui.surf, (255, 255, 255), r, 2, border_radius=6)
+            if ui.hover(r):
+                pygame.draw.rect(ui.surf, (255, 255, 255), r, 1, border_radius=6)
+                ui.tip = f"Jornada {i + 1} · {F.texto_fecha(fecha)}\n{h.nombre} vs {v.nombre}"
+            if ui.clic_en(r):
+                self.cal_sel = i
+        # ---- panel de la jornada elegida
+        rx = X0 + 716
+        panel = pygame.Rect(rx, 96, ANCHO - rx - 14, 392)
+        ui.panel(panel, U.PANEL, 12, U.BORDE)
+        estado = "próxima" if sel == jug and liga.jornada < total else "jugada" if sel < liga.jornada else "por jugar"
+        ui.texto(f"Jornada {sel + 1}", (rx + 16, 106), 22, U.VERDE, True)
+        ui.texto(f"{F.texto_fecha(self.fecha(sel))} · {estado}", (panel.right - 16, 112), 13,
+                 U.AMARILLO if estado == "próxima" else U.APAGADO, True, "tr")
+        for k, (h, v) in enumerate(liga.calendario[sel]):
+            H, V = self.mundo.clubes[h], self.mundo.clubes[v]
+            res = next(((gh, gv) for hh, vv, gh, gv in liga.historial[sel] if (hh, vv) == (h, v)), None) \
+                if sel < len(liga.historial) else None
+            yy = 152 + k * 33
+            mio = c.id in (h, v)
+            if mio:
+                pygame.draw.rect(ui.surf, (30, 44, 66), (rx + 8, yy - 14, panel.w - 16, 28), border_radius=6)
+            ui.texto(H.nombre, (rx + 132, yy), 13, U.AMARILLO if mio else U.TEXTO, mio, "mr", maxw=112)
+            ui.texto(f"{res[0]} - {res[1]}" if res else "vs", (rx + 156, yy), 14, U.TEXTO if res else U.APAGADO,
+                     bool(res), "mc")
+            ui.texto(V.nombre, (rx + 180, yy), 13, U.AMARILLO if mio else U.TEXTO, mio, "ml", maxw=112)
+        # ---- balance de la temporada
+        bal = pygame.Rect(rx, 500, panel.w, 190)
+        ui.panel(bal, U.PANEL, 12, U.BORDE)
+        ui.texto(f"Tu temporada {F.nombre_temporada(self.temporada)}", (rx + 16, 510), 16, U.VERDE, True)
+        ui.texto(f"{ganados} V · {empatados} E · {perdidos} D", (rx + 16, 540), 22, U.TEXTO, True)
+        ui.texto(f"{c.pts} puntos · {liga.posicion(c)}º · objetivo top {self.objetivo_pos}", (rx + 16, 576), 14,
+                 U.AMARILLO)
+        ui.texto(f"Quedan {max(0, total - liga.jornada)} jornadas · termina el {F.texto_fecha(ultimo, False)}",
+                 (rx + 16, 600), 13, U.APAGADO)
+        for k, (col, txt) in enumerate(((U.VERDE, "victoria"), (U.AMARILLO, "empate"), (U.ROJO, "derrota"))):
+            pygame.draw.rect(ui.surf, col, (rx + 16 + k * 92, 634, 8, 14), border_radius=2)
+            ui.texto(txt, (rx + 30 + k * 92, 641), 12, U.APAGADO, anchor="ml")
+        ui.texto("Azul: juegas de local · morado: de visita", (rx + 16, 664), 12, U.APAGADO)
 
     # --------------------------------------------------- datos y modelos
     def _cargar_ml(self):
@@ -913,8 +1200,10 @@ class App:
         ui.insignia((ANCHO // 2 + 330, y + 40), 44, V)
         ui.texto_fit(L.nombre, (ANCHO // 2 - 270, y + 16), 34, 18, 230, titulo=True)
         ui.texto_fit(V.nombre, (ANCHO // 2 + 270, y + 16), 34, 18, 230, anchor="tr", titulo=True)
-        ui.texto(f"{L.formacion} · {L.entrenador}", (ANCHO // 2 - 270, y + 52), 13, U.APAGADO, maxw=210)
-        ui.texto(f"{V.formacion} · {V.entrenador}", (ANCHO // 2 + 270, y + 52), 13, U.APAGADO, anchor="tr", maxw=210)
+        est = p.get("est")
+        fl, fv = (est["formacion"]["a"], est["formacion"]["b"]) if est else (L.formacion, V.formacion)
+        ui.texto(f"{fl} · {L.entrenador}", (ANCHO // 2 - 270, y + 52), 13, U.APAGADO, maxw=210)
+        ui.texto(f"{fv} · {V.entrenador}", (ANCHO // 2 + 270, y + 52), 13, U.APAGADO, anchor="tr", maxw=210)
 
     def partido_pre(self):
         ui, p, c = self.ui, self.p, self.club
@@ -963,7 +1252,7 @@ class App:
             ui.texto("¿Por qué?  " + " → ".join(pr["arbol_camino"][:3]), (r2.x + 16, r2.y + 208), 12, U.APAGADO,
                      maxw=r2.w - 32)
         # consejos
-        r3 = pygame.Rect(60, 436, 1160, 150)
+        r3 = pygame.Rect(60, 436, 1160, 172)
         ui.panel(r3, U.PANEL, 12, U.BORDE)
         mi = c
         bono = pr["ba"] if p["user_local"] else pr["bb"]
@@ -976,17 +1265,20 @@ class App:
             yy += 22
         rival = V if p["user_local"] else L
         brv = pr["bb"] if p["user_local"] else pr["ba"]
+        yy += 6
         ui.texto(f"Táctica rival: {rival.tactica['salida']} · {rival.tactica['creacion']} · {rival.tactica['defensa']}"
-                 f"  (bono {brv:+.1%})", (r3.x + 16, yy + 6), 13, U.APAGADO, maxw=r3.w - 32)
+                 f"  (bono {brv:+.1%})", (r3.x + 16, yy), 13, U.APAGADO, maxw=r3.w - 32)
+        yy += 26                                  # las líneas siguientes se apilan: no se pisan entre sí
         lesionados = [j.nombre for j in c.plantel if j.lesion and j.motivo != "sanción"]
         suspendidos = [j.nombre for j in c.plantel if j.lesion and j.motivo == "sanción"]
         if lesionados or suspendidos:
             partes = ([f"Lesionados: {', '.join(lesionados[:4])}"] if lesionados else []) + \
                      ([f"Suspendidos: {', '.join(suspendidos[:4])}"] if suspendidos else [])
-            ui.texto("No disponibles · " + "  |  ".join(partes), (r3.x + 16, r3.bottom - 56), 13, U.ROJO, maxw=r3.w - 32)
+            ui.texto("No disponibles · " + "  |  ".join(partes), (r3.x + 16, yy), 13, U.ROJO, maxw=r3.w - 32)
+            yy += 24
         fuera = [j.nombre for (g, j) in c.xi_con_grupo() if j.aptitud(g) < 0.55]
         if fuera:
-            ui.texto("Fuera de posición: " + ", ".join(fuera), (r3.x + 16, r3.bottom - 32), 13, U.AMARILLO, maxw=r3.w - 32)
+            ui.texto("Fuera de posición: " + ", ".join(fuera), (r3.x + 16, yy), 13, U.AMARILLO, maxw=r3.w - 32)
         if ui.boton((60, 620, 180, 54), "← Volver", tam=18):
             self.ir("hub")
         if ui.boton((ANCHO - 340, 620, 280, 54), "Jugar el partido", True, tam=22):
@@ -1002,13 +1294,13 @@ class App:
         p = self.p
         pr = p["pron"]
         lado = "a" if p["user_local"] else "b"
-        est = ev.nuevo_estado(p["local"], p["visit"], pr["la"], pr["lb"], lado)
-        ev.generar_tramo(est, 1, 45, self.rng)
+        est = ev.nuevo_estado(p["local"], p["visit"], pr["la"], pr["lb"], lado)      # las jugadas se generan minuto a minuto
+        self.audio.silbato("inicio")
         med = pr["fa"]["medio"], pr["fb"]["medio"]
         vista = VistaPartido(p["local"], p["visit"], med[0] / (med[0] + med[1]), semilla=p["local"].id * 1000 + p["visit"].id)
         p.update(fase="vivo", est=est, lado=lado, min=0, fin=False, pausa=None, mini=None, ev_mini=None,
                  t_ult=pygame.time.get_ticks(), acum=0.0, vel=1, mentalidad="eq", tramo=1, jugadas=[],
-                 banner=None, vista=vista)
+                 banner=None, vista=vista, cam=None)
 
     def _pendiente_en(self, minuto):
         for e in self.p["est"]["eventos"]:
@@ -1022,7 +1314,7 @@ class App:
         _, f_propio, f_rival, _ = self.MENTALIDADES[p["mentalidad"]]
         otro = "b" if p["lado"] == "a" else "a"
         est["f"][p["lado"]], est["f"][otro] = f_propio, f_rival
-        ev.generar_tramo(est, 46, 90, self.rng)
+        self.audio.silbato("inicio")
         p["tramo"] = 2
         p["pausa"] = None
         p["vista"].reiniciar("b")                                  # saque inicial del 2.º tiempo
@@ -1033,6 +1325,7 @@ class App:
         for e in ([solo] if solo else p["est"]["eventos"]):
             if e["min"] == minuto and (e["res"] is not None or e["tipo"] not in ev.INTERACTIVOS):
                 p["vista"].evento(e)
+                self.audio.evento(e, p["lado"])
         prio = {"gol": 0, "roja": 1, "lesion": 2, "amarilla": 3}
         cands = [e for e in p["est"]["eventos"] if e["min"] == minuto and not e["oculto"]
                  and (e["tipo"] in prio or e["res"] is not None)]
@@ -1056,16 +1349,21 @@ class App:
             e = self._pendiente_en(p["min"])
             if e:
                 p["pausa"], p["ev_mini"] = "mini", e
-                p["mini"] = mj.crear(e, p["lado"], self.rng)
+                p["mini"] = mj.crear(e, p["lado"], self.rng, p["est"]["clubes"])
+                if e["tipo"] in ("penal", "tiro_libre"):
+                    self.audio.silbato("largo" if e["tipo"] == "penal" else "corto")
                 return
             if p["min"] >= 90:
                 p["fin"] = True
+                self.audio.silbato("final")
                 break
             if p["min"] == 45 and p["tramo"] == 1:
                 p["pausa"] = "descanso"
+                self.audio.silbato("largo")
                 return
             p["acum"] -= self.VEL_MS
             p["min"] += 1
+            ev.generar_tramo(p["est"], p["min"], p["min"], self.rng)       # así los cambios del usuario afectan lo que viene
             self._anunciar(p["min"])
 
     def omitir_partido(self):
@@ -1080,10 +1378,12 @@ class App:
                 continue
             if p["min"] >= 90:
                 p["fin"] = True
+                self.audio.silbato("final")
             elif p["min"] == 45 and p["tramo"] == 1:
                 self._segundo_tiempo()
             else:
                 p["min"] += 1
+                ev.generar_tramo(p["est"], p["min"], p["min"], self.rng)
         p["banner"] = None
 
     def _cerrar_minijuego(self, r):
@@ -1107,6 +1407,10 @@ class App:
             pygame.draw.circle(surf, (20, 20, 20), (cx, cy), 3)
         elif clave in ("amarilla", "roja"):
             pygame.draw.rect(surf, U.AMARILLO if clave == "amarilla" else U.ROJO, (cx - 6, cy - 9, 12, 18), border_radius=2)
+        elif clave == "cambio":
+            pygame.draw.circle(surf, U.VERDE, (cx, cy), 10)
+            pygame.draw.polygon(surf, (255, 255, 255), [(cx - 6, cy - 6), (cx + 6, cy - 3), (cx - 6, cy)])
+            pygame.draw.polygon(surf, (255, 255, 255), [(cx + 6, cy), (cx - 6, cy + 3), (cx + 6, cy + 6)])
         elif clave == "lesion":
             pygame.draw.circle(surf, (255, 255, 255), (cx, cy), 10)
             pygame.draw.rect(surf, U.ROJO, (cx - 6, cy - 2, 12, 4))
@@ -1147,7 +1451,7 @@ class App:
             tx, col, _ = p["banner"]
             w = ui.fuente(26, True).size(tx)[0] + 40
             r = pygame.Rect(0, 0, w, 46)
-            r.midtop = (campo.centerx, campo.y + 14)
+            r.midtop = (campo.centerx, campo.bottom + 14)             # fuera del campo, justo debajo
             ui.panel(r, (10, 14, 24), 10, col)
             ui.texto(tx, r.center, 26, col, True, "mc", maxw=campo.w - 40)
         # crónica
@@ -1171,9 +1475,14 @@ class App:
                 self.omitir_partido()
             r = pygame.Rect(ANCHO - 260, 620, 220, 50)
             self._icono_omitir(ui.surf, r.x + 26, r.centery, U.TEXTO)
-            ui.texto("Velocidad", (ANCHO - 590, 616), 12, U.APAGADO)
+            n_c, n_v = CB.restantes(est, p["lado"])
+            if ui.boton((60, 620, 250, 50), f"Cambios y formación ({n_c})", tam=15,
+                        tip=f"Haz cambios (máx. {ev.MAX_CAMBIOS} por partido, {ev.MAX_VENTANAS} paradas) o cambia de formación.\n"
+                            "El partido se detiene mientras decides."):
+                self.abrir_cambios()
+            ui.texto("Velocidad", (960, 340), 13, U.APAGADO, anchor="ml")        # arriba de las estadísticas
             for i, v in enumerate((1, 2, 4)):
-                if ui.boton((ANCHO - 590 + i * 66, 636, 60, 34), f"x{v}", p["vel"] == v, tam=15, color=U.AZUL):
+                if ui.boton((1048 + i * 58, 324, 52, 32), f"x{v}", p["vel"] == v, tam=15, color=U.AZUL):
                     p["vel"] = v
         if p["pausa"] == "mini":
             r = p["mini"].dibujar(ui)
@@ -1181,8 +1490,139 @@ class App:
                 self._cerrar_minijuego(r)
         elif p["pausa"] == "descanso":
             self._descanso(ga, gb)
+        elif p["pausa"] == "cambios":
+            self._panel_cambios()
         elif p["fin"]:
             self.resumen_final(ga, gb)
+
+    # ------------------------------------------------ cambios y formación durante el partido
+    def abrir_cambios(self):
+        p = self.p
+        p["cam"] = {"form": p["est"]["formacion"][p["lado"]], "pend": [], "sel": None, "prev": p["pausa"], "msg": ""}
+        p["pausa"] = "cambios"
+
+    def _cerrar_cambios(self):
+        p = self.p
+        p["pausa"] = p["cam"]["prev"]
+        p["cam"] = None
+        p["acum"] = 0.0
+
+    def _panel_cambios(self):
+        ui, p = self.ui, self.p
+        est, lado, cam = p["est"], p["lado"], p["cam"]
+        club = est["clubes"][lado]
+        descanso = cam["prev"] == "descanso"
+        sombra = pygame.Surface((ANCHO, ALTO), pygame.SRCALPHA)
+        sombra.fill((0, 0, 0, 185))
+        ui.surf.blit(sombra, (0, 0))
+        M = pygame.Rect(90, 44, 1100, 632)
+        ui.panel(M, (12, 18, 30), 14, U.BORDE)
+        ui.texto("CAMBIOS Y FORMACIÓN", (M.x + 24, M.y + 12), 40, U.AMARILLO, titulo=True)
+        n_c, n_v = CB.restantes(est, lado)
+        pend = cam["pend"]
+        ui.texto(f"Minuto {p['min']}' · cambios usados {ev.MAX_CAMBIOS - n_c}/{ev.MAX_CAMBIOS} "
+                 f"(con los pendientes {ev.MAX_CAMBIOS - n_c + len(pend)}/{ev.MAX_CAMBIOS}) · "
+                 + ("descanso: no usa una parada" if descanso else f"paradas usadas {ev.MAX_VENTANAS - n_v}/{ev.MAX_VENTANAS}"),
+                 (M.x + 26, M.y + 62), 14, U.APAGADO, maxw=M.w - 52)
+        nuevo, err = CB.proponer(est, lado, cam["form"], pend)
+        base = nuevo or CB.en_campo(est, lado)
+        entran = {e.id for _, e in pend}
+        # ---- campo con el once (y los cambios pendientes)
+        campo = pygame.Rect(M.x + 24, M.y + 92, 400, 520)
+        ui.campo(campo)
+        c1, c2, patron = club.color, club.color2, club.patron
+        for slot, j in base:
+            px, py = ui.pos_campo(campo, slot[1], slot[2])
+            entrante = j.id in entran
+            if cam["sel"] is not None and cam["sel"].id == j.id:
+                pygame.draw.circle(ui.surf, U.AMARILLO, (px, py), 26, 3)
+            elif entrante:
+                pygame.draw.circle(ui.surf, U.VERDE, (px, py), 26, 3)
+            if slot[0] == "POR":
+                k1, k2 = color_portero(c1, c2)
+                ui.camiseta((px, py), 36, k1, k2, numero=j.dorsal)
+            else:
+                ui.camiseta((px, py), 36, c1, c2, numero=j.dorsal, patron=patron)
+            pygame.draw.circle(ui.surf, color_apt(j.aptitud(slot[0])), (px + 20, py - 19), 10)
+            ui.texto(j.ovr, (px + 20, py - 19), 10, (10, 20, 15), True, "mc")
+            apellido = [t for t in j.nombre.split() if not t.endswith(".")]
+            ui.placa_jugador_corta(px, py + 20, apellido[-1] if apellido else j.nombre)
+            rr = pygame.Rect(0, 0, 58, 62)
+            rr.center = (px, py + 6)
+            if ui.hover(rr):
+                ui.tip = f"{j.nombre} ({j.pos}) · OVR {j.ovr}" + ("\nEntra en este puesto (clic para deshacer)." if entrante
+                                                                  else "\nClic para elegir a quién sacar.")
+            if ui.clic_en(rr):
+                if entrante:
+                    cam["pend"] = [(s_, e_) for s_, e_ in pend if e_.id != j.id]
+                    cam["msg"] = ""
+                else:
+                    cam["sel"] = None if (cam["sel"] is not None and cam["sel"].id == j.id) else j
+        # ---- banquillo
+        bx, by = M.x + 450, M.y + 92
+        ui.texto("Banquillo", (bx, by), 18, U.VERDE, True)
+        ui.texto("Elige primero a quién sacar (campo) y luego quién entra.", (bx, by + 24), 12, U.APAGADO)
+        for i, j in enumerate(CB.banquillo(est, lado)):
+            r = pygame.Rect(bx, by + 50 + i * 43, 340, 40)
+            dentro = j.id in entran
+            if dentro:
+                ui.panel(r, (24, 52, 40), 8, U.VERDE)
+            elif ui.hover(r):
+                ui.panel(r, U.PANEL2, 8, U.AMARILLO if cam["sel"] is not None else U.BORDE)
+            else:
+                ui.panel(r, U.PANEL, 8)
+            ui.texto(j.pos, (r.x + 12, r.centery), 14, U.AMARILLO, True, "ml")
+            ui.texto(j.nombre, (r.x + 58, r.centery), 14, U.TEXTO, True, "ml", maxw=170)
+            ui.texto(f"OVR {j.ovr}", (r.x + 238, r.centery), 14, U.VERDE, True, "ml")
+            ui.texto(f"{j.edad}", (r.right - 14, r.centery), 13, U.APAGADO, anchor="mr")
+            if ui.clic_en(r) and not dentro:
+                if cam["sel"] is None:
+                    cam["msg"] = "Primero toca en el campo al jugador que sale."
+                elif len(pend) - sum(1 for s_, _ in pend if s_.id == cam["sel"].id) >= n_c:
+                    cam["msg"] = f"No quedan más cambios (máx. {ev.MAX_CAMBIOS})."
+                else:
+                    cam["pend"] = [(s_, e_) for s_, e_ in pend if s_.id != cam["sel"].id] + [(cam["sel"], j)]
+                    cam["sel"], cam["msg"] = None, ""
+        if not CB.banquillo(est, lado):
+            ui.texto("No quedan suplentes disponibles.", (bx, by + 54), 14, U.APAGADO)
+        # ---- formación y resumen
+        rx = M.x + 820
+        ui.texto("Formación", (rx, by), 18, U.VERDE, True)
+        for k, f in enumerate(FORMACIONES):
+            if ui.boton((rx + (k % 2) * 136, by + 30 + (k // 2) * 46, 128, 38), f, cam["form"] == f, tam=15):
+                cam["form"], cam["msg"] = f, ""
+        ui.texto("El cambio de formación es libre.", (rx, by + 126), 12, U.APAGADO)
+        ui.texto("Cambios pendientes", (rx, by + 158), 16, U.VERDE, True)
+        if not pend:
+            ui.texto("Ninguno.", (rx, by + 186), 13, U.APAGADO)
+        for i, (sale, entra) in enumerate(pend):
+            ui.texto(f"{sale.nombre} → {entra.nombre}", (rx, by + 186 + i * 22), 13, U.TEXTO, maxw=262)
+        if cam["form"] != est["formacion"][lado]:
+            ui.texto(f"Formación: {est['formacion'][lado]} → {cam['form']}", (rx, by + 186 + max(1, len(pend)) * 22 + 6), 13,
+                     U.AMARILLO, True, maxw=262)
+        if cam["sel"] is not None:
+            ui.texto(f"Sale: {cam['sel'].nombre}", (rx, by + 330), 14, U.AMARILLO, True, maxw=262)
+        mensaje = err or cam["msg"]
+        ok, motivo = CB.validar(est, lado, cam["form"], pend, descanso)
+        if not ok and not err:
+            mensaje = motivo
+        if mensaje:
+            ui.parrafo(mensaje, pygame.Rect(rx, by + 360, 262, 70), 13, U.ROJO)
+        # ---- botones
+        hay = bool(pend) or cam["form"] != est["formacion"][lado]
+        if ui.boton((M.x + 450, M.bottom - 62, 150, 46), "Deshacer todo", tam=15, habilitado=hay):
+            cam.update(pend=[], sel=None, form=est["formacion"][lado], msg="")
+        if ui.boton((M.right - 360, M.bottom - 62, 150, 46), "Cancelar", tam=16):
+            self._cerrar_cambios()
+        elif ui.boton((M.right - 200, M.bottom - 62, 176, 46), "Confirmar cambios", True, habilitado=hay and ok, tam=16):
+            ok2, msg, evs = CB.aplicar(est, lado, cam["form"], pend, p["min"], self.asist.bono_tactico, descanso)
+            if ok2:
+                for e in evs:
+                    self._anunciar(p["min"], solo=e)
+                self.aviso("Cambios realizados." if any(e["tipo"] == "cambio" for e in evs) else "Formación cambiada.")
+                self._cerrar_cambios()
+            else:
+                cam["msg"] = msg
 
     def _panel_stats(self, r, minuto):
         ui, p = self.ui, self.p
@@ -1252,7 +1692,11 @@ class App:
             consejo = "Partido parejo: el plan equilibrado es razonable."
         ui.texto("Consejo (regla simple, no es un modelo): " + consejo, (r.centerx, y + 88), 13, U.AMARILLO,
                  anchor="tc", maxw=r.w - 40)
-        if ui.boton((r.centerx - 150, r.bottom - 74, 300, 54), "Empezar el 2.º tiempo", True, tam=19) or \
+        n_c, _ = CB.restantes(p["est"], p["lado"])
+        if ui.boton((r.x + 20, r.bottom - 74, 262, 54), f"Cambios y formación ({n_c})", tam=16,
+                    tip="En el descanso los cambios no usan una de las 3 paradas."):
+            self.abrir_cambios()
+        elif ui.boton((r.right - 320, r.bottom - 74, 300, 54), "Empezar el 2.º tiempo", True, tam=19) or \
                 pygame.K_RETURN in ui.teclas:
             self._segundo_tiempo()
 
@@ -1316,10 +1760,11 @@ class App:
         self.ultimos = resultados
         self.aviso(f"Ingresos de la jornada: {eur(ingreso)}", U.VERDE)
         self.mercado["clave"] = None
-        if liga.terminada:
-            G.borrar()                                # temporada acabada: no hay nada que continuar
-        else:
-            self.guardar()                            # autoguardado al cerrar cada jornada
+        if liga.terminada:                            # se guarda también al terminar: se puede seguir con la siguiente temporada
+            pos = liga.posicion(c)
+            self.historial_temporadas.append({"temporada": self.temporada, "pos": pos, "pts": c.pts,
+                                              "objetivo": self.objetivo_pos, "cumplido": pos <= self.objetivo_pos})
+        self.guardar()                                # autoguardado al cerrar cada jornada
         self.ir("fin" if liga.terminada else "hub")
 
     @staticmethod
@@ -1340,7 +1785,95 @@ class App:
             H.e += 1
             V.e += 1
 
-    # ================================================================== FIN
+    # ======================================================= MODO CARRERA: paso de temporada
+    def escena_pasando(self):
+        self.dibujar_logo(ANCHO // 2, 90, 240)
+        self.ui.texto("Pasa el tiempo…", (ANCHO // 2, ALTO // 2 + 90), 34, U.TEXTO, True, "mc")
+        self.ui.texto("Evolucionando a todos los jugadores con el modelo entrenado con FIFA 18-24",
+                      (ANCHO // 2, ALTO // 2 + 130), 16, (170, 184, 208), anchor="mc")
+        if self._pasando_frame:
+            self._pasando_frame = False
+            self.siguiente_temporada()
+        else:
+            self._pasando_frame = True
+
+    def siguiente_temporada(self):
+        c, liga = self.club, self.liga
+        posiciones = {t.id: i + 1 for i, t in enumerate(liga.tabla())}
+        presupuesto0 = c.presupuesto
+        self.resumen_evol = EV.avanzar_temporada(self.mundo, self.rng, c, posiciones)
+        self.resumen_evol["presupuesto"] = (presupuesto0, c.presupuesto)
+        self.temporada += 1
+        self.iniciar_temporada(c)                               # liga y calendario nuevos
+        self.guardar()
+        self.ir("evolucion")
+
+    def escena_evolucion(self):
+        ui, r, c = self.ui, self.resumen_evol, self.club
+        ui.texto(f"TEMPORADA {F.nombre_temporada(self.temporada)}", (ANCHO // 2, 14), 62, anchor="tc", titulo=True)
+        ui.texto("Así cambió tu plantilla en un año (modelo de evolución entrenado con datos reales de FIFA 18-24)",
+                 (ANCHO // 2, 84), 15, U.APAGADO, anchor="tc")
+        cambios = sorted(r["cambios"], key=lambda t: (t[2] - t[1], t[2]), reverse=True)
+        suben = [t for t in cambios if t[2] > t[1]][:7]
+        bajan = [t for t in reversed(cambios) if t[2] < t[1]][:7]
+
+        def lista(rect, titulo, color, filas):
+            ui.panel(rect, U.PANEL, 12, U.BORDE)
+            ui.texto(titulo, (rect.x + 16, rect.y + 10), 18, color, True)
+            if not filas:
+                ui.texto("Nadie.", (rect.x + 16, rect.y + 46), 14, U.APAGADO)
+            for i, (j, o0, o1, p0, p1) in enumerate(filas):
+                y = rect.y + 50 + i * 36
+                ui.texto(j.nombre, (rect.x + 16, y), 14, U.TEXTO, True, "ml", maxw=150)
+                ui.texto(f"{j.edad} años", (rect.x + 172, y), 12, U.APAGADO, anchor="ml")
+                ui.texto(f"{o0} → {o1}", (rect.x + 240, y), 14, U.TEXTO, anchor="ml")
+                ui.texto(f"{o1 - o0:+d}", (rect.right - 16, y), 16, U.VERDE if o1 > o0 else U.ROJO, True, "mr")
+        lista(pygame.Rect(40, 118, 390, 308), "Mejoran", U.VERDE, suben)
+        lista(pygame.Rect(445, 118, 390, 308), "Bajan", U.ROJO, bajan)
+        rr = pygame.Rect(850, 118, 390, 308)
+        ui.panel(rr, U.PANEL, 12, U.BORDE)
+        ui.texto("Salidas y cantera", (rr.x + 16, rr.y + 10), 18, U.AMARILLO, True)
+        y = rr.y + 48
+        if r["retirados"]:
+            ui.texto("Dejan el club (retiro o salida a otras ligas)", (rr.x + 16, y), 12, U.APAGADO, True)
+            for j, o, e in r["retirados"][:4]:
+                y += 24
+                ui.texto(f"{j.nombre} · {e} años · OVR {o}", (rr.x + 16, y), 13, U.ROJO, anchor="ml", maxw=rr.w - 32)
+            y += 30
+        else:
+            ui.texto("Nadie de tu plantilla se va.", (rr.x + 16, y), 13, U.APAGADO, anchor="ml")
+            y += 34
+        if r["cantera"]:
+            ui.texto("Llegan de la cantera", (rr.x + 16, y), 12, U.APAGADO, True)
+            for j in r["cantera"][:5]:
+                y += 24
+                ui.texto(f"{j.nombre} · {j.edad} años · OVR {j.ovr} · POT {j.pot}", (rr.x + 16, y), 13, U.VERDE,
+                         anchor="ml", maxw=rr.w - 32)
+        else:
+            ui.texto("No hizo falta fichar de la cantera.", (rr.x + 16, y), 13, U.APAGADO, anchor="ml")
+        # ---- resumen
+        m = r["mundo"]
+        pan = pygame.Rect(40, 440, 1200, 160)
+        ui.panel(pan, U.PANEL, 12, U.BORDE)
+        x0, x1 = r["media_xi"]
+        p0, p1 = r["presupuesto"]
+        ui.texto(f"Valoración media de tu once: {x0:.1f} → {x1:.1f}", (pan.x + 20, pan.y + 14), 17, U.TEXTO, True)
+        ui.texto(f"Presupuesto: {eur(p0)} → {eur(p1)} (ingresos según el valor del plantel y tu posición final)",
+                 (pan.x + 20, pan.y + 44), 15, U.TEXTO)
+        ui.texto(f"En todo el mundo: {m['jugadores']:,} jugadores · {m['suben']:,} suben · {m['bajan']:,} bajan · "
+                 f"{m['retirados']:,} dejan el juego · cambio medio {m['delta_medio']:+.1f} OVR".replace(",", " "),
+                 (pan.x + 20, pan.y + 72), 14, U.APAGADO)
+        ui.texto(f"Objetivo de la directiva para esta temporada: top {self.objetivo_pos}", (pan.x + 20, pan.y + 100), 15,
+                 U.AMARILLO, True)
+        if self.historial_temporadas:
+            hist = "   ".join(f"{F.nombre_temporada(h['temporada'])}: {h['pos']}º ({h['pts']} pts) "
+                             f"{'cumplido' if h['cumplido'] else 'no cumplido'}" for h in self.historial_temporadas[-4:])
+            ui.texto("Temporadas anteriores:  " + hist, (pan.x + 20, pan.y + 128), 13, U.APAGADO, maxw=pan.w - 40)
+        if ui.boton((ANCHO // 2 - 170, 626, 340, 56), "Empezar la temporada", True, tam=21):
+            self.tab = "alineacion"
+            self.ir("hub")
+
+    # ==================================================================== FIN
     def escena_fin(self):
         ui, c, liga = self.ui, self.club, self.liga
         tabla = liga.tabla()
@@ -1364,5 +1897,10 @@ class App:
         if ui.boton((ANCHO // 2 - 300, 620, 280, 54), "Ver la tabla completa", tam=18):
             self.tab = "liga"
             self.ir("hub")
-        if ui.boton((ANCHO // 2 + 20, 620, 280, 54), "Nueva temporada", True, tam=20):
+        if ui.boton((ANCHO // 2 + 20, 620, 280, 54), "Siguiente temporada", True, tam=20,
+                    tip="Pasa un año: los jugadores cambian de nivel (modelo entrenado con FIFA 18-24),\n"
+                        "algunos jugadores se van del club y llega la cantera."):
+            self._pasando_frame = False
+            self.ir("pasando")
+        if ui.boton((24, ALTO - 64, 140, 40), "← Menú", tam=16, tip="La partida queda guardada: puedes continuarla."):
             self.ir("menu")

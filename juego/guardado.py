@@ -15,6 +15,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .fechas import TEMPORADA_BASE
 from .modelo import Liga
 
 VERSION = 1
@@ -62,6 +63,9 @@ def guardar(app):
         "resumen": {"club": club.nombre, "liga": club.liga, "jornada": liga.jornada,
                     "total": liga.total_jornadas, "posicion": liga.posicion(club), "pts": club.pts},
         "seed": app.seed,
+        "temporada": app.temporada,
+        "historial": app.historial_temporadas,
+        "retirados": sorted(m.retirados),
         "club_id": club.id,
         "liga_nombre": app.liga_nombre,
         "objetivo_pos": app.objetivo_pos,
@@ -71,7 +75,9 @@ def guardar(app):
         "markup": [round(float(x), 6) for x in m.markup],
         "externos": [j.id for j in m.externos],
         "lesionados": {str(j.id): [j.lesion, j.motivo] for j in m.jugadores.values() if j.lesion > 0},
+        "jugadores": _estadisticas(m) if (app.temporada != TEMPORADA_BASE or m.retirados) else {},
         "clubes": {str(c.id): {
+            "ovr": c.ovr,
             "plantel": [j.id for j in c.plantel],
             "once": [None if j is None else j.id for j in c.once],
             "formacion": c.formacion, "presupuesto": c.presupuesto, "tactica": c.tactica,
@@ -86,6 +92,21 @@ def guardar(app):
     tmp = destino.with_suffix(".tmp")
     tmp.write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
     os.replace(tmp, destino)
+
+
+def _estadisticas(m):
+    """Lo que cambia con la evolución de los jugadores (solo se guarda si ya pasó alguna temporada)."""
+    res = {}
+    for c in m.clubes.values():
+        for j in c.plantel:
+            res[str(j.id)] = _fila(j)
+    for j in m.externos:
+        res[str(j.id)] = _fila(j)
+    return res
+
+
+def _fila(j):
+    return [j.ovr, j.pot, j.edad, round(j.valor), round(j.valor_pred)] + list(j.rasgos.values())
 
 
 def leer():
@@ -110,8 +131,14 @@ def aplicar(app, datos):
     """Restaura la partida sobre un mundo recién cargado (app.mundo ya existe, con los datos originales)."""
     m = app.mundo
     por_id = m.jugadores
+    m.retirados = set(datos.get("retirados", []))
+    for i, f in datos.get("jugadores", {}).items():                 # evolución de jugadores de temporadas anteriores
+        j = por_id[int(i)]
+        j.ovr, j.pot, j.edad, j.valor, j.valor_pred = f[0], f[1], f[2], float(f[3]), float(f[4])
+        j.rasgos = dict(zip(j.rasgos.keys(), f[5:]))
     for cid, d in datos["clubes"].items():
         c = m.clubes[int(cid)]
+        c.ovr = d.get("ovr", c.ovr)
         c.plantel = [por_id[i] for i in d["plantel"]]
         c.once = [None if i is None else por_id[i] for i in d["once"]]
         c.formacion, c.presupuesto, c.tactica = d["formacion"], d["presupuesto"], d["tactica"]
@@ -138,6 +165,9 @@ def aplicar(app, datos):
     liga.jornada = datos["liga"]["jornada"]
     _poner_rng(app.rng, datos["rng_app"])         # Liga() barajó un calendario nuevo con el rng: se restituye el estado guardado
 
+    app.temporada = datos.get("temporada", TEMPORADA_BASE)
+    app.historial_temporadas = datos.get("historial", [])
+    m.invalidar_prediccion()
     app.club, app.liga, app.liga_nombre = club, liga, datos["liga_nombre"]
     app.objetivo_pos = datos["objetivo_pos"]
     app.ultimos = [tuple(r) for r in datos["ultimos"]]

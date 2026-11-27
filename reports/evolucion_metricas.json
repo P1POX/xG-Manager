@@ -1,0 +1,60 @@
+{
+ "pares": 78510,
+ "desde_edicion": 18,
+ "regresion_ovr": {
+  "Media por edad (línea base)": {
+   "R2": 0.1709,
+   "MAE": 1.64
+  },
+  "Regresión lineal": {
+   "R2": 0.2067,
+   "MAE": 1.622
+  },
+  "Gradient Boosting": {
+   "R2": 0.2054,
+   "MAE": 1.619
+  }
+ },
+ "regresion_pot": {
+  "Media por edad (línea base)": {
+   "R2": 0.0244,
+   "MAE": 1.803
+  },
+  "Regresión lineal": {
+   "R2": 0.0502,
+   "MAE": 1.815
+  },
+  "Gradient Boosting": {
+   "R2": 0.096,
+   "MAE": 1.76
+  }
+ },
+ "sigma_ovr_por_tramo": {
+  "0-19": 2.86,
+  "20-22": 2.48,
+  "23-25": 2.04,
+  "26-28": 1.84,
+  "29-31": 1.73,
+  "32-34": 1.77,
+  "35-99": 1.91
+ },
+ "arbol_tendencia": {
+  "accuracy": 0.5979,
+  "linea_base": 0.5885,
+  "auc_mejora": 0.7158,
+  "profundidad": 4,
+  "clases": [
+   "decae",
+   "estable",
+   "mejora"
+  ]
+ },
+ "retiro": {
+  "veteranos": 22003,
+  "tasa_real": 0.3568,
+  "tasa_modelo": 0.3568
+ },
+ "valor_simple": {
+  "R2_log": 0.9987
+ }
+}
