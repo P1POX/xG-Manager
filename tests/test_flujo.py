@@ -11,7 +11,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _util import (App, avanzar_hasta, botones, captura, clic, clic_xy, etiquetas, frame, inyectar,  # noqa: E402
-                   pygame)
+                   jugar_hub, pygame)
 
 from juego import eventos as ev  # noqa: E402
 from juego.minijuegos import PORTERIA  # noqa: E402
@@ -154,12 +154,12 @@ paso("calendario: 38 partidos (19 de local), fechas crecientes, clic en un día 
 
 # ------------------------------------------------------------------ previa
 clic(app, "Alineación")
-clic(app, "Jugar jornada")
+jugar_hub(app)
 assert app.escena == "partido" and app.p["fase"] == "pre"
 captura(app, "06_previa")
 clic(app, "← Volver")
 assert app.escena == "hub"
-clic(app, "Jugar jornada")
+jugar_hub(app)
 paso("previa: Volver y Jugar jornada")
 clic(app, "Jugar el partido")
 assert app.p["fase"] == "vivo"
@@ -285,7 +285,7 @@ paso("Continuar cierra la jornada y actualiza la tabla")
 
 # ------------------------------------------------------------------ Omitir directo desde el inicio, varias jornadas
 for _ in range(6):
-    clic(app, "Jugar jornada")
+    jugar_hub(app)
     clic(app, "Jugar el partido")
     clic(app, "Omitir partido")
     assert app.p["fin"]
@@ -294,7 +294,7 @@ assert app.escena == "hub"
 paso("6 jornadas seguidas con Omitir")
 
 # Omitir pulsado en pleno primer tiempo: el botón tiene el icono (comprobado visualmente en la captura)
-clic(app, "Jugar jornada")
+jugar_hub(app)
 clic(app, "Jugar el partido")
 avanzar_hasta(app, lambda: app.p["min"] >= 5)
 captura(app, "07b_boton_omitir")

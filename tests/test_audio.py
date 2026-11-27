@@ -10,6 +10,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _util import RAIZ, T, App, avanzar_hasta, clic, clic_xy, frame, pygame  # noqa: E402
+from _util import jugar_hub  # noqa: E402
 
 from juego import audio as A  # noqa: E402
 from juego import eventos as ev  # noqa: E402
@@ -154,7 +155,7 @@ app.liga_nombre = "La Liga"
 club = next(c for c in app.mundo.clubes.values() if c.nombre == "Real Madrid")
 app.iniciar_temporada(club)
 frame(app, n=2)
-clic(app, "Jugar jornada")
+jugar_hub(app)
 clic(app, "Jugar el partido")
 p = app.p
 p["vel"] = 4

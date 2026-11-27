@@ -1,51 +1,105 @@
 coach_id,short_name,long_name,nationality_name
+126,A. Dawson,Andy Dawson,England
 243,D. Digard,Didier Digard,France
 270,G. O'Neil,Gary O'Neil,England
 307,M. Arteta,Mikel Arteta Amatriain,Spain
+384,D. Moore,Darren Moore,England
 511,X. Alonso Olano,Xabier Alonso Olano,Spain
 562,R. Edwards,Rob Edwards,Wales
+645,M. Carrick,Michael Carrick,England
+727,A. Aquilani,Alberto Aquilani,Italy
+904,R. Martin,Russell Martin,Scotland
 938,R. Mason,Ryan Mason,England
 1346,P. McCarthy,Patrick McCarthy,Republic of Ireland
+1458,M. Duff,Michael Duff,Northern Ireland
+1631,P. Kisnorbo,Patrick Kisnorbo,Australia
+1819,G. Ainsworth,Gareth Ainsworth,England
+2146,J. Eustace,John Eustace,England
+2733,M. Taylor,Matthew Taylor,England
 2922,B. Saltor Grau,Bruno Saltor Grau,Spain
+7101,S. Schumacher,Steven Schumacher,England
+8170,R. Lowe,Ryan Lowe,England
 9954,M. Jackson,Michael David Jackson,England
 10127,P. Heckingbottom,Paul Heckingbottom,England
+23174,J. Dahl Tomasson,Jon Dahl Tomasson,Denmark
 29535,B. Svensson,Bo Svensson,Denmark
+29582,P. Dárdai,Pál Dárdai,Hungary
 29676,S. Baumgart,Steffen Baumgart,Germany
 29710,M. Rose,Marco Rose,Germany
+29842,C. Fiél Casanova,Cristian Ramon Fiél Casanova,Spain
+30044,C. Eichner,Christian Eichner,Germany
 32849,D. Toppmöller,Dino Toppmöller,Germany
+33182,S. Leitl,Stefan Leitl,Germany
+33212,D. Thioune,Daniel Thioune,Germany
 33525,J. Abardonado,Jacques Abardonado,France
+35399,M. Rapp,Marcel Rapp,Germany
+35472,T. Schweinsteiger,Tobias Schweinsteiger,Germany
+37679,F. Hürzeler,Fabian Hürzeler,United States
 38217,S. Hoeneß,Sebastian Hoeneß,Germany
 38927,E. Maaßen,Enrico Maaßen,Germany
 45305,P. Matarazzo,Pellegrino Matarazzo,United States
+62986,L. García Fernández,Luis García Fernández,Spain
+94064,L. Batlles,Laurent Batlles,France
+94233,V. Hognon,Vincent Hognon,France
+94341,S. Dumont,Stéphane Dumont,France
+94389,O. Echouafni,Olivier Echouafni,France
 94575,F. Grosso,Fabio Grosso,Italy
+95070,O. Daf,Omar Daf,Senegal
 95212,B. Grougi,Bruno Grougi,France
 95726,T. Motta,Thiago Motta,Italy
+97031,A. Dujeux,Alexandre Dujeux,France
+106189,F. Muñoz Llompart,Francisco Javier Muñoz Llompart,Spain
+107439,E. Maresca,Enzo Maresca,Italy
+127492,E. Corini,Eugenio Corini,Italy
+127755,P. Bianco,Paolo Bianco,Italy
 127771,A. Gilardino,Alberto Gilardino,Italy
+127811,A. Soncin,Andrea Soncin,Italy
+127840,F. Caserta,Fabio Caserta,Italy
 127889,R. De Zerbi,Roberto De Zerbi,Italy
 127980,I. Juric,Ivan Juric,Croatia
+127989,A. Pirlo,Andrea Pirlo,Italy
+128120,A. Diana,Aimo Diana,Italy
 128160,S. Inzaghi,Simone Inzaghi,Italy
+128192,D. Gastaldello,Daniele Gastaldello,Italy
 128261,V. Italiano,Vincenzo Italiano,Italy
 128295,R. Palladino,Raffaele Palladino,Italy
 128311,A. Agostini,Alessandro Agostini,Italy
+130460,W. Viali,William Viali,Italy
+130528,F. Pecchia,Fabio Pecchia,Italy
+130912,M. Mignani,Michele Mignani,Italy
+131125,E. Gorini,Edoardo Gorini,Italy
 131252,R. D'Aversa,Roberto D'Aversa,Italy
+173023,A. Neil,Alex Neil,Scotland
 184794,S. González Soriano,Sergio González Soriano,Spain
 184942,X. Hernández,Xavier Hernández Creus,Spain
 185095,R. Baraja Vegas,Rubén Baraja Vegas,Spain
+185262,J. Etxeberria Lizardi,Joseba Andoni Etxeberria Lizardi,Spain
 185336,V. Moreno Peris,Vicente Moreno Peris,Spain
+185346,J. Calleja Revilla,Javier Calleja Revilla,Spain
 186018,M. Sánchez,Miguel Ángel Sánchez Muñoz,Spain
+186071,P. Pezzolano Suárez,Paulo César Pezzolano Suárez,Uruguay
+188253,A. Mújika López,Aritz Mújika López,Spain
+227933,M. Pereira Nascimento,Mario Jorge Maciel Pereira Nascimento,Brazil
 361268,P. Aristouy,Pierre Aristouy,France
 367568,A. Dionisi,Alessio Dionisi,Italy
 417317,E. Terzic,Edin Terzic,Croatia
 452946,D. Simeone,Diego Pablo Simeone,Argentina
+453012,S. Beccacece,Sebastián Beccacece,Argentina
+455344,T. Mowbray,Tony Mowbray,England
 455353,J. Klopp,Jürgen Klopp,Germany
 455355,D. Moyes,David Moyes,Scotland
 455361,J. Guardiola i Sala,Josep Guardiola i Sala,Spain
 455375,José Mourinho,José Mario Felix dos Santos Mourinho,Portugal
 455387,R. Benítez Maudes,Rafael Benítez Maudes,Spain
 455424,M. Saraiva da Silva,Marco Alexandre Saraiva da Silva,Portugal
+455453,G. Rowett,Gary Rowett,England
 455461,S. Dyche,Sean Dyche,England
+455489,M. Robins,Mark Robins,England
 455712,U. Fischer,Urs Fischer,Switzerland
+455788,V. Sánchez del Amo,Víctor Sánchez del Amo,Spain
 455800,C. Ancelotti,Carlo Ancelotti,Italy
+455815,O. Pantaloni,Olivier Pantaloni,France
+455827,S. Le Mignan,Stéphane Le Mignan,France
 455848,M. Baroni,Marco Baroni,Italy
 455907,U. Emery,Unai Emery Etxegoien,Spain
 455926,M. Sarri,Maurizio Sarri,Italy
@@ -54,14 +108,26 @@ coach_id,short_name,long_name,nationality_name
 455978,A. Hütter,Adolf Hütter,Austria
 456038,G. Gasperini,Gian Piero Gasperini,Italy
 456113,E. ten Hag,Erik ten Hag,Netherlands
+456247,C. Pélissier,Christophe Pélissier,France
+456258,A. Garitano Aguirrezábal,Asier Garitano Aguirrezábal,Spain
+456409,L. Carrión Delgado,Luis Miguel Carrión Delgado,Spain
 456423,J. Arrasate,Jagoba Arrasate Elustondo,Spain
+456483,O. Frapolli,Olivier Frapolli,France
 456603,M. Der Zakarian,Michel Der Zakarian,Armenia
+456991,D. Santini,Didier Santini,France
 458783,E. Di Francesco,Eusebio Di Francesco,Italy
 458978,F. Schmidt,Frank Schmidt,Germany
 459100,S. Pioli,Stefano Pioli,Italy
+460096,F. Escriba Segura,Francisco Escriba Segura,Spain
 460197,C. Streich,Christian Streich,Germany
+460205,J. Härtel,Jens Härtel,Germany
 460255,T. Lieberknecht,Torsten Lieberknecht,Germany
+460535,D. Farke,Daniel Farke,Germany
+462195,M. Longo,Moreno Longo,Italy
+464864,N. Usaï,Nicolas Usaï,France
 464975,F. Rodríguez Vílchez,Francisco Javier Rodríguez Vílchez,Spain
+465167,S. Lamouchi,Sabri Lamouchi,France
+465900,V. Vivarini,Vincenzo Vivarini,Italy
 470943,E. Valverde,Ernesto Valverde Tejedor,Spain
 474728,J. Lopetegui Argote,Julen Lopetegui Argote,Spain
 523898,M. Pellegrini,Manuel Luis Pellegrini Ripamonti,Chile
@@ -73,25 +139,63 @@ coach_id,short_name,long_name,nationality_name
 523959,L. Martínez García,Luis Enrique Martínez García,Spain
 524009,J. Bordalás Jiménez,José Bordalás Jiménez,Spain
 524018,P. Carvalho de Sousa,Paulo Manuel Carvalho de Sousa,Portugal
+524257,D. Wagner,David Wagner,United States
+524286,J. Furlan,Jean-Marc Furlan,France
+524311,A. Zorniger,Alexander Zorniger,Germany
 524537,N. Kovač,Niko Kovač,Croatia
+524834,J. Pérez Alonso,Jon Andoni Pérez Alonso,Spain
 526236,T. Letsch,Thomas Letsch,Germany
+526440,B. Jiménez Sáez,Borja Jiménez Sáez,Spain
 529482,R. Le Bris,Régis Le Bris,France
+529830,D. Guion,David Guion,France
 530329,P. Gastien,Pascal Gastien,France
 530755,I. Alguacil Barrenetxea,Imanol Alguacil Barrenetxea,Spain
+533871,R. Albés Yáñez,Rubén Albés Yáñez,Spain
+533879,J. Ziganda Lacunza,José Ángel Ziganda Lacunza,Spain
 533904,F. López Fernández,Francisco José López Fernández,Spain
+608328,S. Vecchi,Stefano Vecchi,Italy
+896508,M. Kauczinski,Markus Kauczinski,Germany
+896509,D. Schuster,Dirk Schuster,Germany
+896514,M. Büskens,Michael Büskens,Germany
+896531,A. Schwartz,Alois Schwartz,Germany
+896553,N. Pearson,Nigel Pearson,England
+896570,V. Ismaël,Valérien Ismaël,France
 896608,F. Haise,Franck Haise,France
+896619,L. Kwasniok,Lukas Kwasniok,Germany
+896634,P. Bisoli,Pierpaolo Bisoli,Italy
+896662,F. Fernández Díaz,Francisco Javier Fernández Díaz,Spain
 896798,J. Aguirre Onaindía,Javier Aguirre Onaindía,Mexico
 1068543,J. Rojo Martín,Juan José Rojo Martín,Spain
+1548455,H. Steffen,Horst Steffen,Germany
+1552334,L. Guyot,Laurent Guyot,France
+1552477,T. Walter,Tim Walter,Germany
+1553030,C. Lucarelli,Cristiano Lucarelli,Italy
 1553200,A. Sottil,Andrea Sottil,Italy
+1553203,M. Alvini,Massimiliano Alvini,Italy
+1553204,G. Stroppa,Giovanni Stroppa,Italy
+1677031,R. Brouard,Régis Brouard,France
 2158433,L. Bölöni,László Bölöni,Romania
+2206526,C. Titz,Christian Titz,Germany
+2510462,M. Chabert,Mathieu Chabert,France
+2823359,F. Estévez Martín,Fernando Estévez Martín,Spain
 3187813,L. Elsner,Luka Elsner,Slovenia
+3510275,C. Parralo Aguilera,Cristóbal Parralo Aguilera,Spain
 5961878,W. Still,William Still,Belgium
+5967966,M. Álvarez Jurado,Miguel Álvarez Jurado,Spain
 7330518,F. García Pimienta,Francisco Javier García Pimienta,Spain
+9950240,J. López Menéndez,José Alberto López Menéndez,Spain
 10269848,A. Andreazzoli,Aurelio Andreazzoli,Italy
+10293491,E. Sarabia Armesto,Eder Sarabia Armesto,Spain
 10966287,G. Seoane,Gerardo Seoane,Switzerland
+14011820,L. Foschi,Luciano Foschi,Italy
 16111977,L. García Plaza,Luis García Plaza,Spain
 20693423,O. Werner,Ole Werner,Germany
 24427744,T. Frank,Thomas Frank,Denmark
+36083600,M. Ramírez,Miguel Ángel Ramírez,Spain
 37250724,S. Cooper,Steve Cooper,Wales
+37453069,R. Beale,Richard Beale,England
+37524146,K. McKenna,Kieran McKenna,England
+37524603,S. Gilli,Stéphane Gilli,France
+37553756,A. Lisci,Alessio Lisci,Italy
 37558369,M. Le Scornet,Mathieu Le Scornet,France
 37700640,C. Martínez Novell,Carles Martínez Novell,Spain

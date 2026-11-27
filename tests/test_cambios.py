@@ -10,6 +10,7 @@ import pygame
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _util import App, avanzar_hasta, captura, clic, clic_xy, frame  # noqa: E402
+from _util import jugar_hub  # noqa: E402
 
 from juego import cambios as CB  # noqa: E402
 from juego import eventos as ev  # noqa: E402
@@ -160,7 +161,7 @@ paso(f"motor minuto a minuto ≈ motor por tramos (jugadas {np.mean(g_min):.2f} 
      f"tarjetas {np.mean(tarj_min):.2f} vs {np.mean(tarj_blk):.2f})")
 
 # ------------------------------------------------------------------ 8. interfaz durante el partido
-clic(app, "Jugar jornada")
+jugar_hub(app)
 clic(app, "Jugar el partido")
 p = app.p
 avanzar_hasta(app, lambda: p["min"] >= 20)
@@ -193,9 +194,10 @@ clic_xy(app, (90 + 450 + 170, 44 + 92 + 50 + idx * 43 + 20))
 assert [(s_.id, e_.id) for s_, e_ in cam["pend"]] == [(sale.id, entra.id)], cam["pend"]
 frame(app, n=2)
 captura(app, "18b_cambios_pendiente")
+c_ant, v_ant = est["cambios"][lado], est["ventanas"][lado]        # una lesión previa también puede haber gastado un cambio
 clic(app, "Confirmar cambios")
 assert p["pausa"] is None and p["cam"] is None
-assert est["cambios"][lado] == 1 and est["ventanas"][lado] == 1
+assert est["cambios"][lado] == c_ant + 1 and est["ventanas"][lado] == v_ant + 1
 assert any(e["tipo"] == "cambio" and e["jug"] == entra.nombre for e in est["eventos"])
 vis = [x.nombre for x in p["vista"].eq[lado]]
 assert entra.nombre in vis and sale.nombre not in vis, "la cancha animada no reflejó el cambio"
@@ -222,6 +224,7 @@ paso("cancelar cierra el panel sin cambiar nada")
 # descanso: los cambios no usan parada y se vuelve al descanso
 assert avanzar_hasta(app, lambda: p["pausa"] == "descanso"), "no llegó el descanso"
 paradas = est["ventanas"][lado]
+cambios_antes = est["cambios"][lado]
 clic(app, "Cambios y formación")
 assert p["cam"]["prev"] == "descanso"
 s2, e2 = None, None
@@ -238,7 +241,7 @@ clic_xy(app, (px, py + 6))
 idx = [b.id for b in CB.banquillo(est, lado)].index(e2.id)
 clic_xy(app, (90 + 450 + 170, 44 + 92 + 50 + idx * 43 + 20))
 clic(app, "Confirmar cambios")
-assert p["pausa"] == "descanso" and est["ventanas"][lado] == paradas and est["cambios"][lado] == 2
+assert p["pausa"] == "descanso" and est["ventanas"][lado] == paradas and est["cambios"][lado] == cambios_antes + 1
 captura(app, "18c_descanso_tras_cambio")
 clic(app, "Empezar el 2.º tiempo")
 paso("descanso: se pueden hacer cambios sin gastar parada y se vuelve a la pantalla de descanso")

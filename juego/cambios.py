@@ -100,6 +100,8 @@ def recalcular(est, bono_tactico):
     fa, fb = sim.fuerzas(est["xi"]["a"]), sim.fuerzas(est["xi"]["b"])
     est["la"], est["lb"] = sim.goles_esperados(fa, fb, L.tactica, V.tactica, True,
                                                bono_tactico(L.tactica), bono_tactico(V.tactica))
+    if est.get("neutral"):                                      # final de copa: sin ventaja de local
+        est["la"], est["lb"] = est["la"] / sim.VENTAJA_LOCAL, est["lb"] / 0.92
     return est["la"], est["lb"]
 
 

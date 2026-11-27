@@ -107,6 +107,9 @@ def main():
                     print(f"  revisar: {club!r} -> {arch!r} ({s:.2f})")
     print(f"Listo: {total} escudos en {DESTINO} ({dudosos} con coincidencia baja, revisa los de arriba).")
     descargar_ligas()
+    import logos_extra                               # segundas divisiones, Champions y copas nacionales
+    logos_extra.descargar_segunda_clonando()
+    logos_extra.descargar_competiciones()
 
 
 if __name__ == "__main__":

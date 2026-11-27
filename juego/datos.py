@@ -40,7 +40,8 @@ class Mundo:
         eq = pd.read_csv(DATA / "equipos.csv")
         ent = pd.read_csv(DATA / "entrenadores.csv").set_index("coach_id")
         self.clubes = {}
-        self.ligas = {}
+        self.ligas = {}                        # solo primeras divisiones: son las que se pueden dirigir
+        self.segunda = {}                      # liga de primera -> ids de los clubes de su segunda división (copa nacional)
         for r in eq.to_dict("records"):
             k = camisetas.kit(r["team_name"])
             c1, c2 = k[:2] if k else colores_club(r["team_name"])
@@ -48,9 +49,13 @@ class Mundo:
             club = Club(id=int(r["team_id"]), nombre=r["team_name"], liga=r["liga"], ovr=int(r["overall"]),
                         estadio=r["home_stadium"] if isinstance(r["home_stadium"], str) else "Estadio municipal",
                         entrenador=nom_ent, tactica=tac.tactica_desde_fila(r), color=c1, color2=c2,
-                        patron=k[2] if k else "liso")
+                        patron=k[2] if k else "liso", division=int(r.get("division", 1)),
+                        liga_madre=r.get("liga_madre", r["liga"]))
             self.clubes[club.id] = club
-            self.ligas.setdefault(r["liga"], []).append(club.id)
+            if club.division == 1:
+                self.ligas.setdefault(r["liga"], []).append(club.id)
+            else:
+                self.segunda.setdefault(club.liga_madre, []).append(club.id)
         self.externos = []                     # jugadores sin club simulado (otras ligas o sin equipo)
         for j in self.jugadores.values():
             club = self.clubes.get(j.club_id)

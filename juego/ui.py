@@ -269,7 +269,8 @@ class UI:
         """Logo de la liga sobre una placa clara (los logos oficiales no se leen bien sobre fondo oscuro).
         Devuelve False si no está descargado."""
         slug = {"Premier League": "premier", "La Liga": "laliga", "Bundesliga": "bundesliga", "Serie A": "seriea",
-                "Ligue 1": "ligue1"}.get(liga)
+                "Ligue 1": "ligue1", "Championship": "championship", "La Liga 2": "laliga2", "2. Bundesliga": "bundesliga2",
+                "Serie B": "serieb", "Ligue 2": "ligue2"}.get(liga)
         logo = self._logo(f"liga_{slug}", alto) if slug else None
         if logo is None:
             return False
@@ -277,6 +278,23 @@ class UI:
             logo = self._logo(f"liga_{slug}", int(alto * 170 / logo.get_width()))
         placa = logo.get_rect(center=centro).inflate(22, 18)
         pygame.draw.rect(self.surf, (240, 244, 250), placa, border_radius=12)
+        self.surf.blit(logo, logo.get_rect(center=centro))
+        return True
+
+    LOGOS_COMPETICION = {"UEFA Champions League": "champions", "FA Cup": "copa_facup", "Copa del Rey": "copa_copadelrey",
+                         "DFB-Pokal": "copa_dfbpokal", "Coppa Italia": "copa_coppaitalia",
+                         "Coupe de France": "copa_coupedefrance"}
+
+    def logo_competicion(self, centro, alto, nombre, ancho_max=130):
+        """Logo de una copa o de la Champions sobre una placa clara. Devuelve False si no está descargado."""
+        clave = self.LOGOS_COMPETICION.get(nombre)
+        logo = self._logo(clave, alto) if clave else None
+        if logo is None:
+            return False
+        if logo.get_width() > ancho_max:
+            logo = self._logo(clave, int(alto * ancho_max / logo.get_width()))
+        placa = logo.get_rect(center=centro).inflate(18, 14)
+        pygame.draw.rect(self.surf, (240, 244, 250), placa, border_radius=10)
         self.surf.blit(logo, logo.get_rect(center=centro))
         return True
 

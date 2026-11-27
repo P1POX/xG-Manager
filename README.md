@@ -43,7 +43,7 @@ python main.py
 En macOS/Linux, el entorno se activa con `source .venv/bin/activate`. Si PowerShell bloquea la activación, ejecuta antes
 `Set-ExecutionPolicy -Scope Process RemoteSigned`. Si la ruta de la carpeta es muy larga en Windows, puede fallar la carga de DLL: clónalo en una ruta corta (p. ej. `C:\dev`).
 
-**Escudos de los clubes (opcional).** Descárgalos una vez con `python tools/descargar_logos.py` (necesita `git` y baja unos 17 MB;
+**Escudos y logos (opcional).** Descárgalos una vez con `python tools/descargar_logos.py` (necesita `git` y baja unos 17 MB, más los de segunda división, la Champions y las copas desde Wikipedia, que tarda unos minutos;
 se guardan en `assets/logos/`, que no se sube a Git). Si no los descargas, el juego dibuja un escudo genérico con las iniciales.
 
 Los datos ya procesados y los modelos entrenados vienen incluidos (`data/`, `models/`, `reports/`). Para regenerarlos
@@ -70,6 +70,10 @@ python tests/test_cancha.py     # partidos completos: la animación coincide con
 python tests/test_carrera.py    # modelo de evolución, paso de temporada y continuidad tras guardar
 python tests/test_cambios.py    # cambios y formación en pleno partido (reglas de la liga, interfaz y motor)
 python tests/test_audio.py      # síntesis, música, silbato y grada (con el controlador de audio 'dummy')
+python tests/test_copa.py       # copa: lógica, prórroga, tanda de penales, calendario, guardado
+python tests/test_champions.py  # Champions: clasificación, grupos, ida y vuelta, global, penales, calendario, guardado
+python tests/test_ascensos.py   # ascensos y descensos: simulación, movimientos, tu club en segunda, guardado
+python tests/test_simular.py    # calendario: 'Simular hasta la jornada N' (liga, copa y Champions de paso)
 python tests/smoke_test.py      # simula una temporada completa
 ```
 
@@ -110,6 +114,24 @@ python tests/smoke_test.py      # simula una temporada completa
    5 grandes ligas: **máximo 5 cambios y 3 paradas** (el descanso no cuenta como parada); las lesiones que fuerzan un
    cambio también cuentan, y hace falta un portero en el campo. Tras cada cambio se recalculan los goles esperados con el
    once que queda en el campo, así que las decisiones influyen en lo que pasa después.
+10. **Copa nacional:** cada temporada hay una copa de 32 clubes a partido único (FA Cup, Copa del Rey, DFB-Pokal, Coppa
+   Italia o Coupe de France) con tu primera división y clubes de segunda elegidos al azar (los datos incluyen ahora 200
+   clubes). Son 5 rondas, cada una justo antes de una jornada de liga, con sorteo puro y premios en dinero. Si hay
+   empate a los 90' hay **prórroga** y, si sigue, **tanda de penales** que se juega con los minijuegos de penal (o se
+   simula). La final es en campo neutral. Hay pestaña *Copa* con el cuadro y tu camino, y las rondas salen en el calendario.
+11. **Champions League:** 32 clubes de las 5 ligas (los 6 mejores de cada una y 2 más; en tu liga, los 6 primeros de la
+   temporada anterior). Fase de grupos (8 grupos de 4 con bombos por nivel, ida y vuelta, 6 jornadas), octavos, cuartos y
+   semifinales **a doble partido** (el global decide; si empata, prórroga y penales tras la vuelta) y final única en campo
+   neutral. Se juega los martes antes de una jornada de liga y paga premios por participar, ganar, pasar de fase y ser
+   campeón. Pestaña *Champions* con las tablas de grupo, los cruces y tu camino.
+12. **Ascensos y descensos:** al terminar la temporada se simulan las demás divisiones (la segunda de tu país y las 10 de
+   Europa) con el mismo modelo de goles esperados y bajan los últimos de primera y suben los primeros de segunda (3 en las
+   ligas de 20 clubes, 2 en las de 18). Una pantalla resume los movimientos de las 5 ligas. El club que sube cobra 10 M€ y
+   el que baja conserva el 85 % del presupuesto. Si desciende **tu club**, juegas la segunda división (Championship,
+   La Liga 2, 2. Bundesliga, Serie B o Ligue 2) con su calendario, su tabla (zona de ascenso en verde) y la copa; la
+   Champions queda fuera de tu alcance hasta que vuelvas a subir y entres entre los 6 primeros.
+13. **Simular hasta una fecha:** en el calendario eliges una jornada futura y *Simular hasta la jornada N* (con confirmación)
+    juega sola tus partidos de liga, copa y Champions hasta ahí; el partido elegido lo juegas tú.
 
 ## Sonido
 
@@ -167,8 +189,8 @@ ml/preparar_datos.py    limpieza y filtrado de los CSV de Kaggle
 ml/entrenar.py          clustering, regresión, árboles y reglas; guarda modelos y métricas
 ml/entrenar_evolucion.py  modelo de evolución de jugadores (datos reales FIFA 18-24) para el modo carrera
 juego/                  modelo.py · simulacion.py · eventos.py · minijuegos.py · cancha.py · cambios.py · audio.py · evolucion.py · fechas.py · guardado.py · camisetas.py · asistente.py · datos.py · tactica.py · ui.py · app.py
-tools/                  descargar_logos.py (escudos de clubes y logos de ligas, opcional)
-tests/                  test_flujo.py · test_guardado.py · test_cancha.py · test_carrera.py · test_cambios.py · test_audio.py · smoke_test.py
+tools/                  descargar_logos.py + logos_extra.py (escudos, logos de ligas, copas y Champions; opcional)
+tests/                  test_flujo.py · test_guardado.py · test_cancha.py · test_carrera.py · test_cambios.py · test_audio.py · test_copa.py · test_champions.py · test_ascensos.py · test_simular.py · smoke_test.py
 assets/fonts/           Lato y Bebas Neue (SIL Open Font License)
 data/ models/ reports/  datos procesados, modelos y métricas
 ```

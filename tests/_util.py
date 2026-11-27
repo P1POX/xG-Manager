@@ -99,3 +99,29 @@ def nueva_app(seed=None):
     """Otra instancia de App en el mismo proceso (cierra la ventana anterior: con SCALED solo cabe una)."""
     pygame.display.quit()
     return App(seed=seed)
+
+
+def jugar_hub(app):
+    """Pulsa el botón de partido del hub: 'Jugar jornada N' o, si toca una ronda de copa, 'Copa: …'."""
+    log = botones(app)
+    cand = [b for b in log if b[1].startswith(("Jugar jornada", "Copa:", "Champions:"))]
+    assert cand, f"No hay botón de partido. Botones: {[b[1] for b in log]}"
+    assert cand[0][2], "el botón de partido está inhabilitado"
+    frame(app, click=cand[0][0].center, n=2)
+
+
+def jugar_liga(app):
+    """Como jugar_hub, pero antes juega (con Omitir) las jornadas de copa o Champions que haya pendientes, de modo que
+    termina en el partido de liga. Úsalo en las pruebas que cuentan jornadas de liga."""
+    for _ in range(20):
+        if any(b[1].startswith("Jugar jornada") for b in botones(app)):
+            break
+        jugar_hub(app)
+        clic(app, "Jugar el partido")
+        clic(app, "Omitir partido")
+        if "Tanda de penales" in etiquetas(app):
+            clic(app, "Tanda de penales")
+            clic(app, "Simular el resto")
+            clic(app, "Continuar")
+        clic(app, "Continuar")
+    jugar_hub(app)

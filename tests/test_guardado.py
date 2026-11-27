@@ -9,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _util import RAIZ, App, clic, etiquetas, frame, nueva_app  # noqa: E402
+from _util import jugar_liga  # noqa: E402
 
 from juego import guardado as G  # noqa: E402
 
@@ -37,7 +38,7 @@ def foto(app):
 
 def jugar(app, n):
     for _ in range(n):
-        clic(app, "Jugar jornada")
+        jugar_liga(app)
         clic(app, "Jugar el partido")
         clic(app, "Omitir partido")
         clic(app, "Continuar")

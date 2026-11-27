@@ -113,6 +113,8 @@ class Club:
     color: tuple = (200, 200, 200)
     color2: tuple = (30, 30, 30)
     patron: str = "liso"
+    division: int = 1                # 1 = primera (se puede dirigir); 2 = segunda (solo juega la copa nacional)
+    liga_madre: str = ""             # liga de primera de su país
 
     @property
     def pts(self):

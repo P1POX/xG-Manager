@@ -6,7 +6,8 @@ de partidos no usa las fechas.
 """
 import datetime as dt
 
-INICIO = {"Premier League": (8, 12), "La Liga": (8, 12), "Bundesliga": (8, 19), "Serie A": (8, 19), "Ligue 1": (8, 12)}
+INICIO = {"Premier League": (8, 12), "La Liga": (8, 12), "Bundesliga": (8, 19), "Serie A": (8, 19), "Ligue 1": (8, 12),
+          "Championship": (8, 5), "La Liga 2": (8, 12), "2. Bundesliga": (7, 29), "Serie B": (8, 19), "Ligue 2": (8, 5)}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
          "noviembre", "diciembre"]
 DIAS = ["lun", "mar", "mié", "jue", "vie", "sáb", "dom"]

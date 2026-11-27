@@ -89,10 +89,12 @@ paso("fin de temporada: queda guardada y registrada en el historial")
 
 ovr_antes = {j.id: j.ovr for j in club2.plantel}
 clic(app2, "Siguiente temporada")
+assert app2.escena == "ascensos"
+clic(app2, "Continuar")
 for _ in range(6):
     frame(app2, n=2)
 assert app2.escena == "evolucion" and app2.temporada == 2024, (app2.escena, app2.temporada)
-assert app2.liga.jornada == 0 and app2.liga.total_jornadas in (34, 38)
+assert app2.liga.jornada == 0 and app2.liga.total_jornadas in (34, 38, 42, 46)
 assert app2.fecha(0).year == 2024, app2.fecha(0)
 assert any(j.ovr != ovr_antes.get(j.id) for j in club2.plantel), "ningún jugador cambió de OVR"
 app2.avisos.clear()

@@ -7,6 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _util import App, avanzar_hasta, clic, frame  # noqa: E402
+from _util import jugar_hub  # noqa: E402
 
 from juego import eventos as ev  # noqa: E402
 from juego.cancha import POSTE, VistaPartido  # noqa: E402
@@ -36,7 +37,7 @@ fuera_de_limites = 0
 for jornada in range(3):
     dentro.clear()
     cosmeticos_dentro.clear()
-    clic(app, "Jugar jornada")
+    jugar_hub(app)
     clic(app, "Jugar el partido")
     p = app.p
     p["vel"] = 4

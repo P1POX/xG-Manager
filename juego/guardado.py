@@ -15,6 +15,9 @@ from pathlib import Path
 
 import numpy as np
 
+from . import ascensos as AS
+from .champions import Champions
+from .copa import Copa
 from .fechas import TEMPORADA_BASE
 from .modelo import Liga
 
@@ -64,6 +67,10 @@ def guardar(app):
                     "total": liga.total_jornadas, "posicion": liga.posicion(club), "pts": club.pts},
         "seed": app.seed,
         "temporada": app.temporada,
+        "copa": app.copa.a_dict() if app.copa else None,
+        "champions": app.champions.a_dict() if app.champions else None,
+        "ordenes_prev": app._ordenes_prev,
+        "divisiones": AS.a_dict(m),
         "historial": app.historial_temporadas,
         "retirados": sorted(m.retirados),
         "club_id": club.id,
@@ -132,6 +139,8 @@ def aplicar(app, datos):
     m = app.mundo
     por_id = m.jugadores
     m.retirados = set(datos.get("retirados", []))
+    if datos.get("divisiones"):                                     # ascensos y descensos de temporadas anteriores
+        AS.de_dict(m, datos["divisiones"])
     for i, f in datos.get("jugadores", {}).items():                 # evolución de jugadores de temporadas anteriores
         j = por_id[int(i)]
         j.ovr, j.pot, j.edad, j.valor, j.valor_pred = f[0], f[1], f[2], float(f[3]), float(f[4])
@@ -158,14 +167,22 @@ def aplicar(app, datos):
     _poner_rng(app.rng, datos["rng_app"])
 
     club = m.clubes[datos["club_id"]]
-    clubes = [m.clubes[i] for i in m.ligas[datos["liga_nombre"]]]
-    liga = Liga(datos["liga_nombre"], clubes, app.rng)
+    ids = m.ligas[datos["liga_nombre"]] if club.division == 1 else m.segunda[datos["liga_nombre"]]
+    clubes = [m.clubes[i] for i in ids]
+    liga = Liga(club.liga, clubes, app.rng)
     liga.calendario = [[tuple(p) for p in r] for r in datos["liga"]["calendario"]]
     liga.historial = [[tuple(x) for x in r] for r in datos["liga"]["historial"]]
     liga.jornada = datos["liga"]["jornada"]
     _poner_rng(app.rng, datos["rng_app"])         # Liga() barajó un calendario nuevo con el rng: se restituye el estado guardado
 
     app.temporada = datos.get("temporada", TEMPORADA_BASE)
+    app.copa = Copa.de_dict(datos["copa"]) if datos.get("copa") else None      # partidas antiguas: sin copa
+    app.copa_sel = None
+    app.champions = Champions.de_dict(datos["champions"]) if datos.get("champions") else None   # partidas antiguas: sin Champions
+    if app.champions:
+        app.champions.preparar(m)
+    app.champ_sel = None
+    app._ordenes_prev = datos.get("ordenes_prev")
     app.historial_temporadas = datos.get("historial", [])
     m.invalidar_prediccion()
     app.club, app.liga, app.liga_nombre = club, liga, datos["liga_nombre"]

@@ -19,6 +19,10 @@ DATA = RAIZ / "data"
 
 # Ligas con las que se juega: Premier League, La Liga, Bundesliga, Serie A y Ligue 1
 LIGAS_JUEGO = {13: "Premier League", 53: "La Liga", 19: "Bundesliga", 31: "Serie A", 16: "Ligue 1"}
+# Segundas divisiones: no se juegan como liga, pero sus clubes participan en la copa nacional.
+# id de liga -> (nombre, liga de primera de ese país)
+LIGAS_SEGUNDA = {14: ("Championship", "Premier League"), 54: ("La Liga 2", "La Liga"), 20: ("2. Bundesliga", "Bundesliga"),
+                 32: ("Serie B", "Serie A"), 17: ("Ligue 2", "Ligue 1")}
 
 ATRIBUTOS = [
     "pace", "shooting", "passing", "dribbling", "defending", "physic",
@@ -77,16 +81,18 @@ def main(ruta):
     # ------------------------------------------------------------------ equipos
     eq = pd.read_csv(ruta / "male_teams.csv", low_memory=False)
     eq24 = ultima_actualizacion(eq, 24)
-    eq24 = eq24[eq24.league_id.isin(LIGAS_JUEGO)].copy()
-    eq24["liga"] = eq24.league_id.map(LIGAS_JUEGO)
+    eq24 = eq24[eq24.league_id.isin(list(LIGAS_JUEGO) + list(LIGAS_SEGUNDA))].copy()
+    eq24["division"] = eq24.league_id.map(lambda i: 1 if i in LIGAS_JUEGO else 2)
+    eq24["liga"] = eq24.league_id.map(lambda i: LIGAS_JUEGO[i] if i in LIGAS_JUEGO else LIGAS_SEGUNDA[i][0])
+    eq24["liga_madre"] = eq24.league_id.map(lambda i: LIGAS_JUEGO[i] if i in LIGAS_JUEGO else LIGAS_SEGUNDA[i][1])
     # Solo clubes con plantel suficiente en el dataset de jugadores
     tam = jug.groupby("club_team_id").size()
     eq24 = eq24[eq24.team_id.map(tam).fillna(0) >= 18]
-    cols_eq = ["team_id", "team_name", "liga", "league_id", "overall", "attack", "midfield",
+    cols_eq = ["team_id", "team_name", "liga", "division", "liga_madre", "league_id", "overall", "attack", "midfield",
                "defence", "coach_id", "home_stadium", "international_prestige",
                "domestic_prestige"] + COLS_TACTICA
     eq24 = eq24[cols_eq]
-    print(f"Equipos jugables: {len(eq24)} -> {eq24.groupby('liga').size().to_dict()}")
+    print(f"Equipos: {len(eq24)} -> {eq24.groupby('liga').size().to_dict()}")
     eq24.to_csv(DATA / "equipos.csv", index=False)
 
     # -------------------------------------------------------------- entrenadores
