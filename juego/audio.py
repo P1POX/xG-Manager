@@ -245,6 +245,7 @@ class Audio:
         self.activo = bool(pygame.mixer.get_init())
         self.ruta = Path(ruta_ajustes) if ruta_ajustes else None
         self.musica, self.efectos, self.silencio = 0.5, 0.8, False
+        self.en_lote = False                         # True mientras se simulan varios partidos seguidos: no suena nada
         self.estilo_silbato = "fox40"
         self.cargar_ajustes()
         self.sonidos = {}
@@ -368,7 +369,7 @@ class Audio:
         del self.registro[:-300]
 
     def _tocar(self, nombre, canal, ganancia):
-        if not (self.activo and self.listo) or nombre not in self.sonidos or canal is None:
+        if self.en_lote or not (self.activo and self.listo) or nombre not in self.sonidos or canal is None:
             return
         snd = self.sonidos[nombre]
         snd.set_volume(ganancia)

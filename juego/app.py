@@ -2358,15 +2358,20 @@ class App:
     def simular_hasta(self, objetivo):
         """Juega todos tus partidos (liga, copas y Champions) hasta llegar a la jornada `objetivo` (0-based) de liga."""
         jugados = 0
-        while not self.liga.terminada and self.liga.jornada < objetivo:
-            self.copa_simular_sin_usuario()
-            comp = self.comp_debida()
-            if comp is not None:
-                self.copa_sorteo()
-            self.jugar_auto(comp)
-            jugados += 1
-            if self.escena == "fin":
-                break
+        self.audio.en_lote = True                                  # sin pitidos ni grada: solo uno al terminar
+        try:
+            while not self.liga.terminada and self.liga.jornada < objetivo:
+                self.copa_simular_sin_usuario()
+                comp = self.comp_debida()
+                if comp is not None:
+                    self.copa_sorteo()
+                self.jugar_auto(comp)
+                jugados += 1
+                if self.escena == "fin":
+                    break
+        finally:
+            self.audio.en_lote = False
+        self.audio.silbato("final")
         self.avisos.clear()
         if self.escena == "hub":
             self.tab = "calendario"

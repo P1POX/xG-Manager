@@ -51,8 +51,28 @@ frame(app, n=2)
 assert boton_sim()[1] == "Simular hasta la jornada 13"
 app.cal_sel = 10
 frame(app, n=2)
+
+class Espia:
+    """Canal de sonido falso que cuenta las reproducciones."""
+    def __init__(self):
+        self.n = 0
+
+    def play(self, snd):
+        self.n += 1
+
+    def set_volume(self, v):
+        pass
+
+
+au = app.audio
+au.activo = au.listo = True
+assert "silbato_final" in au.sonidos, "el audio de prueba no tiene sonidos: la comprobación no valdría"
+au._canal_sfx, au._canal_ev = Espia(), Espia()
 clic_xy(app, boton_sim()[0].center)
 clic_xy(app, boton_sim()[0].center)
+suena = au._canal_sfx.n + au._canal_ev.n
+assert suena <= 1, f"al simular hasta una fecha solo debe sonar un pitido, sonaron {suena}"
+assert au.en_lote is False
 frame(app, n=4)
 assert app.liga.jornada == 10 and app.escena == "hub" and app.tab == "calendario", (app.liga.jornada, app.escena)
 assert club.pj == 10, club.pj
