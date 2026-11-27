@@ -1,10 +1,12 @@
 """Mini-biblioteca de interfaz en modo inmediato para Pygame (botones, paneles, campo, camisetas)."""
+import math
 from pathlib import Path
 
 import pygame
 
 RAIZ = Path(__file__).resolve().parent.parent
 FUENTES = RAIZ / "assets" / "fonts"
+LOGOS = RAIZ / "assets" / "logos"
 
 FONDO = (13, 19, 31)
 PANEL = (23, 32, 49)
@@ -30,6 +32,7 @@ class UI:
         self.surf = surf
         self._fuentes = {}
         self._cache = {}
+        self._logos = {}
         self.mouse = (0, 0)
         self.click = None
         self.click_der = None
@@ -207,7 +210,75 @@ class UI:
             self.texto(l, (x + 9, y + 6 + i * (f.get_linesize() + 2)), 14)
 
     # ------------------------------------------------------- dibujos de juego
+    def _logo(self, club_id, alto):
+        """Escudo real (assets/logos/<id>.png, ver tools/descargar_logos.py) escalado a `alto` px; None si no existe."""
+        clave = (club_id, alto)
+        if clave not in self._logos:
+            img = None
+            ruta = LOGOS / f"{club_id}.png"
+            if ruta.exists():
+                try:
+                    orig = pygame.image.load(str(ruta)).convert_alpha()
+                    w = max(1, round(orig.get_width() * alto / orig.get_height()))
+                    img = pygame.transform.smoothscale(orig, (w, alto))
+                except pygame.error:
+                    img = None
+            self._logos[clave] = img
+        return self._logos[clave]
+
+    def placa_jugador(self, cx, y, nombre, pos, maxw=84):
+        """Nombre y posición de un jugador sobre una placa oscura translúcida: se leen sobre cualquier fondo."""
+        f = self.fuente(13, True)
+        w = min(maxw, f.size(str(nombre))[0]) + 12
+        placa = pygame.Surface((w, 33), pygame.SRCALPHA)
+        pygame.draw.rect(placa, (6, 14, 10, 165), placa.get_rect(), border_radius=7)
+        self.surf.blit(placa, (cx - w // 2, y - 2))
+        self.texto(nombre, (cx, y), 13, (255, 255, 255), True, "tc", maxw=maxw)
+        self.texto(pos, (cx, y + 16), 11, (214, 232, 220), anchor="tc")
+
+    def icono_baja(self, cx, cy, motivo, r=10):
+        """Por qué un jugador no está disponible: cruz roja = lesión; tarjeta roja = sanción por expulsión."""
+        if motivo == "sanción":
+            rect = pygame.Rect(0, 0, int(r * 1.35), int(r * 1.9))
+            rect.center = (cx, cy)
+            pygame.draw.rect(self.surf, (226, 48, 48), rect, border_radius=3)
+            pygame.draw.rect(self.surf, (255, 255, 255), rect, 2, border_radius=3)
+        else:
+            pygame.draw.circle(self.surf, (255, 255, 255), (cx, cy), r)
+            pygame.draw.circle(self.surf, (150, 30, 30), (cx, cy), r, 1)
+            g = max(2, r // 4)
+            pygame.draw.rect(self.surf, (226, 48, 48), (cx - r * 0.6, cy - g, r * 1.2, 2 * g))
+            pygame.draw.rect(self.surf, (226, 48, 48), (cx - g, cy - r * 0.6, 2 * g, r * 1.2))
+
+    def placa_jugador_corta(self, cx, y, nombre):
+        """Nombre pequeño sobre placa oscura (vista animada del partido)."""
+        f = self.fuente(11, True)
+        w = min(92, f.size(str(nombre))[0]) + 10
+        placa = pygame.Surface((w, 17), pygame.SRCALPHA)
+        pygame.draw.rect(placa, (6, 14, 10, 175), placa.get_rect(), border_radius=6)
+        self.surf.blit(placa, (cx - w // 2, y))
+        self.texto(nombre, (cx, y + 2), 11, (255, 255, 255), True, "tc", maxw=92)
+
+    def logo_liga(self, centro, alto, liga):
+        """Logo de la liga sobre una placa clara (los logos oficiales no se leen bien sobre fondo oscuro).
+        Devuelve False si no está descargado."""
+        slug = {"Premier League": "premier", "La Liga": "laliga", "Bundesliga": "bundesliga", "Serie A": "seriea",
+                "Ligue 1": "ligue1"}.get(liga)
+        logo = self._logo(f"liga_{slug}", alto) if slug else None
+        if logo is None:
+            return False
+        if logo.get_width() > 170:                       # logos muy anchos (Premier League): reducir para que quepan
+            logo = self._logo(f"liga_{slug}", int(alto * 170 / logo.get_width()))
+        placa = logo.get_rect(center=centro).inflate(22, 18)
+        pygame.draw.rect(self.surf, (240, 244, 250), placa, border_radius=12)
+        self.surf.blit(logo, logo.get_rect(center=centro))
+        return True
+
     def insignia(self, centro, radio, club):
+        logo = self._logo(club.id, int(radio * 2.2))
+        if logo is not None:
+            self.surf.blit(logo, logo.get_rect(center=centro))
+            return
         pygame.draw.circle(self.surf, club.color2, centro, radio)
         pygame.draw.circle(self.surf, club.color, centro, radio - max(2, radio // 8))
         pal = [w for w in club.nombre.replace(".", "").split() if len(w) > 1 or w.isupper()]
@@ -215,45 +286,85 @@ class UI:
         self.texto(ini, centro, int(radio * 0.95), club.color2 if sum(club.color) > 380 else (255, 255, 255),
                    True, "mc")
 
-    def camiseta(self, centro, tam, c1, c2, numero=None, apagada=False):
+    def camiseta(self, centro, tam, c1, c2, numero=None, apagada=False, patron="liso"):
+        """Camiseta con patrón ("liso", "rayas", "aros" o "mitades") recortado a la silueta."""
         cx, cy = centro
         a = tam / 2
         if apagada:
             c1, c2 = mezclar(c1, (60, 60, 60), .6), mezclar(c2, (60, 60, 60), .6)
-        puntos = [(cx - a * .38, cy - a), (cx + a * .38, cy - a), (cx + a, cy - a * .55), (cx + a * .72, cy - a * .12),
-                  (cx + a * .5, cy - a * .28), (cx + a * .5, cy + a), (cx - a * .5, cy + a),
-                  (cx - a * .5, cy - a * .28), (cx - a * .72, cy - a * .12), (cx - a, cy - a * .55)]
-        pygame.draw.polygon(self.surf, c1, puntos)
-        pygame.draw.polygon(self.surf, (15, 20, 30), puntos, 2)
-        pygame.draw.polygon(self.surf, c2, [(cx - a * .38, cy - a), (cx + a * .38, cy - a),
-                                            (cx, cy - a * .55)])
-        pygame.draw.line(self.surf, c2, (cx + a, cy - a * .55), (cx + a * .72, cy - a * .12), 3)
-        pygame.draw.line(self.surf, c2, (cx - a, cy - a * .55), (cx - a * .72, cy - a * .12), 3)
-        if numero is not None:
-            self.texto(str(numero), (cx, cy + a * .15), int(tam * .42), c2, True, "mc")
+        lado = int(tam) + 6
+        o = lado / 2                                   # centro de la superficie local
+        puntos = [(o - a * .38, o - a), (o + a * .38, o - a), (o + a, o - a * .55), (o + a * .72, o - a * .12),
+                  (o + a * .5, o - a * .28), (o + a * .5, o + a), (o - a * .5, o + a),
+                  (o - a * .5, o - a * .28), (o - a * .72, o - a * .12), (o - a, o - a * .55)]
+        loc = pygame.Surface((lado, lado), pygame.SRCALPHA)
+        loc.fill(c1)
+        ancho = max(2, round(tam / 7))
+        if patron == "rayas":
+            for x in range(int(o - a) + ancho, int(o + a) + 1, 2 * ancho):
+                pygame.draw.rect(loc, c2, (x, 0, ancho, lado))
+        elif patron == "aros":
+            for y in range(int(o - a) + ancho, int(o + a) + 1, 2 * ancho):
+                pygame.draw.rect(loc, c2, (0, y, lado, ancho))
+        elif patron == "mitades":
+            pygame.draw.rect(loc, c2, (int(o), 0, lado, lado))
+        mascara = pygame.Surface((lado, lado), pygame.SRCALPHA)
+        pygame.draw.polygon(mascara, (255, 255, 255, 255), puntos)
+        loc.blit(mascara, (0, 0), special_flags=pygame.BLEND_RGBA_MIN)    # recorta a la silueta
+        if patron == "liso":                                              # cuello y puños en el color secundario
+            pygame.draw.polygon(loc, c2, [(o - a * .38, o - a), (o + a * .38, o - a), (o, o - a * .55)])
+            pygame.draw.line(loc, c2, (o + a, o - a * .55), (o + a * .72, o - a * .12), 3)
+            pygame.draw.line(loc, c2, (o - a, o - a * .55), (o - a * .72, o - a * .12), 3)
+        else:                                                             # cuello neutro: se lee bien sobre las rayas
+            pygame.draw.polygon(loc, mezclar(c1, c2, .5), [(o - a * .3, o - a), (o + a * .3, o - a), (o, o - a * .62)])
+        pygame.draw.polygon(loc, (15, 20, 30), puntos, 2)
+        self.surf.blit(loc, (int(cx - o), int(cy - o)))
+        if numero is not None:                                            # dorsal en el pecho, con contorno para leerse sobre rayas
+            lum = 0.299 * c1[0] + 0.587 * c1[1] + 0.114 * c1[2]
+            relleno, contorno = ((255, 255, 255), (12, 18, 30)) if lum < 140 else ((16, 20, 32), (255, 255, 255))
+            tam_n = int(tam * (.40 if numero < 10 else .36))
+            pos = (cx, cy + a * .22)
+            for dx, dy in ((-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (1, 1), (-1, 1), (1, -1)):
+                self.texto(str(numero), (pos[0] + dx, pos[1] + dy), tam_n, contorno, True, "mc")
+            self.texto(str(numero), pos, tam_n, relleno, True, "mc")
 
     def campo(self, rect):
-        """Media cancha vertical (arco propio abajo)."""
+        """Cancha completa vertical con proporciones reglamentarias (68×105 m). Arco propio abajo, rival arriba."""
         r = pygame.Rect(rect)
-        n = 10
+        n = 14
         for i in range(n):
             col = (36, 128, 60) if i % 2 == 0 else (41, 140, 66)
             pygame.draw.rect(self.surf, col, (r.x, r.y + i * r.h // n, r.w, r.h // n + 1))
-        blanco = (225, 240, 228)
+        blanco = (190, 226, 200)          # un poco atenuado para que no compita con los nombres
         m = 14
-        pygame.draw.rect(self.surf, blanco, (r.x + m, r.y + m, r.w - 2 * m, r.h - 2 * m), 2)
-        cx = r.centerx
-        pygame.draw.circle(self.surf, blanco, (cx, r.y + m), int(r.w * .13), 2)
-        pw, ph = int(r.w * .56), int(r.h * .16)
-        pygame.draw.rect(self.surf, blanco, (cx - pw // 2, r.bottom - m - ph, pw, ph), 2)
-        gw, gh = int(r.w * .26), int(r.h * .06)
-        pygame.draw.rect(self.surf, blanco, (cx - gw // 2, r.bottom - m - gh, gw, gh), 2)
-        pygame.draw.rect(self.surf, (200, 210, 220), (cx - gw // 4, r.bottom - m, gw // 2, 5), 2)
-        pygame.draw.arc(self.surf, blanco, (cx - int(r.w * .12), r.bottom - m - ph - int(r.w * .12), int(r.w * .24),
-                                            int(r.w * .24)), 0.55, 2.6, 2)
+        L =pygame.Rect(r.x + m, r.y + m, r.w - 2 * m, r.h - 2 * m)      # líneas de banda y de fondo
+        W, H = L.w, L.h
+        pygame.draw.rect(self.surf, blanco, L, 2)
+        pygame.draw.line(self.surf, blanco, (L.x, L.centery), (L.right, L.centery), 2)
+        rc = int(W * 9.15 / 68)
+        pygame.draw.circle(self.surf, blanco, L.center, rc, 2)
+        pygame.draw.circle(self.surf, blanco, L.center, 3)
+        cx = L.centerx
+        pw, ph = int(W * 40.3 / 68), int(H * 16.5 / 105)                  # área grande
+        gw, gh = int(W * 18.3 / 68), int(H * 5.5 / 105)                   # área chica
+        pm = int(H * 11 / 105)                                            # punto penal
+        d = ph - pm
+        semi = math.acos(max(-1, min(1, d / rc)))                         # tramo del arco que queda fuera del área
+        for arriba in (True, False):
+            s = 1 if arriba else -1
+            y0 = L.y if arriba else L.bottom                              # línea de fondo
+            ytope = y0 + s * ph
+            pygame.draw.rect(self.surf, blanco, (cx - pw // 2, y0 if arriba else y0 - ph, pw, ph), 2)
+            pygame.draw.rect(self.surf, blanco, (cx - gw // 2, y0 if arriba else y0 - gh, gw, gh), 2)
+            pygame.draw.circle(self.surf, blanco, (cx, y0 + s * pm), 3)
+            a0 = (math.pi * 1.5 if arriba else math.pi / 2) - semi        # el arco mira hacia el medio campo
+            pygame.draw.arc(self.surf, blanco, (cx - rc, y0 + s * pm - rc, 2 * rc, 2 * rc), a0, a0 + 2 * semi, 2)
+            pygame.draw.rect(self.surf, (200, 210, 220), (cx - gw // 4, y0 - 5 if arriba else y0, gw // 2, 5), 2)  # arco
         return r
 
     def pos_campo(self, rect, x, y):
+        """x, y en 0..1 (y=0 delantera, y=1 portero) → píxeles. Los once ocupan desde el borde del área rival hasta el arco propio."""
         r = pygame.Rect(rect)
         m = 14
-        return (int(r.x + m + (r.w - 2 * m) * x), int(r.y + m + (r.h - 2 * m) * (y)))
+        y = 0.11 + 0.82 * y            # de la zona del área rival hasta el área propia: usa todo el largo del campo
+        return (int(r.x + m + (r.w - 2 * m) * x), int(r.y + m + (r.h - 2 * m) * y))

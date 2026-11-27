@@ -31,7 +31,7 @@ FORMACIONES = {
     "3-5-2": _formacion([.25, .5, .75], _fila("MED", .50, [.1, .3, .5, .7, .9]),
                         _fila("DEL", .24, [.38, .62])),
     "4-2-3-1": _formacion([.14, .38, .62, .86],
-                          _fila("MED", .60, [.38, .62]) + _fila("MED", .40, [.2, .5, .8]),
+                          _fila("MED", .56, [.34, .66]) + _fila("MED", .38, [.18, .5, .82]),   # filas a ≥ .18 (≈ 90 px)
                           _fila("DEL", .20, [.5])),
 }
 
@@ -41,7 +41,7 @@ FORMACIONES = {
 class Jugador:
     __slots__ = ("id", "idx", "nombre", "nombre_largo", "pos", "pos_lista", "grupo", "grupos_nat",
                  "ovr", "pot", "edad", "valor", "valor_pred", "cluster", "rol", "p", "club_id",
-                 "nacionalidad", "lesion", "motivo", "rasgos", "_prima")
+                 "nacionalidad", "lesion", "motivo", "rasgos", "_prima", "dorsal")
 
     def __init__(self, fila, idx):
         self.id = int(fila["player_id"])
@@ -61,6 +61,8 @@ class Jugador:
         self.rol = fila["rol"]
         self.p = {g: float(fila["p_" + g]) for g in GRUPOS}
         self.club_id = int(fila["club_team_id"])
+        d = fila.get("club_jersey_number")                 # dorsal en su club (FC 24); puede faltar
+        self.dorsal = int(float(d)) if d not in (None, "") and d == d else None
         self.nacionalidad = fila["nationality_name"]
         self.lesion = 0
         self.motivo = "lesión"        # "lesión" o "sanción" (roja)
@@ -110,6 +112,7 @@ class Club:
     gc: int = 0
     color: tuple = (200, 200, 200)
     color2: tuple = (30, 30, 30)
+    patron: str = "liso"
 
     @property
     def pts(self):

@@ -35,7 +35,7 @@ ATRIBUTOS = [
 ]
 COLS_JUGADOR = [
     "player_id", "short_name", "long_name", "player_positions", "overall", "potential",
-    "value_eur", "wage_eur", "age", "height_cm", "weight_kg", "club_team_id", "club_name",
+    "value_eur", "wage_eur", "age", "height_cm", "weight_kg", "club_team_id", "club_name", "club_jersey_number",
     "league_id", "league_name", "club_position", "nationality_name", "preferred_foot",
     "weak_foot", "skill_moves", "international_reputation", "work_rate", "player_traits",
     "player_tags",

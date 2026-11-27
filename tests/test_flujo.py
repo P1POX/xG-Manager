@@ -58,7 +58,7 @@ for tab, nombre in (("alineacion", "Alineación"), ("mercado", "Mercado"), ("tac
     assert app.tab == tab, (tab, app.tab)
     pulsados = set()
     for _ in range(40):
-        bs = [b for b in botones(app) if b[2] and b[1] not in pulsados and not b[1].startswith(("Jugar jornada", "Ver resultado"))
+        bs = [b for b in botones(app) if b[2] and b[1] not in pulsados and not b[1].startswith(("Jugar jornada", "Ver resultado", "Guardar y salir"))
               and b[1] not in ("Alineación", "Mercado", "Táctica", "Liga", "Datos y modelos")]
         if not bs:
             break
@@ -99,7 +99,7 @@ captura(app, "07_partido_vivo")
 
 # minijuego: penal a favor (jugado a mano)
 e = inyectar(app, "penal", True)
-assert avanzar_hasta(app, lambda: p["pausa"] == "mini"), "no apareció el minijuego"
+assert avanzar_hasta(app, lambda: p["pausa"] == "mini" and p["ev_mini"] is e), "no apareció el minijuego"
 captura(app, "11_penal_elegir_zona")
 clic_xy(app, centro_zona(0, 1))
 captura(app, "11b_penal_barra")
@@ -108,12 +108,12 @@ frame(app, n=12, dt=100)
 captura(app, "11c_penal_resultado")
 assert p["mini"].resultado in ("gol", "fallo")
 clic(app, "Continuar")
-assert p["pausa"] is None and e["res"] in ("gol", "fallo") and not e["pend"]
+assert p["pausa"] is None and e["res"] in ("gol", "fallo") and not e["pend"], (p["pausa"], e["res"], e["pend"], p["min"], p["vel"])
 paso(f"penal a favor jugado a mano → {e['res']}")
 
 # minijuego: penal en contra
 e = inyectar(app, "penal", False)
-assert avanzar_hasta(app, lambda: p["pausa"] == "mini")
+assert avanzar_hasta(app, lambda: p["pausa"] == "mini" and p["ev_mini"] is e)
 captura(app, "12_penal_contra")
 clic_xy(app, centro_zona(2, 1))
 frame(app, n=12, dt=100)
@@ -125,7 +125,7 @@ paso(f"penal en contra (atajar) → {e['res']}")
 # minijuego: tiro libre y ocasión (clic para disparar)
 for tipo, nombre in (("tiro_libre", "13_tiro_libre"), ("ocasion", "14_ocasion")):
     e = inyectar(app, tipo, True)
-    assert avanzar_hasta(app, lambda: p["pausa"] == "mini")
+    assert avanzar_hasta(app, lambda: p["pausa"] == "mini" and p["ev_mini"] is e)
     frame(app, n=5, dt=40)
     captura(app, nombre)
     clic_xy(app, (640, 300))
@@ -138,14 +138,14 @@ for tipo, nombre in (("tiro_libre", "13_tiro_libre"), ("ocasion", "14_ocasion"))
 # 'Simular jugada' en cada tipo
 for tipo, fav in (("penal", True), ("penal", False), ("tiro_libre", True), ("ocasion", True)):
     e = inyectar(app, tipo, fav)
-    assert avanzar_hasta(app, lambda: p["pausa"] == "mini")
+    assert avanzar_hasta(app, lambda: p["pausa"] == "mini" and p["ev_mini"] is e)
     clic(app, "Simular jugada")
     assert p["pausa"] is None and e["res"] in ("gol", "fallo"), (tipo, fav)
 paso("'Simular jugada' en los 4 casos")
 
 # barra de espacio / Enter como atajo
 e = inyectar(app, "ocasion", True)
-assert avanzar_hasta(app, lambda: p["pausa"] == "mini")
+assert avanzar_hasta(app, lambda: p["pausa"] == "mini" and p["ev_mini"] is e)
 frame(app, teclas=(pygame.K_SPACE,), n=2)
 frame(app, n=12, dt=100)
 frame(app, teclas=(pygame.K_RETURN,), n=2)

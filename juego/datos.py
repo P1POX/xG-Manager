@@ -6,6 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from . import camisetas
 from . import tactica as tac
 from .modelo import Club, Jugador, autoalinear, reparar_once
 
@@ -39,11 +40,13 @@ class Mundo:
         self.clubes = {}
         self.ligas = {}
         for r in eq.to_dict("records"):
-            c1, c2 = colores_club(r["team_name"])
+            k = camisetas.kit(r["team_name"])
+            c1, c2 = k[:2] if k else colores_club(r["team_name"])
             nom_ent = ent.loc[r["coach_id"], "long_name"] if r["coach_id"] in ent.index else "Sin entrenador"
             club = Club(id=int(r["team_id"]), nombre=r["team_name"], liga=r["liga"], ovr=int(r["overall"]),
                         estadio=r["home_stadium"] if isinstance(r["home_stadium"], str) else "Estadio municipal",
-                        entrenador=nom_ent, tactica=tac.tactica_desde_fila(r), color=c1, color2=c2)
+                        entrenador=nom_ent, tactica=tac.tactica_desde_fila(r), color=c1, color2=c2,
+                        patron=k[2] if k else "liso")
             self.clubes[club.id] = club
             self.ligas.setdefault(r["liga"], []).append(club.id)
         self.externos = []                     # jugadores sin club simulado (otras ligas o sin equipo)

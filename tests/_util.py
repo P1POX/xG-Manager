@@ -1,10 +1,13 @@
 """Utilidades de prueba: reloj falso, clics por etiqueta de botón y captura de pantalla."""
 import os
+import shutil
 import sys
 from pathlib import Path
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 RAIZ = Path(__file__).resolve().parent.parent
+os.environ["XG_SAVE_DIR"] = str(RAIZ / "shots" / "_saves")      # las pruebas nunca tocan tu partida real
+shutil.rmtree(os.environ["XG_SAVE_DIR"], ignore_errors=True)    # cada ejecución parte sin partida guardada
 sys.path.insert(0, str(RAIZ))
 import pygame  # noqa: E402
 
@@ -78,9 +81,20 @@ def inyectar(app, tipo, a_favor=True, minutos=1):
     return e
 
 
-def avanzar_hasta(app, cond, max_cuadros=3000, dt=70):
+def avanzar_hasta(app, cond, max_cuadros=6000, dt=70):
+    """Avanza cuadros hasta que cond() sea cierta. Las jugadas clave aleatorias que aparezcan por el camino se
+    simulan solas (salvo que cond() las esté esperando)."""
     for _ in range(max_cuadros):
         if cond():
             return True
+        p = app.p
+        if p and p.get("pausa") == "mini":
+            app._cerrar_minijuego("auto")                 # como el botón "Simular jugada"
         frame(app, dt=dt)
     return cond()
+
+
+def nueva_app(seed=None):
+    """Otra instancia de App en el mismo proceso (cierra la ventana anterior: con SCALED solo cabe una)."""
+    pygame.display.quit()
+    return App(seed=seed)

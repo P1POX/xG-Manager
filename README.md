@@ -1,4 +1,6 @@
-﻿# xG Manager
+﻿<p align="center"><img src="assets/img/logo.png" alt="xG Manager" width="260"></p>
+
+# xG Manager
 
 Juego de gestión de fútbol en **Pygame** para el ramo de Minería de Datos. Diriges un club de una de las 5 grandes
 ligas durante una temporada completa (datos reales de **EA SPORTS FC 24**, Kaggle) y un asistente basado en modelos
@@ -33,6 +35,9 @@ python main.py
 En macOS/Linux, el entorno se activa con `source .venv/bin/activate`. Si PowerShell bloquea la activación, ejecuta antes
 `Set-ExecutionPolicy -Scope Process RemoteSigned`. Si la ruta de la carpeta es muy larga en Windows, puede fallar la carga de DLL: clónalo en una ruta corta (p. ej. `C:\dev`).
 
+**Escudos de los clubes (opcional).** Descárgalos una vez con `python tools/descargar_logos.py` (necesita `git` y baja unos 17 MB;
+se guardan en `assets/logos/`, que no se sube a Git). Si no los descargas, el juego dibuja un escudo genérico con las iniciales.
+
 Los datos ya procesados y los modelos entrenados vienen incluidos (`data/`, `models/`, `reports/`). Para regenerarlos
 desde los CSV originales de Kaggle (`male_players.csv`, `male_teams.csv`, `male_coaches.csv`):
 
@@ -41,11 +46,19 @@ python ml/preparar_datos.py "C:/ruta/a/archive"
 python ml/entrenar.py
 ```
 
-Pruebas (sin ventana, con clics simulados; guardan capturas en `shots/`):
+**Guardar y continuar.** La temporada se guarda sola al cerrar cada jornada, al pulsar *Jugar jornada* y al cerrar la ventana
+desde el hub; también puedes usar **Guardar y salir** (barra lateral). Al abrir el juego aparece **Continuar temporada** con
+el resumen de la partida. Hay un solo guardado, en `%APPDATA%\xG-Manager\partida.json` (Windows), `~/Library/Application Support/xG-Manager/`
+(macOS) o `~/.local/share/xG-Manager/` (Linux). Un partido a medias no se guarda: al continuar vuelves al inicio de esa jornada.
+Para empezar de cero basta con pulsar dos veces *Nueva temporada* (o borrar ese archivo).
+
+Pruebas (sin ventana, con clics simulados; guardan capturas en `shots/` y nunca tocan tu partida guardada):
 
 ```powershell
-python tests/test_flujo.py    # pulsa los botones de menús, hub, partido, minijuegos y descanso
-python tests/smoke_test.py    # simula una temporada completa
+python tests/test_flujo.py      # pulsa los botones de menús, hub, partido, minijuegos y descanso
+python tests/test_guardado.py   # guarda, carga y comprueba que la partida continúa igual
+python tests/test_cancha.py     # partidos completos: la animación coincide con la crónica y nadie sale de la cancha
+python tests/smoke_test.py      # simula una temporada completa
 ```
 
 ## Jugabilidad
@@ -54,7 +67,10 @@ python tests/smoke_test.py    # simula una temporada completa
 2. **Alineación:** elige formación, coloca titulares (clic en un puesto y luego en un jugador) o usa *Autoalinear*.
 3. **Mercado:** ficha jugadores con tu presupuesto, vende, o pide *Buscar reemplazo* para un jugador.
 4. **Táctica:** 6 ajustes tácticos; el asistente te muestra qué reglas cumplen y su bono.
-5. **Jugar jornada:** previa con pronóstico y partido en vivo minuto a minuto, con faltas, tarjetas amarillas y rojas
+5. **Jugar jornada:** previa con pronóstico y partido en vivo (dura ~1 minuto a velocidad x1) sobre una cancha animada estilo
+   Haxball: los 22 jugadores se mueven según su formación, la pelota pasa entre ellos y el campo "actúa" cada gol, falta,
+   tarjeta y lesión de la crónica (la animación es solo presentación: el resultado lo decide siempre `juego/eventos.py`).
+   Hay faltas, tarjetas amarillas y rojas
    (la expulsión te deja con 10 y el jugador se pierde el siguiente partido), lesiones con sustitución automática,
    estadísticas, velocidad x1/x2/x4 y botón **Omitir partido**.
 6. **Jugadas clave (minijuegos):** los penales, tiros libres y ocasiones claras se juegan tú mismo. La dificultad depende
@@ -96,8 +112,9 @@ python tests/smoke_test.py    # simula una temporada completa
 main.py                 punto de entrada
 ml/preparar_datos.py    limpieza y filtrado de los CSV de Kaggle
 ml/entrenar.py          clustering, regresión, árboles y reglas; guarda modelos y métricas
-juego/                  modelo.py · simulacion.py · eventos.py · minijuegos.py · asistente.py · datos.py · tactica.py · ui.py · app.py
-tests/                  test_flujo.py · smoke_test.py
+juego/                  modelo.py · simulacion.py · eventos.py · minijuegos.py · cancha.py · guardado.py · camisetas.py · asistente.py · datos.py · tactica.py · ui.py · app.py
+tools/                  descargar_logos.py (escudos de clubes y logos de ligas, opcional)
+tests/                  test_flujo.py · test_guardado.py · test_cancha.py · smoke_test.py
 assets/fonts/           Lato y Bebas Neue (SIL Open Font License)
 data/ models/ reports/  datos procesados, modelos y métricas
 ```
@@ -112,4 +129,5 @@ conservan su licencia SIL OFL.
 
 - Datos: *EA SPORTS FC 24 Complete Player Dataset* (Kaggle, stefanoleone992); los nombres de clubes y jugadores pertenecen a sus titulares.
 - Fuentes: [Lato](https://fonts.google.com/specimen/Lato) y [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue), licencia SIL OFL (`assets/fonts/OFL.txt`).
-- Camisetas, campo e insignias se dibujan por código; no hay imágenes de terceros.
+- Escudos (opcionales): los baja `tools/descargar_logos.py` del repositorio público [luukhopman/football-logos](https://github.com/luukhopman/football-logos); pertenecen a sus clubes y se usan solo con fines educativos.
+- Camisetas y campo se dibujan por código; el repositorio no incluye imágenes de terceros.

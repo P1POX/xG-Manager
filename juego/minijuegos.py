@@ -144,7 +144,7 @@ class PenalFavor(Minijuego):
         self.anim = None
 
     def dibujar(self, ui):
-        self._cabecera(ui, f"Tirador: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Portero: {self.portero} (nivel {self.ovr_gk})",
+        self._cabecera(ui, f"Tirador: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Portero: {self.portero} (OVR {self.ovr_gk})",
                        self.diff)
         dibujar_porteria(ui)
         zonas = _zonas()
@@ -238,7 +238,7 @@ class PenalContra(Minijuego):
 
     def dibujar(self, ui):
         # aquí e["gk"] es el portero PROPIO (el del equipo del usuario)
-        self._cabecera(ui, f"Ejecuta: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Tu portero: {self.portero} (nivel {self.ovr_gk})",
+        self._cabecera(ui, f"Ejecuta: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Tu portero: {self.portero} (OVR {self.ovr_gk})",
                        self.diff)
         dibujar_porteria(ui)
         zonas = _zonas()
@@ -329,7 +329,7 @@ class Remate(Minijuego):
 
     def dibujar(self, ui):
         quien = "Tiro libre" if self.libre else "Mano a mano"
-        self._cabecera(ui, f"{quien}: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Portero: {self.portero} (nivel {self.ovr_gk})",
+        self._cabecera(ui, f"{quien}: {self.ejecutor} (tiro {self.tiro:.0f})  ·  Portero: {self.portero} (OVR {self.ovr_gk})",
                        self.diff)
         dibujar_porteria(ui)
         if self.muro:

@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _util import App, captura, frame  # noqa: E402
+from _util import App, avanzar_hasta, captura, frame  # noqa: E402
 
 from juego import eventos as ev  # noqa: E402
 
@@ -41,11 +41,7 @@ while not app.liga.terminada:
         captura(app, "06_previa")
     app.iniciar_partido()
     if jornadas == 0:
-        for _ in range(45):                 # hasta el descanso, simulando solo las jugadas pendientes
-            frame(app, dt=70)
-            if app.p["pausa"] == "mini":
-                ev.autoresolver(app.p["ev_mini"], app.rng)
-                app.p["pausa"] = app.p["mini"] = None
+        avanzar_hasta(app, lambda: app.p["min"] >= 30 or app.p["pausa"] == "descanso")   # jugadas clave: se simulan solas
         captura(app, "07_partido_vivo")
     app.omitir_partido()
     frame(app, n=2)
